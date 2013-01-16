@@ -1,0 +1,17 @@
+{
+  "name": "leaves",
+  "version": "0.0.1",
+  "dependencies": {
+    "bower": "~0.6.8",
+    "bower-brunch": "git://github.com/brian-c/bower-brunch.git",
+    "brunch": "~1.5.2",
+    "coffee-script": "~1.4.0",
+    "coffee-script-brunch": "~1.5.0",
+    "stylus": "~0.32.0",
+    "stylus-brunch": "~1.5.0",
+    "uglify-js-brunch": "~1.5.0"
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  }
+}
