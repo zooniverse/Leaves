@@ -7,6 +7,8 @@
     "brunch": "~1.5.2",
     "coffee-script": "~1.4.0",
     "coffee-script-brunch": "~1.5.0",
+    "eco": "~1.1.0-rc-3",
+    "eco-brunch": "~1.5.0",
     "stylus": "~0.32.0",
     "stylus-brunch": "~1.5.0",
     "uglify-js-brunch": "~1.5.0"
