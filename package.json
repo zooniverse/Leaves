@@ -2,18 +2,16 @@
   "name": "leaves",
   "version": "0.0.1",
   "dependencies": {
-    "bower": "~0.6.8",
-    "bower-brunch": "git://github.com/brian-c/bower-brunch.git",
-    "brunch": "~1.5.2",
-    "coffee-script": "~1.4.0",
-    "coffee-script-brunch": "~1.5.0",
-    "eco": "~1.1.0-rc-3",
-    "eco-brunch": "~1.5.0",
-    "stylus": "~0.32.0",
-    "stylus-brunch": "~1.5.0",
-    "uglify-js-brunch": "~1.5.0"
+    "hem": "~0.1.8",
+    "es5-shimify": "~0.0.1",
+    "json2ify": "~0.0.1",
+    "jqueryify": "~0.0.1",
+    "marking-surface": "~0.0.3",
+    "nib": "~0.9.0",
+    "spine": "~1.0.7",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git"
   },
   "scripts": {
-    "start": "brunch watch --server"
+    "start": "hem server --port 1347"
   }
 }

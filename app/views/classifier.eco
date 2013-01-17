@@ -1,0 +1,16 @@
+<div class="classifier">
+  <div class="subject-container"></div>
+
+  <div class="step">
+    <div class="info">
+      <div class="number">1</div>
+      <div class="text">Measure three lobules</div>
+      <div class="instruction">Look for round bulges and measure along their wide and narrow axes.</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button name="skip">Skip</button>
+    <button name="next">Next step</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{
+  "dependencies": [
+    "es5-shimify",
+    "json2ify",
+    "jqueryify",
+    "marking-surface",
+    "spine",
+    "spine/lib/manager",
+    "spine/lib/route",
+    "zooniverse/lib/controllers/browser_check",
+    "zooniverse/lib/api",
+    "zooniverse/lib/controllers/top_bar",
+    "zooniverse/lib/models/user",
+    "zooniverse/lib/models/recent",
+    "zooniverse/lib/models/favorite",
+    "zooniverse/lib/google_analytics"
+  ],
+
+  "libs": [
+    "node_modules/zooniverse/vendor/base64.js",
+    "app/vendor/raphael.js"
+  ]
+}
