@@ -8,8 +8,7 @@
     "jqueryify": "~0.0.1",
     "marking-surface": "~0.0.3",
     "nib": "~0.9.0",
-    "spine": "~1.0.7",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git"
+    "spine": "~1.0.7"
   },
   "scripts": {
     "start": "hem server --port 1347"

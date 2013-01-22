@@ -1,7 +1,9 @@
 {Controller} = require 'spine'
+template = require 'views/classifier'
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
-template = require 'views/classifier'
+User = require 'zooniverse/models/user'
+Subject = require 'zooniverse/models/subject'
 
 class Classifier extends Controller
   surface: null
@@ -19,5 +21,8 @@ class Classifier extends Controller
       height: 472
 
     @surface.tool = AxesTool
+
+    User.on 'change', ->
+      console.log 'User changed'
 
 module.exports = Classifier
