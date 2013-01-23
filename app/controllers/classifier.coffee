@@ -22,7 +22,24 @@ class Classifier extends Controller
 
     @surface.tool = AxesTool
 
-    User.on 'change', ->
-      console.log 'User changed'
+    User.on 'change', @onUserChange
+    Subject.on 'select', @onSubjectSelect
+    Subject.on 'no-more', @onNoMoreSubjects
+
+  onUserChange: (e, user) =>
+    if user?.project.tutorial_done
+      if @classification.subject.metadata.tutorial
+        console.log 'Discard current tutorial'
+        Subject.next()
+    else
+      console.log 'Load tutorial'
+      Subject.next()
+
+  onSubjectSelect: (e, subject) =>
+    console.log 'Selected subject', subject
+    @surface.image.attr src: subject.location.standard
+
+  onNoMoreSubjects: =>
+    console.log "No more subjects!"
 
 module.exports = Classifier
