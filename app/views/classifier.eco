@@ -12,5 +12,6 @@
   <div class="controls">
     <button name="skip">Skip</button>
     <button name="next">Next step</button>
+    <button name="finish">Finish</button>
   </div>
 </div>
