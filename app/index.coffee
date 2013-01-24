@@ -11,7 +11,7 @@ classifier.el.appendTo '.classify.page'
 api = new Api
   project: 'test'
   host: "http://localhost:8000"
-  # path: '/test/helpers/proxy'
+  path: '/test/helpers/proxy'
 
 topBar = new TopBar
 topBar.el.appendTo 'body'

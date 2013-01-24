@@ -18,6 +18,7 @@ class Classifier extends Controller
     super
 
     @html template
+    @el.addClass 'loading'
 
     @surface ?= new MarkingSurface
       container: @el.find '.subject-container'
@@ -27,28 +28,36 @@ class Classifier extends Controller
     @surface.tool = AxesTool
 
     User.on 'change', @onUserChange
+    Subject.on 'get-next', @onGettingNextSubject
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
       if @classification.subject.metadata.tutorial
-        console.log 'Discard current tutorial'
         Subject.next()
     else
-      console.log 'Load tutorial'
       Subject.next()
 
+  onGettingNextSubject: =>
+    @el.addClass 'loading'
+
   onSubjectSelect: (e, subject) =>
-    console.log 'Selected subject', subject
     @classification = new Classification {subject}
     @classification.on 'send', -> Subject.next()
     @surface.image.attr src: subject.location.standard
+    @el.removeClass 'loading'
 
   onNoMoreSubjects: =>
-    console.log "No more subjects!"
+    @el.removeClass 'loading'
 
   onClickFinish: ->
     @classification.send()
+
+  loadNextSubject: ->
+    next = Subject.next()
+    next.always =>
+      @el.removeCLass 'loading'
+
 
 module.exports = Classifier
