@@ -11,7 +11,8 @@
     "zooniverse/models/user",
     "zooniverse/models/subject",
     "zooniverse/models/classification",
-    "zooniverse/controllers/top-bar"
+    "zooniverse/controllers/top-bar",
+    "zooniverse/controllers/paginator"
   ],
 
   "libs": [
