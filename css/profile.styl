@@ -12,6 +12,7 @@
       margin: 20px
 
       input
+        background: #fff
         border: 1px solid #bbb
         border-radius: 3px
         box-shadow: 0 1px 1px #ccc inset, 0 2px 1px #fff
@@ -49,5 +50,28 @@
         max-width: 100%
 
   .controls
-    text-align: center
     clear: left
+    margin: 10px 0 20px
+    text-align: center
+
+    button
+      height: 24px
+      letter-spacing: -2em
+      overflow: hidden
+      position: relative
+      text-indent: -2em
+      width: 24px
+
+      &:before
+        background: #999
+        border-radius: 50%
+        content: ""
+        height: 8px
+        left: 50%
+        margin: -4px 0 0 -4px
+        position: absolute
+        top: 50%
+        width: 8px
+
+      &.active:before
+        background: $green
