@@ -5,6 +5,7 @@ User = require 'zooniverse/models/user'
 Route = require 'spine/lib/route'
 {Stack} = require 'spine/lib/manager'
 Page = require 'controllers/page'
+HomePage = require 'controllers/home-page'
 Classifier = require 'controllers/classifier'
 Profile = require 'controllers/profile'
 
@@ -13,15 +14,16 @@ stack = new Stack
   el: '#app .main'
 
   controllers:
-    classify: class extends Page then content: (new Classifier).el
-    profile: class extends Page then content: (new Profile).el
+    home: class extends Page then content: (new HomePage).el
+    classify: class extends Page then content: new Classifier
+    profile: class extends Page then content: new Profile
 
   routes:
+    '/': 'home'
     '/classify': 'classify'
     '/profile': 'profile'
 
-  default: 'classify'
-
+  default: 'home'
 
 api = new Api
   project: 'planet_four'
