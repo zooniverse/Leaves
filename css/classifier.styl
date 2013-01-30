@@ -77,3 +77,14 @@
 
     button
       @extend #standard-button
+
+      &[name="finish"]
+        display: none
+
+  &[data-step="lobules"]
+    .controls button
+      &[name="next"]
+        display: none
+
+      &[name="finish"]
+        display: inline-block
