@@ -6,6 +6,17 @@
     .subject
       display: block
 
+    button[name="delete-mark"]
+      background: #000
+      border: 2px solid #fff
+      border-radius: 50%
+      color: #fff
+      font-size: 16px
+      font-family: Arial
+      height: 20px
+      line-height: 0
+      width: 20px
+
   .step
     border-top: 1px solid #fff
     padding: 15px 15px 20px
@@ -36,3 +47,6 @@
     padding: 15px 15px 20px
     position: absolute
     right: 0
+
+    button
+      @extend #standard-button
