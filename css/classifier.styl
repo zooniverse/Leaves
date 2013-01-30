@@ -15,7 +15,34 @@
       font-family: Arial
       height: 20px
       line-height: 0
+      margin: -10px 0 0 -10px
+      left: 0
+      position: absolute;
+      top: 0
       width: 20px
+      z-index: 1
+
+    .measurement-controls
+      background: #fff
+      border-radius: 3px
+      left: -20px
+      padding: 5px
+      position: absolute;
+      top: -40px
+
+      &:after
+        border: 10px solid transparent
+        border-top-color: #fff
+        content: ""
+        left: 50%
+        margin-left: -10px
+        position: absolute
+        top: 100%
+
+      input
+        font-size: 14px
+        text-align: center
+        width: 40px
 
   .step
     border-top: 1px solid #fff

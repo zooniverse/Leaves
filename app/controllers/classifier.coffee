@@ -3,6 +3,7 @@ template = require 'views/classifier'
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
 LineTool = require './tools/line'
+MeasurementTool = require './tools/measurement'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
@@ -26,7 +27,7 @@ class Classifier extends Controller
       width: 800
       height: 472
 
-    @surface.tool = LineTool
+    @surface.tool = MeasurementTool
 
     User.on 'change', @onUserChange
     Subject.on 'get-next', @onGettingNextSubject

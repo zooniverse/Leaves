@@ -2,8 +2,8 @@ $ = require 'jqueryify'
 {Tool} = require 'marking-surface'
 
 class AxesTool extends Tool
-  dots: null
   cross: null
+  dots: null
 
   markDefaults:
     p0: [-20, -20], p1: [-20, -20]
@@ -13,10 +13,9 @@ class AxesTool extends Tool
     'dots': 'move'
 
   initialize: ->
+    @cross = @addShape 'path', 'M 0 0', stroke: 'red', 'stroke-width': 3
     @dots = for i in [0...4]
       @addShape 'circle', 0, 0, 8, fill: 'red', stroke: 'white', 'stroke-width': 2
-
-    @cross = @addShape 'path', 'M 0 0', stroke: 'red', 'stroke-width': 3
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
@@ -49,7 +48,7 @@ class AxesTool extends Tool
 
     @deleteButton.css
       display: if @clicks is 2 then '' else 'none'
-      left: (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
-      top: (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
+      'margin-left': (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
+      'margin-top': (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
 
 module.exports = AxesTool

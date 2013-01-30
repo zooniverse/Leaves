@@ -1,9 +1,8 @@
-$ = require 'jqueryify'
 {Tool} = require 'marking-surface'
 
 class LineTool extends Tool
-  dots: null
   line: null
+  dots: null
 
   markDefaults:
     start: [0, 0]
@@ -13,10 +12,9 @@ class LineTool extends Tool
     'dots': 'move'
 
   initialize: ->
+    @line = @addShape 'path', 'M 0 0', stroke: 'red', 'stroke-width': 3
     @dots = for i in [0...2]
       @addShape 'circle', 0, 0, 8, fill: 'red', stroke: 'white', 'stroke-width': 2
-
-    @line = @addShape 'path', 'M 0 0', stroke: 'red', 'stroke-width': 3
 
   onFirstClick: (e) ->
     @['on drag dots'] e, @dots[0]
@@ -40,7 +38,7 @@ class LineTool extends Tool
     ].join ','
 
     @deleteButton.css
-      left: (@mark.start[0] + @mark.end[0]) / 2
-      top: (@mark.start[1] + @mark.end[1]) / 2
+      'margin-left': (@mark.start[0] + @mark.end[0]) / 2
+      'margin-top': (@mark.start[1] + @mark.end[1]) / 2
 
 module.exports = LineTool
