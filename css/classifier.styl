@@ -1,10 +1,8 @@
 .classifier
   .subject-container
     border-bottom: 1px solid #e9e9e9
+    cursor: crosshair
     padding: 15px
-
-    .subject
-      display: block
 
     button[name="delete-mark"]
       background: #000
@@ -46,7 +44,12 @@
 
   .step
     border-top: 1px solid #fff
-    padding: 15px 15px 20px
+    display: none
+    padding: 10px 15px 20px
+    position: relative
+
+    &.active
+      display: block
 
     .info
       margin: 0 45px
@@ -62,29 +65,18 @@
         top: 0
         width: 40px
 
-      .text
+      .title
         font-size: 22px
 
       .instruction
         font-size: 13px
         color: #999
 
-  .controls
-    bottom: 0
-    padding: 15px 15px 20px
-    position: absolute
-    right: 0
+    .controls
+      bottom: 0
+      padding: 15px 15px 20px
+      position: absolute
+      right: 0
 
-    button
-      @extend #standard-button
-
-      &[name="finish"]
-        display: none
-
-  &[data-step="lobules"]
-    .controls button
-      &[name="next"]
-        display: none
-
-      &[name="finish"]
-        display: inline-block
+      button
+        @extend #standard-button

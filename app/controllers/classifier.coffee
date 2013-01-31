@@ -8,33 +8,15 @@ User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
 
-steps =
-  scale:
-    number: 1
-    tool: MeasurementTool
-    header: 'Measure the image scale'
-    instruction: 'Look for a bar along the bottom of the image. Drag from its start to its end, then type the scale into the box.'
-    next: 'stem'
-
-  stem:
-    number: 2
-    tool: LineTool
-    header: 'Measure the stem'
-    instruction: 'Look for the stem and measure its width at the widest point.'
-    next: 'lobules'
-
-  lobules:
-    number: 3
-    tool: AxesTool
-    header: 'Measure three lobules'
-    instruction: 'Look for round bulges and measure across their widest and narrowest axes.'
-
 class Classifier extends Controller
   surface: null
 
-  currentStep: ''
-
   className: 'classifier'
+
+  steps:
+    scale: tool: MeasurementTool, marks: 1
+    stem: tool: LineTool, marks: 1
+    lobules: tool: AxesTool, marks: 3
 
   events:
     'click button[name="next"]': 'onClickNext'
@@ -51,7 +33,7 @@ class Classifier extends Controller
       width: 800
       height: 472
 
-    @surface.tool = MeasurementTool
+    @surface.on 'create-mark', @onCreateMark
 
     User.on 'change', @onUserChange
     Subject.on 'get-next', @onGettingNextSubject
@@ -78,16 +60,20 @@ class Classifier extends Controller
 
   loadStep: (which) ->
     @currentStep = which
-    @el.attr 'data-step': @currentStep
 
-    step = steps[@currentStep]
-    @el.find('.step .number').html step.number
-    @el.find('.step .text').html step.header
-    @el.find('.step .instruction').html step.instruction
-    @surface.tool = step.tool
+    stepEls = @el.find '.step'
+    stepEls.removeClass 'active'
+    stepEls.filter(".#{@currentStep}").addClass 'active'
 
-  onClickNext: ->
-    @loadStep steps[@currentStep].next
+    @surface.tool = @steps[@currentStep].tool
+
+  onCreateMark: (e, mark, tool) =>
+    mark.set step: @currentStep
+    currentMarks = (mark for {mark}, i in @surface.tools when mark.step is @currentStep) || []
+    currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks
+
+  onClickNext: (e) ->
+    @loadStep $(e.target).val()
 
   onClickFinish: ->
     @classification.annotations.push @surface.marks...
