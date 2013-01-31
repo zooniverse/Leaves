@@ -1,3 +1,8 @@
+<nav>
+  <button name="change-page" value="recents">Recents</button>
+  <button name="change-page" value="favorites">Favorites</button>
+</nav>
+
 <form class="sign-in-form">
   <header>Sign in to see your profile</header>
   <label><input type="text" name="username" placeholder="Username" required="required" /></label>
@@ -7,6 +12,6 @@
   <p class="no-account">Don't have a Zooniverse profile? <button name="sign-up">Create one now!</button></p>
 </form>
 
-<div class="recents"></div>
+<div class="recents page"></div>
 
-<div class="favorites"></div>
+<div class="favorites page"></div>

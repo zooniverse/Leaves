@@ -2,10 +2,11 @@
 template = require 'views/profile'
 itemTemplate = require 'views/profile-item-template'
 LoginForm = require 'zooniverse/controllers/login-form'
+signupDialog = require 'zooniverse/controllers/signup-dialog'
 Paginator = require 'zooniverse/controllers/paginator'
 Recent = require 'zooniverse/models/recent'
+Favorite = require 'zooniverse/models/favorite'
 User = require 'zooniverse/models/user'
-signupDialog = require 'zooniverse/controllers/signup-dialog'
 
 class Profile extends Controller
   className: 'profile'
@@ -13,20 +14,30 @@ class Profile extends Controller
 
   events:
     'click button[name="sign-up"]': 'onClickSignUp'
+    'click button[name="change-page"]': 'onClickChangePage'
+
+  elements:
+    'nav button[name="recents"]': 'recentsButton'
+    'nav button[name="favorites"]': 'favoritesButton'
+    '.page': 'pages'
 
   constructor: ->
     super
 
-    @el.html template @
+    @html template
 
     @loginForm = new LoginForm
-      template: null
       el: @el.find '.sign-in-form'
 
     @recentsList = new Paginator
       type: Recent
       itemTemplate: itemTemplate
       el: @el.find '.recents'
+
+    @favoritesList = new Paginator
+      type: Favorite
+      itemTemplate: itemTemplate
+      el: @el.find '.favorites'
 
     User.on 'change', =>
       @onUserChange arguments...
@@ -36,5 +47,10 @@ class Profile extends Controller
 
   onClickSignUp: ->
     signupDialog.show()
+
+  onClickChangePage: (e) ->
+    page = $(e.target).val()
+    @pages.removeClass 'active'
+    @pages.filter(".#{page}").addClass 'active'
 
 module.exports = Profile
