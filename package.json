@@ -11,6 +11,6 @@
     "spine": "~1.0.7"
   },
   "scripts": {
-    "start": "hem server --port 1347"
+    "start": "hem server --port 1347 --includeCss"
   }
 }
