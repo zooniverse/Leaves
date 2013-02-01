@@ -1,3 +1,6 @@
+require 'json2ify'
+require 'es5-shimify'
+
 $ = require 'jqueryify'
 Api = require 'zooniverse/lib/api'
 TopBar = require 'zooniverse/controllers/top-bar'
@@ -8,6 +11,7 @@ Page = require 'controllers/page'
 HomePage = require 'controllers/home-page'
 Classifier = require 'controllers/classifier'
 Profile = require 'controllers/profile'
+browserDialog  = require 'zooniverse/controllers/browserDialog'
 
 stack = new Stack
   className: "main #{Stack::className}"
@@ -37,5 +41,7 @@ topBar = new TopBar
 topBar.el.appendTo 'body'
 
 User.fetch()
+
+browserDialog.check()
 
 module.exports = {stack, api, topBar}
