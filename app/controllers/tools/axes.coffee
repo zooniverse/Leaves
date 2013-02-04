@@ -19,13 +19,13 @@ class AxesTool extends Tool
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
-    points = if @clicks is 0 then ['p0', 'p1'] else ['p2', 'p3']
+    points = if @clicks is 0 then ['p0', 'p1', 'p2', 'p3'] else ['p2', 'p3']
     @mark.set point, [x, y] for point in points
 
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
-    point = if @clicks is 1 then 'p1' else 'p3'
-    @mark.set point, [x, y]
+    points = if @clicks is 0 then ['p1', 'p3'] else ['p3']
+    @mark.set point, [x, y] for point in points
 
   isComplete: ->
     @clicks is 2
@@ -46,9 +46,9 @@ class AxesTool extends Tool
       "L #{@mark.p3[0]} #{@mark.p3[1]}"
     ].join ','
 
-    @deleteButton.css
-      display: if @clicks is 2 then '' else 'none'
-      'margin-left': (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
-      'margin-top': (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
+    @controls.moveTo [
+      (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
+      (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
+    ]
 
 module.exports = AxesTool

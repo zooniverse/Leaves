@@ -37,8 +37,9 @@ class LineTool extends Tool
       "L #{@mark.end[0]} #{@mark.end[1]}"
     ].join ','
 
-    @deleteButton.css
-      'margin-left': (@mark.start[0] + @mark.end[0]) / 2
-      'margin-top': (@mark.start[1] + @mark.end[1]) / 2
+    @controls.moveTo [
+      (@mark.start[0] + @mark.end[0]) / 2
+      (@mark.start[1] + @mark.end[1]) / 2
+    ]
 
 module.exports = LineTool

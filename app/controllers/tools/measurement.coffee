@@ -1,39 +1,30 @@
 $ = require 'jqueryify'
-{Mark} = require 'marking-surface'
+{ToolControls, Mark} = require 'marking-surface'
 LineTool = require './line'
 
-class MeasurementTool extends LineTool
-  controls: null
+class MeasurementControls extends ToolControls
   input: null
 
-  initialize: ->
+  constructor: ->
     super
-    @controls = $('<div class="measurement-controls"><input placeholder="Scale" /></div>')
-    @controls.css position: 'absolute'
-    @controls.appendTo @surface.container
-    @input = @controls.find 'input'
-    @input.on 'keydown', @onInputChange
 
-  onInputChange: =>
-    @mark.set scale: parseFloat @input.val()
+    @el.append '''
+      <div class="more">
+        <input name="scale" placeholder="Scale" />
+      </div>
+    '''
 
-  render: ->
-    super
-    @controls.css
-      'margin-left': (@mark.start[0] + @mark.end[0]) / 2
-      'margin-top': (@mark.start[1] + @mark.end[1]) / 2
+    @el.on 'change', 'input[name="scale"]', @onScaleInputChange
 
-  select: ->
-    super
-    @controls.show()
+    @input = @el.find 'input[name="scale"]'
 
-  deselect: ->
-    super
-    @controls.hide()
+  onScaleInputChange: =>
+    @tool.mark.set scale: @input.val()
 
-  destroy: ->
-    super
-    @input.off()
-    @controls.remove()
+class MeasurementTool extends LineTool
+  @Controls: MeasurementControls
+
+  onFirstRelease: ->
+    @controls.input.focus()
 
 module.exports = MeasurementTool

@@ -14,9 +14,9 @@ class Classifier extends Controller
   className: 'classifier'
 
   steps:
-    scale: tool: MeasurementTool, marks: 1
-    stem: tool: LineTool, marks: 1
-    lobules: tool: AxesTool, marks: 3
+    scale: tool: MeasurementTool, label: 'Scale', marks: 10
+    stem: tool: LineTool, label: 'Stem', marks: 10
+    lobules: tool: AxesTool, label: 'Lobule', marks: 30
 
   events:
     'click button[name="next"]': 'onClickNext'
@@ -68,6 +68,7 @@ class Classifier extends Controller
     @surface.tool = @steps[@currentStep].tool
 
   onCreateMark: (e, mark, tool) =>
+    mark.set label: @steps[@currentStep].label
     mark.set step: @currentStep
     currentMarks = (mark for {mark}, i in @surface.tools when mark.step is @currentStep) || []
     currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks

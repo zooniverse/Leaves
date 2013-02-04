@@ -4,43 +4,51 @@
     cursor: crosshair
     padding: 15px
 
-    button[name="delete-mark"]
+    .marking-tool-controls
       background: #000
-      border: 2px solid #fff
-      border-radius: 50%
+      border: 1px solid black
       color: #fff
-      font-size: 16px
-      font-family: Arial
-      height: 20px
-      line-height: 0
-      margin: -10px 0 0 -10px
-      left: 0
-      position: absolute;
-      top: 0
-      width: 20px
-      z-index: 1
+      font-size: 11px
+      padding: 3px
 
-    .measurement-controls
-      background: #fff
-      border-radius: 3px
-      left: -20px
-      padding: 5px
-      position: absolute;
-      top: -40px
+      .label
+        display: inline-block
+        font-weight: bold
+        letter-spacing: 1px
+        margin: 0 3px
+        text-transform: uppercase
+        vertical-align: middle
 
-      &:after
-        border: 10px solid transparent
-        border-top-color: #fff
-        content: ""
-        left: 50%
-        margin-left: -10px
-        position: absolute
-        top: 100%
+      button[name="delete-mark"]
+        background: transparent
+        border: 0
+        color: inherit
+        display: none
+        font-size: 15px
+        font-family: Arial
+        height: 14px
+        line-height: 0
+        margin-left: -3px
+        vertical-align: middle
+        width: 14px
+        z-index: 1
 
-      input
-        font-size: 14px
-        text-align: center
-        width: 40px
+      .more
+        display: none
+
+        input[name="scale"]
+          font-size: 14px
+          text-align: center
+          width: 60px
+
+      &.selected
+        box-shadow: 0 0 0 1px rgba(#fff, 0.5) inset, 0 1px 2px rgba(#000, 0.5)
+
+        button[name="delete-mark"]
+          display: inline-block
+
+        .more
+          display: block
 
   .step
     border-top: 1px solid #fff
