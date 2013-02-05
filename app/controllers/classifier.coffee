@@ -1,5 +1,5 @@
 {Controller} = require 'spine'
-template = require 'views/classifier'
+template = require '../views/classifier'
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
 LineTool = require './tools/line'

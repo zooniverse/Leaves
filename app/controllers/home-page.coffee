@@ -1,5 +1,5 @@
 {Controller} = require 'spine'
-template = require 'views/home-page'
+template = require '../views/home-page'
 
 class HomePage extends Controller
   className: 'home'
