@@ -14,13 +14,15 @@ class Classifier extends Controller
   className: 'classifier'
 
   steps:
-    scale: tool: MeasurementTool, label: 'Scale', marks: 10
-    stem: tool: LineTool, label: 'Stem', marks: 10
-    lobules: tool: AxesTool, label: 'Lobule', marks: 30
+    scale: tool: MeasurementTool, label: 'Scale', marks: 1
+    stem: tool: LineTool, label: 'Stem', marks: 1
+    lobules: tool: AxesTool, label: 'Lobule', marks: 3
+    summary: tool: null
 
   events:
-    'click button[name="next"]': 'onClickNext'
+    'click button[name="next-step"]': 'onClickNextStep'
     'click button[name="finish"]': 'onClickFinish'
+    'click button[name="next-subject"]': 'onClickNextSubject'
 
   constructor: ->
     super
@@ -52,7 +54,6 @@ class Classifier extends Controller
 
   onSubjectSelect: (e, subject) =>
     @classification = new Classification {subject}
-    @classification.on 'send', -> Subject.next()
     @surface.marks[0].destroy() until @surface.marks.length is 0
     @surface.image.attr src: subject.location.standard
     @el.removeClass 'loading'
@@ -73,12 +74,19 @@ class Classifier extends Controller
     currentMarks = (mark for {mark}, i in @surface.tools when mark.step is @currentStep) || []
     currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks
 
-  onClickNext: (e) ->
+  onClickNextStep: (e) ->
+    console.log e, e.target, $(e.target).val()
     @loadStep $(e.target).val()
 
   onClickFinish: ->
     @classification.annotations.push @surface.marks...
     @classification.send()
+    @loadStep 'summary'
+    @el.addClass 'summary'
+
+  onClickNextSubject: ->
+    @el.removeClass 'summary'
+    Subject.next()
 
   onNoMoreSubjects: =>
     @el.removeClass 'loading'

@@ -3,6 +3,27 @@
     border-bottom: 1px solid #e9e9e9
     cursor: crosshair
     padding: 15px
+    position: relative
+
+    .summary-message
+      background: rgba(#000, 0.5)
+      bottom: 15px
+      color: #fff
+      display: none
+      font-size: 30px
+      left: 15px
+      padding-top: 175px
+      position: absolute
+      right: 15px
+      text-align: center
+      top: 15px
+
+      header
+        color: $green
+        font-size: 14px
+        font-weight: bold
+        letter-spacing: 1px
+        text-transform: uppercase
 
     .marking-tool-controls
       background: #000
@@ -50,6 +71,9 @@
         .more
           display: block
 
+  &.summary .subject-container .summary-message
+    display: block
+
   .step
     border-top: 1px solid #fff
     display: none
@@ -86,5 +110,6 @@
       position: absolute
       right: 0
 
+      a,
       button
         @extend #standard-button

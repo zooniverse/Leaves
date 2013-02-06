@@ -1,6 +1,11 @@
 <div class="loader"></div>
 
-<div class="subject-container"></div>
+<div class="subject-container">
+  <div class="summary-message">
+    <header>Great job</header>
+    Your measurements were recorded.
+  </div>
+</div>
 
 <div class="scale step">
   <div class="info">
@@ -10,7 +15,7 @@
   </div>
 
   <div class="controls">
-    <button name="next" value="stem">Next step</button>
+    <button name="next-step" value="stem">Next step</button>
   </div>
 </div>
 
@@ -22,7 +27,7 @@
   </div>
 
   <div class="controls">
-    <button name="next" value="lobules">Next step</button>
+    <button name="next-step" value="lobules">Next step</button>
   </div>
 </div>
 
@@ -35,5 +40,17 @@
 
   <div class="controls">
     <button name="finish">Finish</button>
+  </div>
+</div>
+
+<div class="summary step">
+  <div class="info">
+    You've completed this image.
+  </div>
+
+  <div class="controls">
+    <a href="#/TALK">Talk</a>
+    <a href="#/FACEBOOK">Share</a>
+    <button name="next-subject">Next Image</button>
   </div>
 </div>
