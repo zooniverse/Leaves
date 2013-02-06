@@ -33,8 +33,19 @@
     .no-account button
       text-decoration: underline
 
-  &.signed-in .zooniverse-login-form
+  > nav
     display: none
+
+  > .page
+    display: none
+
+  &.signed-in
+    .zooniverse-login-form
+      display: none
+
+    > nav,
+    > .page.active
+      display: block
 
   .items
     margin: 10px
