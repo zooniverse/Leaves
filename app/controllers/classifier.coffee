@@ -7,9 +7,12 @@ MeasurementTool = require './tools/measurement'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
+{Tutorial} = require 'zootorial'
+tutorialSteps = require '../lib/tutorial-steps'
 
 class Classifier extends Controller
   surface: null
+  tutorial: null
 
   className: 'classifier'
 
@@ -41,6 +44,9 @@ class Classifier extends Controller
     Subject.on 'get-next', @onGettingNextSubject
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
+
+    # @tutorial = new Tutorial steps: tutorialSteps
+    # @tutorial.dialog.el.appendTo @el
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
