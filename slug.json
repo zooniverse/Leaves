@@ -18,6 +18,6 @@
 
   "libs": [
     "node_modules/zooniverse/vendor/base64.js",
-    "app/vendor/raphael.js"
+    "public/js/vendor/raphael.js"
   ]
 }
