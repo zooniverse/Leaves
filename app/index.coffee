@@ -29,12 +29,12 @@ stack = new Stack
 
   default: 'home'
 
+Route.setup()
+
 api = new Api
   project: 'planet_four'
   # host: "http://localhost:8000"
   # path: '/test/helpers/proxy'
-
-Route.setup()
 
 topBar = new TopBar
 

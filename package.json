@@ -2,16 +2,17 @@
   "name": "leaves",
   "version": "0.0.1",
   "dependencies": {
+    "haw": "~0.0.2",
     "hem": "git://github.com/spine/hem.git#master",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
     "jqueryify": "~0.0.1",
     "marking-surface": "~0.0.3",
-    "nib": "~0.9.0",
     "spine": "~1.0.7",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",
+    "zootorial": "~0.2.0"
   },
   "scripts": {
-    "start": "hem server --port 1347 --includeCss"
+    "start": "hem server --includeCss"
   }
 }
