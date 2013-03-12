@@ -12,6 +12,7 @@ HomePage = require './controllers/home-page'
 Classifier = require './controllers/classifier'
 Profile = require './controllers/profile'
 browserDialog  = require 'zooniverse/controllers/browserDialog'
+GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 
 stack = new Stack
   className: "main #{Stack::className}"
@@ -43,5 +44,7 @@ topBar.el.appendTo 'body'
 User.fetch()
 
 browserDialog.check()
+
+# new GoogleAnalytics account: '1234567890'
 
 module.exports = {stack, api, topBar}

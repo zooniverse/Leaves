@@ -3,7 +3,6 @@ template = require '../views/classifier'
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
 LineTool = require './tools/line'
-MeasurementTool = require './tools/measurement'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
@@ -17,7 +16,6 @@ class Classifier extends Controller
   className: 'classifier'
 
   steps:
-    scale: tool: MeasurementTool, label: 'Scale', marks: 1
     stem: tool: LineTool, label: 'Stem', marks: 1
     lobules: tool: AxesTool, label: 'Lobule', marks: 3
     summary: tool: null
@@ -63,7 +61,7 @@ class Classifier extends Controller
     @surface.marks[0].destroy() until @surface.marks.length is 0
     @surface.image.attr src: subject.location.standard
     @el.removeClass 'loading'
-    @loadStep 'scale'
+    @loadStep 'stem'
 
   loadStep: (which) ->
     @currentStep = which
@@ -81,7 +79,6 @@ class Classifier extends Controller
     currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks
 
   onClickNextStep: (e) ->
-    console.log e, e.target, $(e.target).val()
     @loadStep $(e.target).val()
 
   onClickFinish: ->
