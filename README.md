@@ -9,3 +9,8 @@ bower install
 ```
 npm start
 ```
+
+```
+haw build
+publisssh
+```

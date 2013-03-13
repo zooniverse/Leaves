@@ -1,0 +1,6 @@
+{
+  "local": "build",
+  "bucket": "zooniverse-demo",
+  "prefix": "leaves",
+  "ignore": "subjects"
+}
