@@ -1,14 +1,19 @@
 Leaves
 ======
 
+Install:
+
 ```
 npm install
-bower install
 ```
+
+Develop:
 
 ```
 npm start
 ```
+
+Deploy:
 
 ```
 haw build
