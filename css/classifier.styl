@@ -6,7 +6,7 @@
     position: relative
 
     .summary-message
-      background: rgba(#000, 0.5)
+      background: rgba(#000, 0.75)
       bottom: 15px
       color: #fff
       display: none
@@ -17,6 +17,7 @@
       right: 15px
       text-align: center
       top: 15px
+      z-index: 1
 
       header
         color: $green
@@ -26,7 +27,7 @@
         text-transform: uppercase
 
     .marking-tool-controls
-      background: #000
+      background: rgba(#000, 0.75)
       border: 1px solid black
       color: #fff
       cursor: auto
@@ -64,6 +65,7 @@
           width: 60px
 
       &.selected
+        background: #000
         box-shadow: 0 0 0 1px rgba(#fff, 0.5) inset, 0 1px 2px rgba(#000, 0.5)
 
         button[name="delete-mark"]

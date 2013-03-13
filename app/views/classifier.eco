@@ -33,7 +33,9 @@
 
 <div class="summary step">
   <div class="info">
-    You've completed this image.
+    <div class="number">3</div>
+    <div class="title">Finished</div>
+    <div class="instruction">You can discuss about this image with other volunteers.</div>
   </div>
 
   <div class="controls">
