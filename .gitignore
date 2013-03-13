@@ -1,5 +1,6 @@
 /build*
 /node_modules
 /public/application.*
+/public/subjects
 /test/public/specs.js
 npm-debug.log
