@@ -32,10 +32,7 @@ stack = new Stack
 
 Route.setup()
 
-api = new Api
-  project: 'planet_four'
-  # host: "http://localhost:8000"
-  # path: '/test/helpers/proxy'
+api = new Api project: 'leaves'
 
 topBar = new TopBar
 

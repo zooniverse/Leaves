@@ -3,7 +3,7 @@
     "id": "OFFLINE_RED",
     "zooniverse_id": "OFF_R",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/f00.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000a.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
@@ -12,7 +12,7 @@
     "id": "OFFLINE_YELLOW",
     "zooniverse_id": "OFF_Y",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/ff0.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000b.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
@@ -21,7 +21,7 @@
     "id": "OFFLINE_GREEN",
     "zooniverse_id": "OFF_G",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/0f0.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000c.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
@@ -30,7 +30,7 @@
     "id": "OFFLINE_CYAN",
     "zooniverse_id": "OFF_C",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/0ff.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000d.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
@@ -39,7 +39,7 @@
     "id": "OFFLINE_BLUE",
     "zooniverse_id": "OFF_B",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/00f.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000e.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
@@ -48,7 +48,7 @@
     "id": "OFFLINE_MAGENTA",
     "zooniverse_id": "OFF_M",
     "coords": [0, 0],
-    "location": {"standard": "//placehold.it/1x1/f0f.png"},
+    "location": {"standard": "./subjects/standard/514092d13ae74064ba00000f.jpg"},
     "metadata": {"offline": true},
     "project_id": "OFFLINE_PROJECT_ID",
     "workflow_ids": ["OFFLINE_WORKFLOW_ID"]
