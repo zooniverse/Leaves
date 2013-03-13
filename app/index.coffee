@@ -32,7 +32,7 @@ stack = new Stack
 
 Route.setup()
 
-api = new Api project: 'leaves'
+api = new Api project: 'leaf'
 
 topBar = new TopBar
 
