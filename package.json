@@ -7,7 +7,7 @@
     "hem": "git://github.com/spine/hem.git#master",
     "jqueryify": "~0.0.1",
     "json2ify": "~0.0.1",
-    "marking-surface": "~0.0.3",
+    "marking-surface": "~0.0.15",
     "publisssh": "~0.0.1",
     "spine": "~1.0.7",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",

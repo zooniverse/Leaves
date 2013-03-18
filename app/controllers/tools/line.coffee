@@ -1,4 +1,5 @@
 {Tool} = require 'marking-surface'
+shapeStyle = require '../../lib/shape-style'
 
 class LineTool extends Tool
   line: null
@@ -12,9 +13,9 @@ class LineTool extends Tool
     'dots': 'move'
 
   initialize: ->
-    @line = @addShape 'path', 'M 0 0', stroke: 'red', 'stroke-width': 3
+    @line = @addShape 'path', 'M 0 0', shapeStyle.line
     @dots = for i in [0...2]
-      @addShape 'circle', 0, 0, 8, fill: 'red', stroke: 'white', 'stroke-width': 2
+      @addShape 'circle', 0, 0, 8, shapeStyle.dot
 
   onFirstClick: (e) ->
     @['on drag dots'] e, @dots[0]
