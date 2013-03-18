@@ -9,7 +9,7 @@ Favorite = require 'zooniverse/models/favorite'
 User = require 'zooniverse/models/user'
 
 class Profile extends Controller
-  className: 'profile'
+  className: 'profile page'
   recentsList: null
 
   events:

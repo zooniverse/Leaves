@@ -19,14 +19,24 @@ stack = new Stack
   el: '#app .main'
 
   controllers:
-    home: class extends Page then content: (new HomePage).el
-    classify: class extends Page then content: new Classifier
-    profile: class extends Page then content: new Profile
+    home: HomePage
+    science: class extends Page then content: $('''
+      <p>Go into more detail about the science here.</p>
+      <p>Include example images, etc.</p>
+      <p>Depending on how much information we want, we can split this into multiple pages.</p>
+    ''')
+    classify: Classifier
+    profile: Profile
+    team: class extends Page then content: $('''
+      <p>Photo and description of each team member here.</p>
+    ''')
 
   routes:
     '/': 'home'
+    '/science': 'science'
     '/classify': 'classify'
     '/profile': 'profile'
+    '/team': 'team'
 
   default: 'home'
 

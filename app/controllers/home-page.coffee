@@ -2,7 +2,7 @@
 template = require '../views/home-page'
 
 class HomePage extends Controller
-  className: 'home'
+  className: 'home page content'
   template: template
 
   constructor: ->

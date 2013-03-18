@@ -14,7 +14,7 @@ class Classifier extends Controller
   surface: null
   tutorial: null
 
-  className: 'classifier'
+  className: 'classifier page'
 
   steps:
     scale: tool: MeasurementTool, label: 'Scale', marks: 1
