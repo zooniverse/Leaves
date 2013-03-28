@@ -21,7 +21,9 @@ body
     color: #fff
 
     nav
+      font-size: 12px
       margin: 0 auto
+      text-transform: uppercase
       width: 830px
 
       ul
@@ -34,8 +36,21 @@ body
           a
             color: inherit
             display: block
-            padding: 10px 20px
+            letter-spacing: 1px
+            padding: 10px 10px
             text-decoration: inherit
+
+          &:first-child a
+            padding-left: 0
+
+          &.logo
+            small
+              border-bottom: 1px solid
+              display: inline-block
+              font-size: 0.67em
+              line-height: 1.5
+              margin-top: 1px
+              vertical-align: 0.33em
 
   > .main
     margin: 0 auto
