@@ -10,7 +10,7 @@ Route = require 'spine/lib/route'
 Page = require './controllers/page'
 HomePage = require './controllers/home-page'
 Classifier = require './controllers/classifier'
-Profile = require './controllers/profile'
+Profile = require 'zooniverse/controllers/profile'
 browserDialog  = require 'zooniverse/controllers/browserDialog'
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 
@@ -26,7 +26,7 @@ stack = new Stack
       <p>Depending on how much information we want, we can split this into multiple pages.</p>
     ''')
     classify: Classifier
-    profile: Profile
+    profile: class extends Page then content: new Profile
     team: class extends Page then content: $('''
       <p>Photo and description of each team member here.</p>
     ''')
