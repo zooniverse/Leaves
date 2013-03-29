@@ -23,9 +23,9 @@ class Classifier extends Controller
     summary: tool: null
 
   events:
-    'click button[name="next-step"]': 'onClickNextStep'
-    'click button[name="finish"]': 'onClickFinish'
-    'click button[name="next-subject"]': 'onClickNextSubject'
+    'click .controls button[name="next-step"]': 'onClickNextStep'
+    'click .controls button[name="finish"]': 'onClickFinish'
+    'click .controls button[name="next-subject"]': 'onClickNextSubject'
 
   constructor: ->
     super
@@ -45,14 +45,17 @@ class Classifier extends Controller
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
-    # @tutorial = new Tutorial steps: tutorialSteps
-    # @tutorial.dialog.el.appendTo @el
+    @tutorial = new Tutorial
+      steps: tutorialSteps
+      firstStep: 'welcome'
+      parent: @el
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
       if @classification.subject.metadata.tutorial
         Subject.next()
     else
+      @tutorial.start()
       Subject.next()
 
   onGettingNextSubject: =>
@@ -75,13 +78,14 @@ class Classifier extends Controller
     @surface.tool = @steps[@currentStep].tool
 
   onCreateMark: (e, mark, tool) =>
+    @el.trigger 'create-mark', [mark]
     mark.set label: @steps[@currentStep].label
     mark.set step: @currentStep
     currentMarks = (mark for {mark}, i in @surface.tools when mark.step is @currentStep) || []
     currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks
 
   onClickNextStep: (e) ->
-    @loadStep $(e.target).val()
+    @loadStep $(e.currentTarget).val()
 
   onClickFinish: ->
     @classification.annotations.push @surface.marks...

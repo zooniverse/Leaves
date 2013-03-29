@@ -1,6 +1,8 @@
 require 'json2ify'
 require 'es5-shimify'
 
+require 'ghost-mouse'
+
 $ = require 'jqueryify'
 Api = require 'zooniverse/lib/api'
 TopBar = require 'zooniverse/controllers/top-bar'
@@ -26,7 +28,7 @@ stack = new Stack
       <p>Depending on how much information we want, we can split this into multiple pages.</p>
     ''')
     classify: Classifier
-    profile: class extends Page then content: new Profile
+    profile: class extends Page then className: "content #{Page::className}", content: new Profile
     team: class extends Page then content: $('''
       <p>Photo and description of each team member here.</p>
     ''')

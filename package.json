@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "es5-shimify": "~0.0.1",
+    "ghost-mouse": "0.0.4",
     "haw": "~0.0.2",
     "hem": "git://github.com/spine/hem.git#master",
     "jqueryify": "~0.0.1",
@@ -11,7 +12,7 @@
     "publisssh": "~0.0.1",
     "spine": "~1.0.7",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",
-    "zootorial": "~0.2.0"
+    "zootorial": "~0.3.3"
   },
   "scripts": {
     "start": "haw serve"
