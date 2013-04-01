@@ -14,12 +14,19 @@ class MeasurementControls extends ToolControls
       </div>
     '''
 
-    @el.on 'change', 'input[name="scale"]', @onScaleInputChange
+    @el.on 'keydown', 'input[name="scale"]', @onScaleInputChange
 
     @input = @el.find 'input[name="scale"]'
 
   onScaleInputChange: =>
-    @tool.mark.set scale: @input.val()
+    setTimeout =>
+      value = @input.val()
+
+      @tool.mark.set scale: value
+      @el.trigger 'change-scale', [value]
+
+      # Trigger this weird event so we know when to move on from the tutorial step.
+      @el.trigger "change-scale-#{value.replace /\D/g, ''}", [value]
 
 class MeasurementTool extends LineTool
   @Controls: MeasurementControls

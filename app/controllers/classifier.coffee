@@ -23,7 +23,7 @@ class Classifier extends Controller
     summary: tool: null
 
   events:
-    'click .controls button[name="next-step"]': 'onClickNextStep'
+    'click .controls button[name="load-next-step"]': 'onClickNextStep'
     'click .controls button[name="finish"]': 'onClickFinish'
     'click .controls button[name="next-subject"]': 'onClickNextSubject'
 
@@ -49,6 +49,8 @@ class Classifier extends Controller
       steps: tutorialSteps
       firstStep: 'welcome'
       parent: @el
+
+    @loadStep 'scale'
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
