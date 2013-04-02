@@ -1,8 +1,6 @@
 require 'json2ify'
 require 'es5-shimify'
 
-require 'ghost-mouse'
-
 $ = require 'jqueryify'
 Api = require 'zooniverse/lib/api'
 TopBar = require 'zooniverse/controllers/top-bar'

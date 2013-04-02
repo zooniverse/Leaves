@@ -103,7 +103,10 @@ module.exports =
         @drag '.marking-surface', 0.3, 0.2
 
         @do 0, ->
-          mark.set {p2: [mark.p0[0], mark.p0[1]], p3: [mark.p1[0], mark.p1[1]]}
+          mark.set
+            p2: [mark.p0[0], mark.p0[1]]
+            p3: [mark.p1[0], mark.p1[1]]
+
           selection.clicks -= 1
 
         @do 0, -> callback()
@@ -116,3 +119,10 @@ module.exports =
           'twoMore'
 
   twoMore: new Step
+    details: 'Great! Now try two more on your own.'
+    instructions: 'Mark the axes of another lobule.'
+    next: 'oneMore'
+
+  oneMore: new Step
+    details: 'Mark just one more!'
+    instruction: 'Mark the axes of another lobule.'
