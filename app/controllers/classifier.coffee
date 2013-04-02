@@ -17,9 +17,9 @@ class Classifier extends Controller
   className: 'classifier page'
 
   steps:
-    scale: tool: MeasurementTool, label: 'Scale', marks: 1
+    # scale: tool: MeasurementTool, label: 'Scale', marks: 1
     stem: tool: LineTool, label: 'Stem', marks: 1
-    lobules: tool: AxesTool, label: 'Lobule', marks: 3
+    lobules: tool: AxesTool, label: 'Lobule', marks: Infinity
     summary: tool: null
 
   events:
@@ -50,7 +50,7 @@ class Classifier extends Controller
       firstStep: 'welcome'
       parent: @el
 
-    @loadStep 'scale'
+    @loadStep 'stem'
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
@@ -68,7 +68,7 @@ class Classifier extends Controller
     @surface.marks[0].destroy() until @surface.marks.length is 0
     @surface.image.attr src: subject.location.standard
     @el.removeClass 'loading'
-    @loadStep 'scale'
+    @loadStep 'stem'
 
   loadStep: (which) ->
     @currentStep = which

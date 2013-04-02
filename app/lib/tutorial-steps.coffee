@@ -21,36 +21,36 @@ module.exports =
     details: 'This tutorial will guide you through the classification steps.'
     attachment: '0.5 0.5 .marking-surface 0.5 0.5'
     block: '.subject-container, button[name="next-step"]'
-    next: 'scale'
+    next: 'measureStem'
 
-  scale: new Step
-    details: 'First we\'ll calibrate our classification to the scale of each image.'
-    instruction: 'Drag from the left to the right of the scale if the lower right of the image.'
-    attachment: 'right bottom .marking-surface right 0.75'
-    demo: dragDemo([0.75, 0.9], [0.95, 0.9])
+  # scale: new Step
+  #   details: 'First we\'ll calibrate our classification to the scale of each image.'
+  #   instruction: 'Drag from the left to the right of the scale if the lower right of the image.'
+  #   attachment: 'right bottom .marking-surface right 0.75'
+  #   demo: dragDemo([0.75, 0.9], [0.95, 0.9])
 
-    next:
-      'mouseup .marking-surface': (e) ->
-        if e.originalEvent.ghostMouse?
-          'scale'
-        else
-          'typeScale'
+  #   next:
+  #     'mouseup .marking-surface': (e) ->
+  #       if e.originalEvent.ghostMouse?
+  #         'scale'
+  #       else
+  #         'typeScale'
 
-   typeScale: new Step
-    details: 'Good, now we have to type the scale value into the text input field.'
-    instruction: 'Type "10" into the scale measurement\'s text field.'
-    next: 'change-scale-10': 'nextAfterScale'
+  #  typeScale: new Step
+  #   details: 'Good, now we have to type the scale value into the text input field.'
+  #   instruction: 'Type "10" into the scale measurement\'s text field.'
+  #   next: 'change-scale-10': 'nextAfterScale'
 
-  nextAfterScale: new Step
-    details: 'Great. Now click "Next Step" to move on.'
-    attachment: 'center bottom button[name="load-next-step"] center top'
-    actionable: 'button[name="load-next-step"]'
-    next: 'click button[name="load-next-step"]': 'measureStem'
+  # nextAfterScale: new Step
+  #   details: 'Great. Now click "Next Step" to move on.'
+  #   attachment: 'center bottom button[name="load-next-step"] center top'
+  #   actionable: 'button[name="load-next-step"]'
+  #   next: 'click button[name="load-next-step"]': 'measureStem'
 
   measureStem: new Step
-    details: 'Now we\'ll measure the thickness of the stem'
-    attachment: 'center bottom .subject-container center 0.4'
+    details: 'First we\'ll measure the thickness of the stem.'
     instruction: 'Drag from the left to the right of the stem at its widest point.'
+    attachment: 'center bottom .subject-container center 0.4'
     demo: dragDemo([0.5, 0.5], [0.7, 0.5])
 
     next:
