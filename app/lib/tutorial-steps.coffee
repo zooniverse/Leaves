@@ -1,24 +1,14 @@
 {Step} = require 'zootorial'
 GhostMouse = require 'ghost-mouse'
 
-ghostMouse = new GhostMouse
+ghostMouse = new GhostMouse events: false
 
-dragDemo = (start, end) ->
-  (callback) ->
-    newMark = null
-
-    $(window).one 'create-mark', (e, mark) ->
-      newMark = mark
-
-    ghostMouse.run ->
-      @move '.marking-surface', start...
-      @drag '.marking-surface', end...
-      @do 0, -> newMark?.destroy()
-      @do 0, -> callback()
+clicks = 0
 
 module.exports =
   welcome: new Step
-    details: 'This tutorial will guide you through the classification steps.'
+    header: 'Welcome to the Leaves Project!'
+    details: 'This quick tutorial will guide you through the classification steps.'
     attachment: '0.5 0.5 .marking-surface 0.5 0.5'
     block: '.subject-container, button[name="next-step"]'
     next: 'measureStem'
@@ -51,78 +41,67 @@ module.exports =
     details: 'First we\'ll measure the thickness of the stem.'
     instruction: 'Drag from the left to the right of the stem at its widest point.'
     attachment: 'center bottom .subject-container center 0.4'
-    demo: dragDemo([0.5, 0.5], [0.7, 0.5])
-
-    next:
-      'mouseup .marking-surface': (e) ->
-        if e.originalEvent.ghostMouse?
-          'measureStem'
-        else
-          'nextAfterStem'
-
-  nextAfterStem: new Step
-    details: 'Let\'s move on the the next step again.'
-    attachment: 'center bottom button[name="load-next-step"] center top'
-    actionable: 'button[name="load-next-step"]'
-    next: 'click button[name="load-next-step"]': 'measureFirstAxis'
-
-  measureFirstAxis: new Step
-    details: 'Finally, we\'ll draw "&times;"s to measure the major and minor axes of three lobules.'
-    instruction: 'Drag from the top to the bottom of the lobule at the top-right of the image.'
 
     demo: (callback) ->
-      newMark = null
-
-      $(window).one 'create-mark', (e, mark) ->
-        newMark = mark
-
       ghostMouse.run ->
-        @move '.marking-surface', 0.2, 0.1
-        @drag '.marking-surface', 0.2, 0.3
-        @do 0, -> newMark?.destroy()
+        @move '.marking-surface', 0.39, 0.66
+        @drag '.marking-surface', 0.53, 0.58
         @do 0, -> callback()
 
     next:
-      'mouseup .marking-surface': (e) ->
-        if e.originalEvent.ghostMouse?
-          'measureFirstAxis'
-        else
-          'measureSecondAxis'
+      'mouseup .marking-surface': 'nextAfterStem'
+
+  nextAfterStem: new Step
+    details: 'When you\'re satisfied with your measurement, move on the the next step.'
+    attachment: 'center bottom button[name="load-next-step"] center top'
+    actionable: 'button[name="load-next-step"]'
+    next: 'click button[name="load-next-step"]': 'measureFirstLobule'
+
+  measureFirstLobule: new Step
+    details: 'Now we need to draw crosses to measure the major and minor axes of the lobules.'
+    instruction: 'Drag from the top to the bottom of the lobule at the top-right of the image. Then drag a perpendicular line across the width of the lobule, forming a cross.'
+    attachment: 'left middle .subject-container 0.4 0.4'
+
+    demo: (callback) ->
+      ghostMouse.run ->
+        @move '.marking-surface', 0.15963855421686746, 0.10503951362941576
+        @drag '.marking-surface', 0.23313253012048193, 0.6781620432736846
+        @do 0, -> callback()
+
+    next:
+      'mouseup .marking-surface': 'measureSecondAxis'
 
   measureSecondAxis: new Step
     details: 'Now the minor axis.'
     instruction: 'Drag perpendicular the previous line to complete the cross.'
+    attachment: 'left middle .subject-container 0.4 0.4'
 
     demo: (callback) ->
-      # TODO: Find a better way to access the selection.
-      selection = require('../index').stack.classify.surface.selection
-      mark = selection.mark
-
       ghostMouse.run ->
-        @move '.marking-surface', 0.1, 0.2
-        @drag '.marking-surface', 0.3, 0.2
-
-        @do 0, ->
-          mark.set
-            p2: [mark.p0[0], mark.p0[1]]
-            p3: [mark.p1[0], mark.p1[1]]
-
-          selection.clicks -= 1
-
+        @move '.marking-surface', 0.05602409638554217, 0.4172924780562932
+        @drag '.marking-surface', 0.33313253012048194, 0.3224308179772418
         @do 0, -> callback()
 
     next:
-      'mouseup .marking-surface': (e) ->
-        if e.originalEvent.ghostMouse?
-          'measureSecondAxis'
-        else
-          'twoMore'
-
-  twoMore: new Step
-    details: 'Great! Now try two more on your own.'
-    instructions: 'Mark the axes of another lobule.'
-    next: 'oneMore'
+      'mouseup .marking-surface': 'oneMore'
 
   oneMore: new Step
-    details: 'Mark just one more!'
-    instruction: 'Mark the axes of another lobule.'
+    details: 'Great! There\'s one more lobule in this image.'
+    instruction: 'Mark the axes of the other lobule.'
+    attachment: 'right middle .marking-surface center middle'
+    next:
+      'mouseup .marking-surface': ->
+        @mousesUp ?= 0
+
+        @mousesUp += 1
+
+        if @mousesUp is 2
+          'finish'
+        else
+          'oneMore'
+
+  finish: new Step
+    details: 'Now that we\'ve marked the stem and all the lobules, move on to the next image.'
+    attachment: 'center bottom button[name="finish"] center top'
+    actionable: 'button[name="finish"]'
+    next: 'click button[name="finish"]': true

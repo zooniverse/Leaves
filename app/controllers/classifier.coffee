@@ -8,6 +8,7 @@ User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
 {Tutorial} = require 'zootorial'
+getTutorialSubject = require '../lib/get-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
 
 class Classifier extends Controller
@@ -57,8 +58,8 @@ class Classifier extends Controller
       if @classification.subject.metadata.tutorial
         Subject.next()
     else
+      getTutorialSubject().select()
       @tutorial.start()
-      Subject.next()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
