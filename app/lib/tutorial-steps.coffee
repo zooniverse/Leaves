@@ -96,11 +96,14 @@ module.exports =
       @mousesUp = 0
 
     demo: (callback) ->
+
+      [[], [], [], []]
+
       ghostMouse.run ->
-        @move '.marking-surface', 0.15963855421686746, 0.10503951362941576
-        @drag '.marking-surface', 0.23313253012048193, 0.6781620432736846
-        @move '.marking-surface', 0.05602409638554217, 0.4172924780562932
-        @drag '.marking-surface', 0.33313253012048194, 0.3224308179772418
+        @move '.marking-surface', 0.560843373493976, 0.25523714208791376
+        @drag '.marking-surface', 0.7740963855421686, 0.7611659958428545
+        @move '.marking-surface', 0.5403614457831325, 0.5951580907045145
+        @drag '.marking-surface', 0.7656626506024097, 0.3777667863566885
         @do 0, -> callback()
 
     next:
