@@ -10,6 +10,7 @@ Classification = require 'zooniverse/models/classification'
 {Tutorial} = require 'zootorial'
 getTutorialSubject = require '../lib/get-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
+$ = require 'jqueryify'
 
 class Classifier extends Controller
   surface: null
@@ -102,5 +103,9 @@ class Classifier extends Controller
 
   onNoMoreSubjects: =>
     @el.removeClass 'loading'
+
+  activate: ->
+    super
+    $(window).trigger 'resize'
 
 module.exports = Classifier
