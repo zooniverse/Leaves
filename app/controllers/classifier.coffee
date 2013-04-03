@@ -103,6 +103,7 @@ class Classifier extends Controller
 
   onNoMoreSubjects: =>
     @el.removeClass 'loading'
+    alert 'All images have been classified!'
 
   activate: ->
     super
