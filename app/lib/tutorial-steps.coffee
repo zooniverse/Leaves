@@ -3,8 +3,6 @@ GhostMouse = require 'ghost-mouse'
 
 ghostMouse = new GhostMouse events: false
 
-clicks = 0
-
 module.exports =
   welcome: new Step
     header: 'Welcome to the Leaves Project!'
@@ -58,8 +56,8 @@ module.exports =
     next: 'click button[name="load-next-step"]': 'measureFirstLobule'
 
   measureFirstLobule: new Step
-    details: 'Now we need to draw crosses to measure the major and minor axes of the lobules.'
-    instruction: 'Drag from the top to the bottom of the lobule at the top-right of the image. Then drag a perpendicular line across the width of the lobule, forming a cross.'
+    details: 'Now we need to draw crosses to measure the major and minor axes of each of the lobules.'
+    instruction: 'Drag from the top to the bottom of the lobule at the top-left of the image.'
     attachment: 'left middle .subject-container 0.4 0.4'
 
     demo: (callback) ->
@@ -73,7 +71,7 @@ module.exports =
 
   measureSecondAxis: new Step
     details: 'Now the minor axis.'
-    instruction: 'Drag perpendicular the previous line to complete the cross.'
+    instruction: 'Now drag a line out perpendicular to the previous line to complete the cross.'
     attachment: 'left middle .subject-container 0.4 0.4'
 
     demo: (callback) ->
@@ -89,16 +87,36 @@ module.exports =
     details: 'Great! There\'s one more lobule in this image.'
     instruction: 'Mark the axes of the other lobule.'
     attachment: 'right middle .marking-surface center middle'
+
+    onEnter: ->
+      @markCreatedOnStep = false
+      $(document).one 'create-mark', =>
+        @markCreatedOnStep = true
+
+      @mousesUp = 0
+
+    demo: (callback) ->
+      ghostMouse.run ->
+        @move '.marking-surface', 0.15963855421686746, 0.10503951362941576
+        @drag '.marking-surface', 0.23313253012048193, 0.6781620432736846
+        @move '.marking-surface', 0.05602409638554217, 0.4172924780562932
+        @drag '.marking-surface', 0.33313253012048194, 0.3224308179772418
+        @do 0, -> callback()
+
     next:
       'mouseup .marking-surface': ->
-        @mousesUp ?= 0
-
-        @mousesUp += 1
+        @mousesUp += 1 if @markCreatedOnStep
 
         if @mousesUp is 2
+          console.log 'To finish'
           'finish'
         else
+          console.log 'Dont change steps'
           'oneMore'
+
+    onExit: ->
+      delete @mousesUp
+      delete @markCreatedOnStep
 
   finish: new Step
     details: 'Now that we\'ve marked the stem and all the lobules, move on to the next image.'
