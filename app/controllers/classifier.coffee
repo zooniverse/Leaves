@@ -56,8 +56,7 @@ class Classifier extends Controller
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
-      if @classification.subject.metadata.tutorial
-        Subject.next()
+      Subject.next()
     else
       getTutorialSubject().select()
       @tutorial.start()
