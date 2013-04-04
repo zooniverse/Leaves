@@ -9,7 +9,7 @@ class Page extends Controller
   constructor: ->
     super
 
-    if @content instanceof $
+    if typeof @content is 'string' or @content instanceof $
       @el.append @content
       @el.addClass 'content'
 
