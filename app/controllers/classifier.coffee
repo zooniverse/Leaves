@@ -20,7 +20,7 @@ class Classifier extends Controller
 
   steps:
     # scale: tool: MeasurementTool, label: 'Scale', marks: 1
-    stem: tool: LineTool, label: 'Stem', marks: 1
+    # stem: tool: LineTool, label: 'Stem', marks: 1
     lobules: tool: AxesTool, label: 'Lobule', marks: Infinity
     summary: tool: null
 
@@ -52,7 +52,7 @@ class Classifier extends Controller
       firstStep: 'welcome'
       parent: @el
 
-    @loadStep 'stem'
+    @loadStep 'lobules'
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
@@ -69,7 +69,7 @@ class Classifier extends Controller
     @surface.marks[0].destroy() until @surface.marks.length is 0
     @surface.image.attr src: subject.location.standard
     @el.removeClass 'loading'
-    @loadStep 'stem'
+    @loadStep 'lobules'
 
   loadStep: (which) ->
     @currentStep = which

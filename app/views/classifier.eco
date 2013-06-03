@@ -19,7 +19,7 @@
   </div>
 </div>-->
 
-<div class="stem step">
+<!--<div class="stem step">
   <div class="info">
     <div class="number"></div>
     <div class="title">Measure the stem</div>
@@ -29,7 +29,7 @@
   <div class="controls">
     <button name="load-next-step" value="lobules">Next step</button>
   </div>
-</div>
+</div>-->
 
 <div class="lobules step">
   <div class="info">
