@@ -1,6 +1,7 @@
 $ = require 'jqueryify'
 {Tool} = require 'marking-surface'
 shapeStyle = require '../../lib/shape-style'
+Raphael = window.Raphael
 
 class AxesTool extends Tool
   major: null
@@ -42,14 +43,24 @@ class AxesTool extends Tool
     for point, i in ['p0', 'p1', 'p2', 'p3']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    @major.attr path: [
+    majorPath = [
       "M #{@mark.p0[0]} #{@mark.p0[1]}"
       "L #{@mark.p1[0]} #{@mark.p1[1]}"
-      ].join ','
-    @minor.attr path: [
+    ].join ','
+
+    minorPath = [
       "M #{@mark.p2[0]} #{@mark.p2[1]}"
       "L #{@mark.p3[0]} #{@mark.p3[1]}"
     ].join ','
+
+    @major.attr path: majorPath
+    @minor.attr path: minorPath
+
+    intersect = Raphael.pathIntersection majorPath, minorPath
+    console.log intersect
+
+    # NOTE: Don't call the setter! It calls this render function.
+    @mark.label = "#{Math.floor Raphael.angle @mark.p0..., intersect.x, intersect.y, @mark.p2...}°"
 
     @controls.moveTo [
       (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4

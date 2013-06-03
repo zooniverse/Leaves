@@ -2,8 +2,8 @@
 template = require '../views/classifier'
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
-LineTool = require './tools/line'
-MeasurementTool = require './tools/measurement'
+# LineTool = require './tools/line'
+# MeasurementTool = require './tools/measurement'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
@@ -82,7 +82,6 @@ class Classifier extends Controller
 
   onCreateMark: (e, mark, tool) =>
     @el.trigger 'create-mark', [mark]
-    mark.set label: @steps[@currentStep].label
     mark.set step: @currentStep
     currentMarks = (mark for {mark}, i in @surface.tools when mark.step is @currentStep) || []
     currentMarks.shift()?.destroy() until currentMarks.length <= @steps[@currentStep].marks
