@@ -43,24 +43,20 @@ class AxesTool extends Tool
     for point, i in ['p0', 'p1', 'p2', 'p3']
       @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
-    majorPath = [
-      "M #{@mark.p0[0]} #{@mark.p0[1]}"
-      "L #{@mark.p1[0]} #{@mark.p1[1]}"
-    ].join ','
-
-    minorPath = [
-      "M #{@mark.p2[0]} #{@mark.p2[1]}"
-      "L #{@mark.p3[0]} #{@mark.p3[1]}"
-    ].join ','
+    majorPath = "M #{@mark.p0[0]} #{@mark.p0[1]}, L #{@mark.p1[0]} #{@mark.p1[1]}"
+    minorPath = "M #{@mark.p2[0]} #{@mark.p2[1]}, L #{@mark.p3[0]} #{@mark.p3[1]}"
 
     @major.attr path: majorPath
     @minor.attr path: minorPath
 
-    intersect = Raphael.pathIntersection majorPath, minorPath
-    console.log intersect
+    [intersect] = Raphael.pathIntersection majorPath, minorPath
+    if intersect?
+      label = "#{Math.abs Math.floor Raphael.angle @mark.p0..., @mark.p2..., intersect?.x, intersect?.y}°"
+    else
+      label = '...'
 
     # NOTE: Don't call the setter! It calls this render function.
-    @mark.label = "#{Math.floor Raphael.angle @mark.p0..., intersect.x, intersect.y, @mark.p2...}°"
+    @mark.label = label
 
     @controls.moveTo [
       (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4

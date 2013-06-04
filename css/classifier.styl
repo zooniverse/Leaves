@@ -27,12 +27,16 @@
         text-transform: uppercase
 
     .marking-tool-controls
-      background: rgba(#000, 0.75)
-      border: 1px solid black
+      // background: rgba(#000, 0.75)
+      // border: 1px solid black
       color: #fff
       cursor: auto
-      font-size: 11px
-      padding: 3px
+      font-size: 12px
+      // padding: 3px
+      text-shadow:
+        0 1px 1px #000,
+        0 1px 2px #000,
+        0 1px 3px #000
 
       .label
         display: inline-block
@@ -65,8 +69,8 @@
           width: 60px
 
       &.selected
-        background: #000
-        box-shadow: 0 0 0 1px rgba(#fff, 0.5) inset, 0 1px 2px rgba(#000, 0.5)
+        // background: #000
+        // box-shadow: 0 0 0 1px rgba(#fff, 0.5) inset, 0 1px 2px rgba(#000, 0.5)
 
         button[name="delete-mark"]
           display: inline-block
