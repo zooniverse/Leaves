@@ -6,19 +6,36 @@ Raphael = window.Raphael
 class AxesTool extends Tool
   major: null
   minor: null
-  dots: null
+  majorHalf: null
+  minorHalf: null
+  majorLabelBacker: null
+  minorLabelBacker: null
+  majorLengthLabel: null
+  minorLengthLabel: null
+  grabbers: null
 
   markDefaults:
     p0: [-20, -20], p1: [-20, -20]
     p2: [-20, -20], p3: [-20, -20]
 
   cursors:
-    'dots': 'move'
+    'grabbers': 'move'
+
+  constructor: ->
+    super
+    window.axes = @
 
   initialize: ->
     @major = @addShape 'path', 'M 0 0', shapeStyle.line
-    @minor = @addShape 'path', 'M 0 0', shapeStyle.line
-    @dots = for i in [0...4]
+    @minor = @addShape 'path', 'M 0 0', $.extend {}, shapeStyle.line, 'stroke-width': 2
+    @majorHalf = @addShape 'circle', r: 5, stroke: 'white'
+    @minorHalf = @addShape 'circle', r: 5, stroke: 'white'
+    @majorLabelBacker = @addShape 'circle', shapeStyle.backer
+    @minorLabelBacker = @addShape 'circle', shapeStyle.backer
+    @majorLengthLabel = @addShape 'text', shapeStyle.label
+    @minorLengthLabel = @addShape 'text', shapeStyle.label
+
+    @grabbers = for i in [0...4]
       @addShape 'circle', 0, 0, 8, shapeStyle.dot
 
   onFirstClick: (e) ->
@@ -34,24 +51,42 @@ class AxesTool extends Tool
   isComplete: ->
     @clicks is 2
 
-  'on drag dots': (e, shape) ->
-    index = $.inArray shape, @dots
+  'on drag grabbers': (e, shape) ->
+    index = $.inArray shape, @grabbers
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x, y]
 
   render: ->
     for point, i in ['p0', 'p1', 'p2', 'p3']
-      @dots[i].attr cx: @mark[point][0], cy: @mark[point][1]
+      @grabbers[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
     majorPath = "M #{@mark.p0[0]} #{@mark.p0[1]}, L #{@mark.p1[0]} #{@mark.p1[1]}"
     minorPath = "M #{@mark.p2[0]} #{@mark.p2[1]}, L #{@mark.p3[0]} #{@mark.p3[1]}"
+    majorLength = Raphael.getTotalLength majorPath
+    minorLength = Raphael.getTotalLength minorPath
+    majorHalfPoint = Raphael.getPointAtLength majorPath, majorLength / 2
+    minorHalfPoint = Raphael.getPointAtLength minorPath, minorLength / 2
 
     @major.attr path: majorPath
     @minor.attr path: minorPath
 
+    @majorHalf.attr cx: majorHalfPoint.x, cy: majorHalfPoint.y
+    @minorHalf.attr cx: minorHalfPoint.x, cy: minorHalfPoint.y
+
+    majorLengthLabelPoint = Raphael.getPointAtLength majorPath, majorLength * 0.8
+    minorLengthLabelPoint = Raphael.getPointAtLength minorPath, minorLength * 0.8
+
+    @majorLabelBacker.attr cx: majorLengthLabelPoint.x, cy: majorLengthLabelPoint.y
+    @minorLabelBacker.attr cx: minorLengthLabelPoint.x, cy: minorLengthLabelPoint.y
+    @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: Math.floor majorLength
+    @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: Math.floor minorLength
+
     [intersect] = Raphael.pathIntersection majorPath, minorPath
     if intersect?
-      label = "#{Math.abs Math.floor Raphael.angle @mark.p0..., @mark.p2..., intersect?.x, intersect?.y}°"
+      angle = Math.abs Math.floor Raphael.angle @mark.p0..., @mark.p2..., intersect?.x, intersect?.y
+      angle -= 180 if angle > 180
+      angle = 90 - Math.abs angle - 90
+      label = "#{angle}°"
     else
       label = '...'
 
