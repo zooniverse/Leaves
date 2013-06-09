@@ -88,7 +88,7 @@ class AxesTool extends Tool
       angle = 90 - Math.abs angle - 90
       label = "#{angle}°"
     else
-      label = '...'
+      label = ''
 
     # NOTE: Don't call the setter! It calls this render function.
     @mark.label = label
