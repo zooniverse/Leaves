@@ -6,6 +6,9 @@ Raphael = window.Raphael
 LABEL_WIDTH = 35
 LABEL_HEIGHT = 12
 
+NEW_SCALE = 970 / 800
+MICONS_PER_PIXEL = (100 / 115) * NEW_SCALE
+
 RENDER_FPS = 30
 
 class AxesTool extends Tool
@@ -91,8 +94,10 @@ class AxesTool extends Tool
 
     @majorLabelBacker.attr x: majorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: majorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
     @minorLabelBacker.attr x: minorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: minorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
-    @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: "#{Math.floor majorLength}px"
-    @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: "#{Math.floor minorLength}px"
+
+
+    @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: "#{Math.floor majorLength * MICONS_PER_PIXEL}µm"
+    @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: "#{Math.floor minorLength * MICONS_PER_PIXEL}µm"
 
     [intersect] = Raphael.pathIntersection majorPath, minorPath
     if intersect?
