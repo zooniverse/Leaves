@@ -15,6 +15,7 @@
     "zootorial": "~0.3.3"
   },
   "scripts": {
-    "start": "haw serve"
+    "start": "haw serve",
+    "deploy": "haw build && publisssh && trash ./build"
   }
 }
