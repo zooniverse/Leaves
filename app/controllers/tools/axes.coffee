@@ -3,6 +3,11 @@ $ = require 'jqueryify'
 shapeStyle = require '../../lib/shape-style'
 Raphael = window.Raphael
 
+LABEL_WIDTH = 35
+LABEL_HEIGHT = 12
+
+RENDER_FPS = 30
+
 class AxesTool extends Tool
   major: null
   minor: null
@@ -30,8 +35,8 @@ class AxesTool extends Tool
     @minor = @addShape 'path', 'M 0 0', $.extend {}, shapeStyle.line, 'stroke-width': 2
     @majorHalf = @addShape 'circle', r: 5, stroke: 'white'
     @minorHalf = @addShape 'circle', r: 5, stroke: 'white'
-    @majorLabelBacker = @addShape 'circle', shapeStyle.backer
-    @minorLabelBacker = @addShape 'circle', shapeStyle.backer
+    @majorLabelBacker = @addShape 'rect', 0, 0, LABEL_WIDTH, LABEL_HEIGHT, 0, shapeStyle.backer
+    @minorLabelBacker = @addShape 'rect', 0, 0, LABEL_WIDTH, LABEL_HEIGHT, 0, shapeStyle.backer
     @majorLengthLabel = @addShape 'text', shapeStyle.label
     @minorLengthLabel = @addShape 'text', shapeStyle.label
 
@@ -56,6 +61,11 @@ class AxesTool extends Tool
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x, y]
 
+  # TODO: Integrate this debouncing into the Marking Surface library.
+  onMarkChange: ->
+    return if @renderTimeout?
+    @renderTimeout = setTimeout (=> @render arguments...; @renderTimeout = null), 1000 / RENDER_FPS
+
   render: ->
     for point, i in ['p0', 'p1', 'p2', 'p3']
       @grabbers[i].attr cx: @mark[point][0], cy: @mark[point][1]
@@ -73,29 +83,35 @@ class AxesTool extends Tool
     @majorHalf.attr cx: majorHalfPoint.x, cy: majorHalfPoint.y
     @minorHalf.attr cx: minorHalfPoint.x, cy: minorHalfPoint.y
 
+    majorArcPoint = Raphael.getPointAtLength majorPath, (majorLength / 2) - 15
+    minorArcPoint = Raphael.getPointAtLength minorPath, (minorLength / 2) + 15
+
     majorLengthLabelPoint = Raphael.getPointAtLength majorPath, majorLength * 0.8
     minorLengthLabelPoint = Raphael.getPointAtLength minorPath, minorLength * 0.8
 
-    @majorLabelBacker.attr cx: majorLengthLabelPoint.x, cy: majorLengthLabelPoint.y
-    @minorLabelBacker.attr cx: minorLengthLabelPoint.x, cy: minorLengthLabelPoint.y
-    @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: Math.floor majorLength
-    @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: Math.floor minorLength
+    @majorLabelBacker.attr x: majorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: majorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
+    @minorLabelBacker.attr x: minorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: minorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
+    @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: "#{Math.floor majorLength}px"
+    @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: "#{Math.floor minorLength}px"
 
     [intersect] = Raphael.pathIntersection majorPath, minorPath
     if intersect?
-      angle = Math.abs Math.floor Raphael.angle @mark.p0..., @mark.p2..., intersect?.x, intersect?.y
+      angle = Math.abs Math.floor Raphael.angle @mark.p0..., @mark.p2..., intersect.x, intersect.y
       angle -= 180 if angle > 180
       angle = 90 - Math.abs angle - 90
-      label = "#{angle}°"
+      angle = "#{angle}°"
     else
-      label = ''
+      angle = ''
 
     # NOTE: Don't call the setter! It calls this render function.
-    @mark.label = label
+    @mark.label = angle
 
-    @controls.moveTo [
-      (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
-      (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
-    ]
+    @controls.moveTo if intersect?
+      [intersect.x, intersect.y]
+    else
+      [
+        (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
+        (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
+      ]
 
 module.exports = AxesTool

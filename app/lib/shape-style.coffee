@@ -13,8 +13,7 @@ module.exports =
     'arrow-end': 'diamond-wide-short'
 
   backer:
-    fill: 'rgba(0, 0, 0, 0.5)'
-    r: 15
+    fill: 'rgba(0, 0, 0, 0.67)'
     'stroke-width': 0
 
   label:
