@@ -12,6 +12,9 @@ getTutorialSubject = require '../lib/get-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
 $ = require 'jqueryify'
 
+IMAGE_WIDTH = 970
+IMAGE_HEIGHT = 572
+
 class Classifier extends Controller
   surface: null
   tutorial: null
@@ -37,8 +40,8 @@ class Classifier extends Controller
 
     @surface ?= new MarkingSurface
       container: @el.find '.subject-container'
-      width: 800
-      height: 472
+      width: IMAGE_WIDTH
+      height: IMAGE_HEIGHT
 
     @surface.on 'create-mark', @onCreateMark
 
