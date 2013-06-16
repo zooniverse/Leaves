@@ -90,8 +90,8 @@ module.exports =
 
   measureSecondAxis: new Step
     details: '''
-      Now we drag out the width.
-      As you drag across, you'll be able to see the angle between the lines change.
+      Now we'll drag straight across the center point of length marking to mark the width of the leaf.
+      As you drag, you'll be able to see the angle between the lines change.
       Keep it as close to 90° as possible!
     '''
     instruction: 'Now drag a line out perpendicular to the previous line to complete the cross.'
