@@ -51,8 +51,8 @@
   </div>
 
   <div class="controls">
-    <a href="#/TALK">Talk</a>
-    <a href="#/FACEBOOK">Share</a>
+    <!--<a href="#/TALK">Talk</a>
+    <a href="#/FACEBOOK">Share</a>-->
     <button name="next-subject">Next Image</button>
   </div>
 </div>
