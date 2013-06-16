@@ -39,6 +39,7 @@
   </div>
 
   <div class="controls">
+    <button name="restart-tutorial">Restart tutorial</button>
     <button name="finish">Finish</button>
   </div>
 </div>

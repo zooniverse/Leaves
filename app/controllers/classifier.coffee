@@ -29,6 +29,7 @@ class Classifier extends Controller
 
   events:
     'click .controls button[name="load-next-step"]': 'onClickNextStep'
+    'click .controls button[name="restart-tutorial"]': 'onClickRestartTutorial'
     'click .controls button[name="finish"]': 'onClickFinish'
     'click .controls button[name="next-subject"]': 'onClickNextSubject'
 
@@ -61,8 +62,7 @@ class Classifier extends Controller
     if user?.project.tutorial_done
       Subject.next()
     else
-      getTutorialSubject().select()
-      @tutorial.start()
+      @onClickRestartTutorial()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
@@ -91,6 +91,11 @@ class Classifier extends Controller
 
   onClickNextStep: (e) ->
     @loadStep $(e.currentTarget).val()
+
+  onClickRestartTutorial: ->
+    return if @tutorial.started?
+    getTutorialSubject().select()
+    @tutorial.start()
 
   onClickFinish: ->
     @classification.annotations.push @surface.marks...
