@@ -22,9 +22,11 @@ class AxesTool extends Tool
   minorLengthLabel: null
   grabbers: null
 
+  renderTimeout = NaN
+
   markDefaults:
-    p0: [-20, -20], p1: [-20, -20]
-    p2: [-20, -20], p3: [-20, -20]
+    p0: [-50, -50], p1: [-50, -50]
+    p2: [-50, -50], p3: [-50, -50]
 
   cursors:
     'grabbers': 'move'
@@ -48,12 +50,12 @@ class AxesTool extends Tool
 
   onFirstClick: (e) ->
     {x, y} = @mouseOffset e
-    points = if @clicks is 0 then ['p0', 'p1', 'p2', 'p3'] else ['p2', 'p3']
+    points = if @clicks is 0 then ['p0', 'p1'] else ['p2', 'p3']
     @mark.set point, [x, y] for point in points
 
   onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
-    points = if @clicks is 0 then ['p1', 'p3'] else ['p3']
+    points = if @clicks is 0 then ['p1'] else ['p3']
     @mark.set point, [x, y] for point in points
 
   isComplete: ->
@@ -66,8 +68,8 @@ class AxesTool extends Tool
 
   # TODO: Integrate this debouncing into the Marking Surface library.
   onMarkChange: ->
-    return if @renderTimeout?
-    @renderTimeout = setTimeout (=> @render arguments...; @renderTimeout = null), 1000 / RENDER_FPS
+    return if @renderTimeout
+    @renderTimeout = setTimeout (=> @render arguments...; @renderTimeout = NaN), 1000 / RENDER_FPS
 
   render: ->
     for point, i in ['p0', 'p1', 'p2', 'p3']
@@ -95,7 +97,6 @@ class AxesTool extends Tool
     @majorLabelBacker.attr x: majorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: majorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
     @minorLabelBacker.attr x: minorLengthLabelPoint.x - (LABEL_WIDTH / 2), y: minorLengthLabelPoint.y - (LABEL_HEIGHT / 2)
 
-
     @majorLengthLabel.attr x: majorLengthLabelPoint.x, y: majorLengthLabelPoint.y, text: "#{Math.floor majorLength * MICONS_PER_PIXEL}µm"
     @minorLengthLabel.attr x: minorLengthLabelPoint.x, y: minorLengthLabelPoint.y, text: "#{Math.floor minorLength * MICONS_PER_PIXEL}µm"
 
@@ -113,10 +114,15 @@ class AxesTool extends Tool
 
     @controls.moveTo if intersect?
       [intersect.x, intersect.y]
-    else
+    else if @mark.p2[0] isnt @markDefaults.p2[0]
       [
         (@mark.p0[0] + @mark.p1[0] + @mark.p2[0] + @mark.p3[0]) / 4
         (@mark.p0[1] + @mark.p1[1] + @mark.p2[1] + @mark.p3[1]) / 4
+      ]
+    else
+      [
+        (@mark.p0[0] + @mark.p1[0]) / 2
+        (@mark.p0[1] + @mark.p1[1]) / 2
       ]
 
 module.exports = AxesTool
