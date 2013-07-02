@@ -12,8 +12,8 @@ getTutorialSubject = require '../lib/get-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
 $ = require 'jqueryify'
 
-IMAGE_WIDTH = 970
-IMAGE_HEIGHT = 572
+IMAGE_WIDTH = 720
+IMAGE_HEIGHT = 530
 
 class Classifier extends Controller
   surface: null
