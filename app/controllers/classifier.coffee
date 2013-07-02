@@ -13,7 +13,7 @@ tutorialSteps = require '../lib/tutorial-steps'
 $ = require 'jqueryify'
 
 IMAGE_WIDTH = 720
-IMAGE_HEIGHT = 530 # 536 is better!
+IMAGE_HEIGHT = 536
 
 class Classifier extends Controller
   surface: null

@@ -1,7 +1,10 @@
 .classifier
+  overflow: hidden
+
   .subject-container
     border-bottom: 1px solid #e9e9e9
     cursor: crosshair
+    float: left
     padding: 15px
     position: relative
 
@@ -81,17 +84,18 @@
   &.summary .subject-container .summary-message
     display: block
 
+  .steps
+    bottom: 0
+    box-sizing: border-box
+    padding: 15px 15px 15px 0
+    position: absolute
+    right: 0
+    top: 0
+    width: 250px
+
   .step
-    border-top: 1px solid #fff
     display: none
-    padding: 15px 15px 25px
     position: relative
-
-    // &.stem
-    //   background: url("./images/mark-stem.png") center left no-repeat
-
-    // &.lobules
-    //   background: url("./images/mark-lobules.png") center left no-repeat
 
     &.active
       display: block
@@ -117,21 +121,10 @@
         color: #999
 
     .controls
-      bottom: 0
-      padding: 15px 15px 20px
-      position: absolute
-      right: 0
+      margin: 1em 0
+      text-align: center
 
-      a,
       button
-        @extend #standard-button
-
-        &[name="restart-tutorial"]
-          background: transparent
-          border: 0
-          box-shadow: none
-          color: inherit
-          font-size: 12px
-          font-weight: normal
-          text-decoration: underline
-          text-shadow: none
+        &[name="finish"],
+        &[name="next-subject"]
+          @extend #standard-button
