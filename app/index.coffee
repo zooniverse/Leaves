@@ -11,6 +11,7 @@ HomePage = require './controllers/home-page'
 SciencePage = require './controllers/science-page'
 Classifier = require './controllers/classifier'
 Profile = require 'zooniverse/controllers/profile'
+TeamPage = require './controllers/team-page'
 
 stack = new Stack
   className: "main #{Stack::className}"
@@ -21,50 +22,7 @@ stack = new Stack
     science: SciencePage
     classify: Classifier
     profile: class extends Page then className: "content #{Page::className}", content: new Profile
-    team: class extends Page then content: '''
-      <h1>The team</h1>
-
-      <h2>The Field Museum</h2>
-      <ul>
-        <li>Matt von Konrat</li>
-        <li>Juan Larrain</li>
-        <li>Beth Crownover</li>
-        <li>Eve Gaus</li>
-        <li>Jessica Hankey</li>
-        <li>Kristina Lugo</li>
-      </ul>
-
-      <h2>Duke University</h2>
-      <ul>
-        <li>Blanka Shaw</li>
-      </ul>
-
-      <h2>Wilbur Wright College</h2>
-      <ul>
-        <li>Matt Greif</li>
-      </ul>
-
-      <h2>Roosevelt University</h2>
-      <ul>
-        <li>Mike Bryson</li>
-      </ul>
-
-      <h2>Northeastern Illinois University</h2>
-      <ul>
-        <li>Tom Campbell</li>
-        <li>John Kasmer</li>
-        <li>Oana Vadineanu</li>
-      </ul>
-
-      <h2>Zooniverse</h2>
-      <ul>
-        <li>Arfon Smith</li>
-        <li>Michael Parrish</li>
-        <li>Brian Carstensen</li>
-        <li>David Miller</li>
-        <li>Kelly Borden</li>
-      </ul>
-    '''
+    team: TeamPage
 
   routes:
     '/': 'home'
