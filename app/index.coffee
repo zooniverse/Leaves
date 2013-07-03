@@ -10,6 +10,7 @@ Page = require './controllers/page'
 HomePage = require './controllers/home-page'
 SciencePage = require './controllers/science-page'
 Classifier = require './controllers/classifier'
+FaqPage = require './controllers/faq-page'
 Profile = require 'zooniverse/controllers/profile'
 TeamPage = require './controllers/team-page'
 
@@ -21,6 +22,7 @@ stack = new Stack
     home: HomePage
     science: SciencePage
     classify: Classifier
+    faq: FaqPage
     profile: class extends Page then className: "content #{Page::className}", content: new Profile
     team: TeamPage
 
@@ -28,6 +30,7 @@ stack = new Stack
     '/': 'home'
     '/science': 'science'
     '/classify': 'classify'
+    '/faq': 'faq'
     '/profile': 'profile'
     '/team': 'team'
 
