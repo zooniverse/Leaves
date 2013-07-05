@@ -5,7 +5,7 @@
 <% if video: %>
   <iframe src="http://player.vimeo.com/video/68192847" width="870" height="490"></iframe>
 <% else: %>
-  <img src="//placehold.it/870x490.png"
+  <img src="./images/video-still.jpg" />
 <% end %>
 
 <h1>Help discover biodiversity!</h1>
