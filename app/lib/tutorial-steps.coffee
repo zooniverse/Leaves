@@ -77,7 +77,7 @@ module.exports =
 
   measureFirstLobule: new Step
     details: 'Let\'s start by marking the length of the first leaf.'
-    instruction: 'Drag from the top to the bottom of the lobule at the top-left of the image.'
+    instruction: 'Drag from the top to the bottom of the modified leaf at the top-left of the image.'
     attachment: 'left middle .subject-container 0.4 0.4'
 
     demo: (callback) ->
@@ -108,8 +108,8 @@ module.exports =
       'mouseup .marking-surface': 'oneMore'
 
   oneMore: new Step
-    details: 'Great! There\'s one more lobule in this image.'
-    instruction: 'Mark the axes of the other lobule.'
+    details: 'Great! There\'s one more modified leaf fully visible in this image.'
+    instruction: 'Mark the axes of the other modified leaf.'
     attachment: 'right middle .marking-surface center middle'
 
     onEnter: ->

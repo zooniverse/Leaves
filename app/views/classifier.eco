@@ -26,8 +26,8 @@
   <div class="lobules step">
     <div class="info">
       <div class="number"></div>
-      <div class="title">Measure the lobules</div>
-      <div class="instruction">Look for round bulges and measure across their widest and narrowest axes.</div>
+      <div class="title">Measure the modified leaves</div>
+      <div class="instruction">Look for round bulges representing sac-like structures and measure the longest and widest axes.</div>
     </div>
 
     <div class="controls">
