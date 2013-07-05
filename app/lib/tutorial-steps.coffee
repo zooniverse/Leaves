@@ -22,9 +22,10 @@ module.exports =
   whatIsThis: new Step
     header: 'What are we looking at?'
     details: '''
-      We are looking through a microscope at a section of a plant.
-      The rounded bulbs growing from either side are actually tiny leaves!
-      Measuring the length and width of these leaves can tell us what kind of plant we have.
+      We are looking through a microscope at a section of the underside of a plant.
+      The rounded bulges, representing sac-like objects growing from either side are actually tiny modified leaves!
+      Measuring the length and width of these modified leaves (lobules) can tell us what kind of plant we have.
+      Let's start by marking the length of the first modified leaf.
     '''
     attachment: 'center bottom .marking-surface center bottom'
     block: '.subject-container, button[name="next-step"]'
@@ -90,7 +91,7 @@ module.exports =
 
   measureSecondAxis: new Step
     details: '''
-      Now we'll drag straight across the center point of length marking to mark the width of the leaf.
+      Now, measure the width of this modified leaf by clicking and dragging the cursor across the widest section.
       As you drag, you'll be able to see the angle between the lines change.
       Keep it as close to 90° as possible!
     '''
