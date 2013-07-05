@@ -44,9 +44,9 @@ content = '''
   <h3>How do I differentiate a lobule from the rest of the image?</h3>
   <p>Usually the structures in clear focus within the image will be the lobules; it will generally be toward the center of the image.  We will measure only lobules (modified leaves) that are clearly focused and fall entirely within the image.  Here are some pictures to help guide you.</p>
 
-  INSERT IMAGE 1
+  <img src="./images/faq/ex-3.jpg" width="300" />
 
-  INSERT IMAGE 2
+  <img src="./images/faq/ex-4.jpg" width="300" />
 
   <h3>How many lobules are on each image?</h3>
   <p>Each image will have at least one lobule; however, some images will have several.</p>
