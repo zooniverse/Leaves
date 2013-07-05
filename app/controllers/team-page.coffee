@@ -53,6 +53,21 @@ content = '''
   <ul>
     <li>Blanka Shaw (Database Manager)</li>
   </ul>
+
+  <h2>Interns</h2>
+  <ul>
+    <li>Dara  Arabsheibani (Northeastern Illinois University)</li>
+    <li>Charlie D'Lavoy (Northeastern Illinois University)</li>
+    <li>Alex Vizzone (Northeastern Illinois University)</li>
+    <li>Xenia Alava (Northeastern Illinois University)</li>
+    <li>Ariel Wagner (DePaul University)</li>
+    <li>Veronica Lopez (Northeastern Illinois University)</li>
+    <li>Jonathan Scheffel (Harold Washington, Chicago City College)</li>
+    <li>Pedro Rebollar (DePaul University)</li>
+    <li>Kavita Elliott (Ohio State University)</li>
+    <li>Ramsey Millison (DePaul University)</li>
+    <li>Zak Zillon (Northeastern Illinois University)</li>
+  </ul>
 '''
 
 class TeamPage extends Page
