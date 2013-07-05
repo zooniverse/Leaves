@@ -1,3 +1,13 @@
+<% video = true if ~location.search.indexOf 'video=1' %>
+<% video = false if ~location.search.indexOf 'video=0' %>
+<% video ?= !!Math.round Math.random() %>
+
+<% if video: %>
+  <iframe src="http://player.vimeo.com/video/68192847" width="870" height="490"></iframe>
+<% else: %>
+  <img src="//placehold.it/870x490.png"
+<% end %>
+
 <h1>Help discover biodiversity!</h1>
 <p>Scientists from the Field Museum, Duke University and international researchers need your help.</p>
 <p>Measure a critical morphological feature, a modified leaf (lobule), from early land plants to help scientists document and describe new species to science.</p>
