@@ -7,9 +7,9 @@ content = '''
   <h2>The Field Museum</h2>
   <ul>
     <li>Matt von Konrat, Principal Investigator (Head of Botanical Collections, Science & Education)</li>
+    <li>Eve Gaus, Co-Principal Investigator (Digital Learning Manager, Education Department)</li>
     <li>Juan Larrain (Post Doctoral Research Scholar, Science & Education)</li>
     <li>Beth Crownover (Director, Education Department)</li>
-    <li>Eve Gaus (Digital Learning Manager, Education Department)</li>
     <li>Jessica Hankey (School Partnerships and Programs Manager, Education Department)</li>
     <li>Kristina Lugo (Annual Fund Coordinator, Institutional Advancement)</li>
     <li>Juan Larrain (Post Doctoral Research Scholar, Science & Education)</li>
