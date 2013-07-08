@@ -1,5 +1,5 @@
 .classifier
-  overflow: hidden
+  height: 570px
 
   .subject-container
     border-bottom: 1px solid #e9e9e9
@@ -124,7 +124,11 @@
       margin: 1em 0
       text-align: center
 
-      button
-        &[name="finish"],
-        &[name="next-subject"]
-          @extend #standard-button
+  button
+    &[name="finish"],
+    &[name="next-subject"]
+      @extend #standard-button
+
+    &[name="restart-tutorial"]
+      color: darken($green, 15%)
+      text-decoration: underline

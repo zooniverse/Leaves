@@ -51,8 +51,7 @@
 
   <p>
     If you need some help,
-    <button name="restart-tutorial">restart tutorial</button>
-    or
+    <button name="restart-tutorial">restart the tutorial</button> or<br />
     <a href="#/faq">read frequently asked questions</a>.
   </p>
 
