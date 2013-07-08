@@ -82,8 +82,8 @@ module.exports =
 
     demo: (callback) ->
       ghostMouse.run ->
-        @move '.marking-surface', 0.15963855421686746, 0.10503951362941576
-        @drag '.marking-surface', 0.23313253012048193, 0.6781620432736846
+        @move '.marking-surface', 0.159 + 0.05, 0.105 + 0.025
+        @drag '.marking-surface', 0.233 + 0.025, 0.678 + 0.085
         @do 0, -> callback()
 
     next:
@@ -100,8 +100,8 @@ module.exports =
 
     demo: (callback) ->
       ghostMouse.run ->
-        @move '.marking-surface', 0.05602409638554217, 0.4172924780562932
-        @drag '.marking-surface', 0.33313253012048194, 0.3224308179772418
+        @move '.marking-surface', 0.056 + 0.025, 0.417 + 0.05
+        @drag '.marking-surface', 0.333 + 0.025, 0.322 + 0.125
         @do 0, -> callback()
 
     next:
@@ -110,7 +110,7 @@ module.exports =
   oneMore: new Step
     details: 'Great! There\'s one more modified leaf fully visible in this image.'
     instruction: 'Mark the axes of the other modified leaf.'
-    attachment: 'right middle .marking-surface center middle'
+    attachment: 'right top .marking-surface right top'
 
     onEnter: ->
       @markCreatedOnStep = false
@@ -121,10 +121,10 @@ module.exports =
 
     demo: (callback) ->
       ghostMouse.run ->
-        @move '.marking-surface', 0.560843373493976, 0.25523714208791376
-        @drag '.marking-surface', 0.7740963855421686, 0.7611659958428545
-        @move '.marking-surface', 0.5403614457831325, 0.5951580907045145
-        @drag '.marking-surface', 0.7656626506024097, 0.3777667863566885
+        @move '.marking-surface', 0.560 + 0.05, 0.255 + 0.075
+        @drag '.marking-surface', 0.774 + 0.05, 0.761 + 0.075
+        @move '.marking-surface', 0.540 + 0.05, 0.595 + 0.05
+        @drag '.marking-surface', 0.765 + 0.05, 0.377 + 0.075
         @do 0, -> callback()
 
     next:
