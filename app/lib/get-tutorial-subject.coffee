@@ -2,15 +2,17 @@ Subject = require 'zooniverse/models/subject'
 
 module.exports = ->
   new Subject
-    id: '514092d13ae74064ba000003'
-    zooniverse_id: 'TUTORIAL_SUBJECT'
+    id: '51dafc9f3ae7401701000730'
+    zooniverse_id: 'ALF00001f4'
 
-    location: standard: './subjects/standard/514092d13ae74064ba00000e.jpg'
+    location: standard: './images/tutorial-subject.jpg'
 
     coords: [0, 0]
 
     metadata:
       tutorial: true
-      file_name: 'TUTORIAL_SUBJECT'
+      original_filename: 'tutorial-subject.jpg'
+      original_dimensions: [800, 593]
+      microns_per_px: 1.05
 
-    workflow_ids: ['514092d13ae74064ba000002']
+    workflow_ids: ['5154abce3ae740898b000002']

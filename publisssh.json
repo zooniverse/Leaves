@@ -1,6 +1,5 @@
 {
   "local": "build",
-  "bucket": "zooniverse-demo",
-  "prefix": "leaves",
+  "bucket": "microplants.zooniverse.org",
   "ignore": "subjects"
 }
