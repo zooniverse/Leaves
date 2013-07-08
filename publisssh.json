@@ -1,5 +1,4 @@
 {
   "local": "build",
-  "bucket": "microplants.zooniverse.org",
-  "ignore": "subjects"
+  "bucket": "microplants.zooniverse.org"
 }
