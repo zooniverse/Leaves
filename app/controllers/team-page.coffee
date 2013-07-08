@@ -17,7 +17,7 @@ content = '''
     <li>Audrey Aronowsky (Outreach Coordinator, BioSynC)</li>
   </ul>
 
-  <h2>Zooniverse</h2>
+  <h2>The Adler Planetarium</h2>
   <ul>
     <li>Arfon Smith, Co-Principal Investigator (Director of Citizen Science)</li>
     <li>Michael Parrish</li>
