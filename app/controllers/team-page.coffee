@@ -1,7 +1,7 @@
 Page = require './page'
 
 content = '''
-  <p>The project is a collaborative effort spearheaded by seven partnering institutions. More information about the team and various roles of each team member can be found here</p>
+  <p>The project is a collaborative effort spearheaded by seven partnering institutions. More information about the team and various roles of each team member can be found <a href="http://fieldmuseum.org/explore/connecting-biodiversity-research-and-collections-outreach-and-education">here</a>.</p>
   <p>The project is supported in part by the National Science Foundation (see Award No. 114589, No. 1057418, and the Grainger Foundation.</p>
 
   <h2>The Field Museum</h2>
