@@ -26,7 +26,10 @@
   <div class="lobules step">
     <div class="info">
       <div class="number"></div>
-      <div class="title">Measure the modified leaves</div>
+      <div class="title">
+        Measure the<br />
+        modified leaves
+      </div>
       <div class="instruction">Look for round bulges representing sac-like structures and measure the longest and widest axes.</div>
     </div>
 
@@ -38,8 +41,11 @@
   <div class="summary step">
     <div class="info">
       <div class="number"></div>
-      <div class="title">Finished</div>
-      <div class="instruction">You can discuss about this image with other volunteers.</div>
+      <div class="title"><br />Finished</div>
+      <div class="instruction">
+        Your classification has been saved.<br />
+        You may now move on to the next image.
+      </div>
     </div>
 
     <div class="controls">
