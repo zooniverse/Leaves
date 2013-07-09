@@ -28,10 +28,10 @@ class Classifier extends Controller
     summary: tool: null
 
   events:
-    'click .controls button[name="load-next-step"]': 'onClickNextStep'
-    'click .controls button[name="restart-tutorial"]': 'onClickRestartTutorial'
-    'click .controls button[name="finish"]': 'onClickFinish'
-    'click .controls button[name="next-subject"]': 'onClickNextSubject'
+    'click button[name="load-next-step"]': 'onClickNextStep'
+    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
+    'click button[name="finish"]': 'onClickFinish'
+    'click button[name="next-subject"]': 'onClickNextSubject'
 
   constructor: ->
     super
