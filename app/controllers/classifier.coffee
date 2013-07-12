@@ -68,6 +68,8 @@ class Classifier extends Controller
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
+    @tutorial.end() if @tutorial.started? and not subject.metadata.tutorial
+
     @classification = new Classification {subject}
     @surface.marks[0].destroy() until @surface.marks.length is 0
     @surface.image.attr src: subject.location.standard
@@ -94,7 +96,7 @@ class Classifier extends Controller
 
   onClickRestartTutorial: ->
     return if @tutorial.started?
-    getTutorialSubject().select()
+    getTutorialSubject().select() unless @classification?.subject.metadata.tutorial
     @tutorial.start()
 
   onClickFinish: ->
