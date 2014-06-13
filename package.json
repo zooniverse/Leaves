@@ -2,17 +2,12 @@
   "name": "leaves",
   "version": "0.0.1",
   "dependencies": {
-    "es5-shimify": "~0.0.1",
     "ghost-mouse": "~0.0.7",
-    "haw": "~0.1.0",
-    "hem": "spine/hem#master",
-    "jqueryify": "~0.0.1",
-    "json2ify": "~0.0.1",
-    "marking-surface": "~0.0.19",
-    "publisssh": "~0.1.3",
-    "spine": "~1.0.7",
-    "zooniverse": "zooniverse/Zooniverse#no-deps",
-    "zootorial": "~0.3.3"
+    "zootorial": "^0.4.12",
+    "marking-surface": "^0.6.0",
+    "zooniverse": "^0.6.11",
+    "publisssh": "^0.2.5",
+    "haw": "^0.4.9"
   },
   "scripts": {
     "start": "haw serve",
