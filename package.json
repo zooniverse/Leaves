@@ -2,15 +2,17 @@
   "name": "leaves",
   "version": "0.0.1",
   "dependencies": {
-    "ghost-mouse": "~0.0.7",
+    "ghost-mouse": "0.0.8",
     "zootorial": "^0.4.12",
     "marking-surface": "^0.6.0",
     "zooniverse": "^0.6.11",
     "publisssh": "^0.2.5",
-    "haw": "^0.4.9"
+    "haw": "^0.4.9",
+    "director": "^1.2.3"
   },
   "scripts": {
     "start": "haw serve",
-    "deploy": "haw build && publisssh && trash ./build"
+    "deploy": "haw build && publisssh ./build microplants.zooniverse.org && trash ./build",
+    "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && trash ./build"
   }
 }

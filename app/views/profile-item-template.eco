@@ -1,3 +1,0 @@
-<a href="<%= @subjects[0]?.zooniverse_id || '#ERROR' %>" class="item">
-  <img src="//placehold.it/300x200.png" />
-</a>

@@ -1,27 +1,4 @@
 <div class="steps">
-  <!--<div class="scale step">
-    <div class="info">
-      <div class="number">1</div>
-      <div class="title">Measure the image scale</div>
-      <div class="instruction">Look for a bar along the bottom of the image. Drag from its start to its end, then type the scale into the box.</div>
-    </div>
-
-    <div class="controls">
-      <button name="load-next-step" value="stem">Next step</button>
-    </div>
-  </div>-->
-
-  <!--<div class="stem step">
-    <div class="info">
-      <div class="number"></div>
-      <div class="title">Measure the stem</div>
-      <div class="instruction">Look for the stem and measure its width at the widest point.</div>
-    </div>
-
-    <div class="controls">
-      <button name="load-next-step" value="lobules">Next step</button>
-    </div>
-  </div>-->
 
   <div class="lobules step">
     <div class="info">
@@ -49,8 +26,6 @@
     </div>
 
     <div class="controls">
-      <!--<a href="#/TALK">Talk</a>
-      <a href="#/FACEBOOK">Share</a>-->
       <button name="next-subject">Next Image</button>
     </div>
   </div>

@@ -1,0 +1,10 @@
+<div class="nav">
+  <ul>
+    <li class="logo"><a href="#/"><b>MicroPlants</b></a></li>
+    <li><a href="#/classify">Classify</a></li>
+    <li><a href="#/about/science">Science</a></li>
+    <li><a href="#/about/faq">FAQ</a></li>
+    <li><a href="#/about/team">Team</a></li>
+    <li><a href="#/profile">Profile</a></li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 $page-width = 1000px
 
 html
-  background: #ccc
+  background: #333
   font: 14px "Helvetica Neue", sans-serif
 
 body
@@ -18,71 +18,20 @@ body
 #app
   position: relative
 
-  > header
-    background: #333
-    color: #fff
-    height: 40px
-
-    nav
-      font-size: 12px
-      font-weight: bold
-      margin: 0 auto
-      text-transform: uppercase
-      width: $page-width
-
-      ul
-        margin: 0
-        padding: 0
-
-        li
-          display: inline-block
-
-          a
-            color: inherit
-            display: block
-            letter-spacing: 1px
-            padding: 20px 10px 5px
-            text-decoration: inherit
-            text-shadow: 0 1px 1px #000
-
-          &:first-child a
-            padding-left: 0
-
-          &.logo
-            > a
-              padding: 0 10px 0 0
-
-              > .collection-connection
-                display: inline-block
-                font-size: 8px
-                line-height: 1
-
-                > span
-                  display: block
-                  padding: 1px 0
-
-                  &:first-child
-                    border-bottom: 1px solid rgba(#fff, 0.5)
-
-              > strong
-                font-size: 24px
-
   > .main
     margin: 0 auto
     width: $page-width
 
-    > .page
-      margin: 20px 0
-      background: #f9f9f9
-      box-shadow: 0 1px 2px rgba(#000, 0.3)
-      display: none
-      position: relative
+  > .page
+    box-shadow: 0 1px 2px rgba(#000, 0.3)
+    display: none
+    position: relative
 
-      &.content
-        padding: 30px 60px 60px
+    &.content
+      padding: 30px 60px 60px
 
-      &.active
-        display: block
+    &.active
+      display: block
 
 button
   background: transparent

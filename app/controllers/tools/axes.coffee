@@ -1,7 +1,9 @@
-$ = require 'jqueryify'
+
 {Tool} = require 'marking-surface'
 shapeStyle = require '../../lib/shape-style'
+
 Raphael = window.Raphael
+$ = window.$
 
 LABEL_WIDTH = 35
 LABEL_HEIGHT = 12

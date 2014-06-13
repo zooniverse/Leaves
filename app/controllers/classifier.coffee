@@ -1,29 +1,27 @@
-{Controller} = require 'spine'
-template = require '../views/classifier'
+ApplicationController = require './application-controller'
+
 MarkingSurface = require 'marking-surface'
 AxesTool = require './tools/axes'
-# LineTool = require './tools/line'
-# MeasurementTool = require './tools/measurement'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
 {Tutorial} = require 'zootorial'
-getTutorialSubject = require '../lib/get-tutorial-subject'
+selectTutorialSubject = require '../lib/select-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
-$ = require 'jqueryify'
+
+$ = window.$
 
 IMAGE_WIDTH = 720
 IMAGE_HEIGHT = 536
 
-class Classifier extends Controller
+class Classifier extends ApplicationController
+  className: 'classifier page'
+  template: require '../views/classifier'
+
   surface: null
   tutorial: null
 
-  className: 'classifier page'
-
   steps:
-    # scale: tool: MeasurementTool, label: 'Scale', marks: 1
-    # stem: tool: LineTool, label: 'Stem', marks: 1
     lobules: tool: AxesTool, label: 'Lobule', marks: Infinity
     summary: tool: null
 
@@ -36,7 +34,6 @@ class Classifier extends Controller
   constructor: ->
     super
 
-    @html template
     @el.addClass 'loading'
 
     @surface ?= new MarkingSurface
@@ -46,15 +43,15 @@ class Classifier extends Controller
 
     @surface.on 'create-mark', @onCreateMark
 
-    User.on 'change', @onUserChange
-    Subject.on 'get-next', @onGettingNextSubject
-    Subject.on 'select', @onSubjectSelect
-    Subject.on 'no-more', @onNoMoreSubjects
+    # User.on 'change', @onUserChange
+    # Subject.on 'get-next', @onGettingNextSubject
+    # Subject.on 'select', @onSubjectSelect
+    # Subject.on 'no-more', @onNoMoreSubjects
 
-    @tutorial = new Tutorial
-      steps: tutorialSteps
-      firstStep: 'welcome'
-      parent: @el
+    # @tutorial = new Tutorial
+    #   steps: tutorialSteps
+    #   firstStep: 'welcome'
+    #   parent: @el
 
     @loadStep 'lobules'
 
@@ -96,7 +93,7 @@ class Classifier extends Controller
 
   onClickRestartTutorial: ->
     return if @tutorial.started?
-    getTutorialSubject().select() unless @classification?.subject.metadata.tutorial
+    selectTutorialSubject() unless @classification?.subject.metadata.tutorial
     @tutorial.start()
 
   onClickFinish: ->
