@@ -5,8 +5,6 @@ current = {} # sigh
 class ApplicationController extends BaseController
 
   show: =>
-    console.log @
-    
     pageType = @className.split(' ').filter((klass) -> klass in ['page', 'sub-page'])[0]
 
     current[pageType] ?= @

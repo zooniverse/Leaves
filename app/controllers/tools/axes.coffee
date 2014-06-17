@@ -1,5 +1,4 @@
-
-{Tool} = require 'marking-surface'
+{ Tool } = require 'marking-surface'
 shapeStyle = require '../../lib/shape-style'
 
 Raphael = window.Raphael
@@ -35,9 +34,6 @@ class AxesTool extends Tool
 
   constructor: ->
     super
-    window.axes = @
-
-  initialize: ->
     @major = @addShape 'path', 'M 0 0', shapeStyle.line
     @minor = @addShape 'path', 'M 0 0', $.extend {}, shapeStyle.line, 'stroke-width': 2
     @majorHalf = @addShape 'circle', r: 5, stroke: 'white'
@@ -50,30 +46,30 @@ class AxesTool extends Tool
     @grabbers = for i in [0...4]
       @addShape 'circle', 0, 0, 8, shapeStyle.dot
 
-  onFirstClick: (e) ->
+  onFirstClick: (e) =>
     {x, y} = @mouseOffset e
     points = if @clicks is 0 then ['p0', 'p1'] else ['p2', 'p3']
     @mark.set point, [x, y] for point in points
 
-  onFirstDrag: (e) ->
+  onFirstDrag: (e) =>
     {x, y} = @mouseOffset e
     points = if @clicks is 0 then ['p1'] else ['p3']
     @mark.set point, [x, y] for point in points
 
-  isComplete: ->
+  isComplete: =>
     @clicks is 2
 
-  'on drag grabbers': (e, shape) ->
+  'on drag grabbers': (e, shape) =>
     index = $.inArray shape, @grabbers
     {x, y} = @mouseOffset e
     @mark.set "p#{index}", [x, y]
 
   # TODO: Integrate this debouncing into the Marking Surface library.
-  onMarkChange: ->
+  onMarkChange: =>
     return if @renderTimeout
     @renderTimeout = setTimeout (=> @render arguments...; @renderTimeout = NaN), 1000 / RENDER_FPS
 
-  render: ->
+  render: =>
     for point, i in ['p0', 'p1', 'p2', 'p3']
       @grabbers[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
