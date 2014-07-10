@@ -2,7 +2,7 @@
 shapeStyle = require '../../lib/shape-style'
 
 Raphael = window.Raphael
-$ = window.$
+$ = window.jQuery
 
 LABEL_WIDTH = 35
 LABEL_HEIGHT = 12
@@ -11,30 +11,6 @@ NEW_SCALE = 970 / 800
 MICONS_PER_PIXEL = (100 / 115) * NEW_SCALE
 
 RENDER_FPS = 30
-
-LARGE_CONSTANT = 5000
-
-closestPointOnLine = (x, y, x1, y1, x2, y2) ->
-  A = x - x1
-  B = y - y1
-  C = x2 - x1
-  D = y2 - y1
-
-  dot = A * C + B * D
-  len_sq = C * C + D * D
-  param = dot / len_sq
-
-  if (param < 0 || (x1 == x2 && y1 == y2))
-    xx = x1
-    yy = y1
-  else if param > 1
-    xx = x2
-    yy = y2
-  else
-    xx = x1 + param * C
-    yy = y1 + param * D
-
-  return [xx, yy]
 
 class AxesTool extends Tool
   major: null
@@ -58,6 +34,9 @@ class AxesTool extends Tool
 
   constructor: ->
     super
+    window.axes = @
+
+  initialize: ->
     @major = @addShape 'path', 'M 0 0', shapeStyle.line
     @minor = @addShape 'path', 'M 0 0', $.extend {}, shapeStyle.line, 'stroke-width': 2
     @majorHalf = @addShape 'circle', r: 5, stroke: 'white'
@@ -70,63 +49,30 @@ class AxesTool extends Tool
     @grabbers = for i in [0...4]
       @addShape 'circle', 0, 0, 8, shapeStyle.dot
 
-  onFirstClick: (e) =>
+  onFirstClick: (e) ->
     {x, y} = @mouseOffset e
     points = if @clicks is 0 then ['p0', 'p1'] else ['p2', 'p3']
     @mark.set point, [x, y] for point in points
 
-  onFirstDrag: (e) =>
+  onFirstDrag: (e) ->
     {x, y} = @mouseOffset e
     points = if @clicks is 0 then ['p1'] else ['p3']
-
-    [x, y] = @ensureAngle [x, y] if 'p3' in points
     @mark.set point, [x, y] for point in points
 
-  isComplete: =>
+  isComplete: ->
     @clicks is 2
 
-  ensureAngle: ([x, y], index = 3) =>
-    switch index
-      when 2
-        otherPoint = @mark.p3
-        minorPath = "M #{x} #{y}, L #{ otherPoint.split ' ' }"
-      when 3
-        otherPoint = @mark.p2
-        minorPath = "M #{@mark.p2[0]} #{@mark.p2[1]}, L #{x} #{y}"
-
-    majorPath = "M #{@mark.p0[0]} #{@mark.p0[1]}, L #{@mark.p1[0]} #{@mark.p1[1]}"
-    minorPath ?= "M #{@mark.p2[0]} #{@mark.p2[1]}, L #{x} #{y}"
-
-    [intersect] = Raphael.pathIntersection majorPath, minorPath
-    return [x, y] unless intersect?
-
-    angle = Math.floor Raphael.angle @mark.p0..., otherPoint..., intersect.x, intersect.y
-
-    remainder = angle %% 10
-    angle = if remainder < 5
-      angle - remainder
-    else
-      angle + (10 - remainder)
-
-    minorLength = Raphael.getTotalLength minorPath
-    radian = Raphael.rad angle
-
-    aX = otherPoint[0] + LARGE_CONSTANT * Math.sin radian
-    aY = otherPoint[1] + LARGE_CONSTANT * Math.cos radian
-
-    return closestPointOnLine x, y, otherPoint[0], otherPoint[1], aX, aY
-
-  'on drag grabbers': (e, shape) =>
+  'on drag grabbers': (e, shape) ->
     index = $.inArray shape, @grabbers
     {x, y} = @mouseOffset e
-    [x, y] = @ensureAngle [x, y], index if index in [2, 3]
     @mark.set "p#{index}", [x, y]
 
-  onMarkChange: =>
+  # TODO: Integrate this debouncing into the Marking Surface library.
+  onMarkChange: ->
     return if @renderTimeout
     @renderTimeout = setTimeout (=> @render arguments...; @renderTimeout = NaN), 1000 / RENDER_FPS
 
-  render: =>
+  render: ->
     for point, i in ['p0', 'p1', 'p2', 'p3']
       @grabbers[i].attr cx: @mark[point][0], cy: @mark[point][1]
 
