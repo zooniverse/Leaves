@@ -1,6 +1,7 @@
 MarkingSurface = require 'marking-surface'
 {Tutorial} = require 'zootorial'
 
+BaseController = require 'zooniverse/controllers/base-controller'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
@@ -9,15 +10,16 @@ selectTutorialSubject = require '../lib/select-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
 { loadImage } = require '../lib/utils'
 
-ApplicationController = require './application-controller'
 AxesTool = require './tools/axes'
 
 $ = window.$
+$window = $(window)
+$body = $('body')
 
 IMAGE_WIDTH = 720
 IMAGE_HEIGHT = 536
 
-class Classifier extends ApplicationController
+class Classifier extends BaseController
   className: 'classifier page'
   template: require '../views/classifier'
 
@@ -26,12 +28,15 @@ class Classifier extends ApplicationController
 
   elements:
     '.subject-container': 'subjectContainer'
+    '.location-and-information': 'informationSection'
+    '.field-guide': 'fieldGuideSection'
+    '.favorite-subject i': 'favoriteIcon'
 
   events:
-    'click button[name="load-next-step"]': 'onClickNextStep'
-    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
-    'click button[name="finish"]': 'onClickFinish'
-    'click button[name="next-subject"]': 'onClickNextSubject'
+    'click .view-info': 'onClickViewInfo'
+    'click .view-guide': 'onClickViewGuide'
+    'click .favorite-subject': 'onClickFavorite'
+    'click .finish-subject': 'onClickFinish'
 
   constructor: ->
     super
@@ -52,10 +57,10 @@ class Classifier extends ApplicationController
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
-    # @tutorial = new Tutorial
-    #   steps: tutorialSteps
-    #   firstStep: 'welcome'
-    #   parent: @el
+    @tutorial = new Tutorial
+      steps: tutorialSteps
+      first: 'welcome'
+      parent: @el.get(0)
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
@@ -67,8 +72,10 @@ class Classifier extends ApplicationController
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
+    @el.toggleClass 'is-tutorial-subject', subject.metadata.tutorial?
+
     if subject.metadata.tutorial
-      @tutorial.start() unless @tutorial.started
+      # @tutorial.start() unless @tutorial.started
     else
       @classification = new Classification {subject}
 
@@ -79,14 +86,28 @@ class Classifier extends ApplicationController
       @surface.enable()
       @el.removeClass 'loading'
 
+  onClickViewInfo: ->
+    $body.animate {
+      scrollTop: @informationSection.position().top - 110
+    }, 500, 'easing'
+
+  onClickViewGuide: ->
+    $body.animate {
+      scrollTop: @fieldGuideSection.position().top - 110
+    }, 500, 'easing'
+
+  onClickFavorite: ->
+    if @classification?
+      @classification.favorite = !@classification.favorite
+
+      @favoriteIcon.toggleClass 'fa-heart', @classification.favorite
+      @favoriteIcon.toggleClass 'fa-heart-o', !@classification.favorite
+
   onClickFinish: ->
     @classification.annotations.push @surface.marks...
     @classification.send()
-    @loadStep 'summary'
-    @el.addClass 'summary'
 
   onClickNextSubject: ->
-    @el.removeClass 'summary'
     Subject.next()
 
   onNoMoreSubjects: =>

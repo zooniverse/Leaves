@@ -1,10 +1,8 @@
-<div class="nav">
-  <ul>
-    <li class="logo"><a href="#/"><b>MicroPlants</b></a></li>
-    <li><a href="#/classify">Classify</a></li>
-    <li><a href="#/about/science">Science</a></li>
-    <li><a href="#/about/faq">FAQ</a></li>
-    <li><a href="#/about/team">Team</a></li>
-    <li><a href="#/profile">Profile</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="#/" class="logo">MicroPlants</a></li>
+  <li><a href="#/classify">Classify</a></li>
+  <li><a href="#/about">About</a></li>
+  <li><a href="#/profile">Profile</a></li>
+  <li><a href="#/TODO">Discuss</a></li>
+  <li><a href="#/TODO">Blog</a></li>
+</ul>

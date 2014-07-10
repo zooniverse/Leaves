@@ -4,29 +4,23 @@ Api = require 'zooniverse/lib/api'
 api = new Api project: 'leaf'
 
 window.app = app = {}
-$app = $('#app')
 
-homeController = new (require './controllers/home')
-classifyController = new (require './controllers/classifier')
-aboutController = new (require './controllers/about')
-profileController = new (require './controllers/profile')
+StackOfPages = require 'stack-of-pages'
+stack = new StackOfPages
+  '#/': require './controllers/home'
+  '#/classify': require './controllers/classifier'
+  '#/about/*': require './controllers/about'
+  '#/profile': require './controllers/profile'
 
-homeController.el.appendTo $app
-classifyController.el.appendTo $app
-aboutController.el.appendTo $app
-profileController.el.appendTo $app
-
-router = Router
-  '/': homeController.show
-  '/classify': classifyController.show
-  '/about/:section': aboutController.show
-  '/profile': profileController.show
-
-router.init '/'
+document.querySelector('#app').appendChild stack.el
 
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
 topBar.el.appendTo 'body'
+
+Footer = require 'zooniverse/controllers/footer'
+footer = new Footer
+footer.el.appendTo '#footer .container'
 
 Navigation = require './controllers/navigation'
 navigation = new Navigation
@@ -41,4 +35,4 @@ browserDialog.check()
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 # TODO: new GoogleAnalytics account: '1234567890'
 
-window.app = { router, api, topBar }
+window.app = { stack, api, topBar }

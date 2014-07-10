@@ -1,14 +1,38 @@
-<% video = true if ~location.search.indexOf 'video=1' %>
-<% video = false if ~location.search.indexOf 'video=0' %>
-<% video ?= !!Math.round Math.random() %>
+<div class="home-section">
+  <div class="columns">
+    <div class="column">
+      <h2>Why do we need you?</h2>
+      <p>We have a <b>lot</b> of data. More images of lobules than an individual scientist team can look through effectively. The more citizen scientists we have marking this data, the faster we can get through it!</p>
+      <p><em><span class="faded">Learn:</span> <a href="#/about">What is a citizen scientist?</a></em></p>
+    </div>
+    <div class="column">
+      <img src="http://placehold.it/400x250" />
+    </div>
+  </div>
+</div>
 
-<% if video: %>
-  <iframe src="http://player.vimeo.com/video/68192847" width="870" height="490"></iframe>
-<% else: %>
-  <img src="./images/video-still.jpg" />
-<% end %>
+<div class="home-section">
+  <div class="columns">
+    <div class="column">
+      <h2>Why do we need you?</h2>
+      <p>We have a <b>lot</b> of data. More images of lobules than an individual scientist team can look through effectively. The more citizen scientists we have marking this data, the faster we can get through it!</p>
+      <p><em><span class="faded">Learn:</span> <a href="#/about">What is a citizen scientist?</a></em></p>
+    </div>
+    <div class="column">
+      <img src="http://placehold.it/400x250" />
+    </div>
+  </div>
+</div>
 
-<h1>Help discover biodiversity!</h1>
-<p>Scientists from the Field Museum, Duke University and international researchers need your help.</p>
-<p>Measure a critical morphological feature, a modified leaf (lobule), from early land plants to help scientists document and describe new species to science.</p>
-<p>Ready to help? Step through the tutorial and <a href="#/classify" class="start">Start classifying!</a></p>
+<div class="home-section">
+  <div class="columns">
+    <div class="column">
+      <h2>Why do we need you?</h2>
+      <p>We have a <b>lot</b> of data. More images of lobules than an individual scientist team can look through effectively. The more citizen scientists we have marking this data, the faster we can get through it!</p>
+      <p><em><span class="faded">Learn:</span> <a href="#/about">What is a citizen scientist?</a></em></p>
+    </div>
+    <div class="column">
+      <img src="http://placehold.it/400x250" />
+    </div>
+  </div>
+</div>

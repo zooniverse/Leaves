@@ -5,14 +5,16 @@
     "ghost-mouse": "0.0.8",
     "zootorial": "^0.4.12",
     "marking-surface": "^0.6.0",
-    "zooniverse": "^0.6.11",
+    "zooniverse": "~0.6.13",
     "publisssh": "^0.2.5",
     "haw": "^0.4.9",
-    "director": "^1.2.3"
+    "director": "^1.2.3",
+    "stack-of-pages": "^0.1.5"
   },
   "scripts": {
     "start": "haw serve",
     "deploy": "haw build && publisssh ./build microplants.zooniverse.org && trash ./build",
-    "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && trash ./build"
+    "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && trash ./build",
+    "deploy-locale":"seed-translation --project asteroid --env production"
   }
 }

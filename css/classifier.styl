@@ -1,40 +1,46 @@
-.classifier
-  height: 570px
+#app > .stack-of-pages > .classifier
+
+  h2
+    color: $dark-green
+    font-size: 16px
+    margin: 16px 0
+    padding: 16px 0
+    position: relative
+    text-align: center
+    text-transform: uppercase
+
+    &:before,
+    &:after
+      content: " "
+      position: absolute
+
+    &:before
+      background: rgba(232, 232, 232, 1)
+      bottom: 0
+      height: 1px
+      left: calc(50% - 150px / 2)
+      width: 150px
+
+    &:after
+      background: rgba(217, 217, 217, 1)
+      border-radius: 50%
+      bottom: -2px
+      height: 5px
+      left: calc(50% - 5px / 2)
+      width: 5px
 
   .subject-container
-    border-bottom: 1px solid #e9e9e9
-    cursor: crosshair
-    float: left
-    padding: 15px
-    position: relative
+    width: 720px
+    margin: 0 auto
 
     svg
       display: block
 
     .marking-surface
+      border-radius: 6px
+      cursor: crosshair
       height: 536px
       width: 720px
-
-    .summary-message
-      background: rgba(#000, 0.75)
-      bottom: 15px
-      color: #fff
-      display: none
-      font-size: 30px
-      left: 15px
-      padding-top: 175px
-      position: absolute
-      right: 15px
-      text-align: center
-      top: 15px
-      z-index: 1
-
-      header
-        color: $green
-        font-size: 14px
-        font-weight: bold
-        letter-spacing: 1px
-        text-transform: uppercase
 
     .marking-tool-controls
       background: rgba(#000, 0.67)
@@ -76,8 +82,6 @@
           width: 60px
 
       &.selected
-        // background: #000
-        // box-shadow: 0 0 0 1px rgba(#fff, 0.5) inset, 0 1px 2px rgba(#000, 0.5)
 
         button[name="delete-mark"]
           display: inline-block
@@ -85,59 +89,36 @@
         .more
           display: block
 
-  &.summary .subject-container .summary-message
-    display: block
+  .classifier-actions
+    height: 50px
+    line-height: 50px
+    padding: 20px 0
 
-  .steps
-    bottom: 0
-    box-sizing: border-box
-    padding: 15px 15px 15px 0
-    position: absolute
-    right: 0
-    top: 0
-    width: 250px
+    // this aint great
+    .view-info,
+    .view-guide
+    .favorite-subject
+      cursor: pointer
+      display: inline-block
 
-  .step
-    display: none
-    position: relative
+    .view-info,
+    .view-guide
+      box-sizing: border-box
+      width: 49%
 
-    &.active
-      display: block
-
-    .info
-      position: relative
-
-      .number
+      i
         color: $green
-        font-size: 44px
-        line-height: 1
-        position: absolute
-        right: 100%
-        text-align: center
-        top: 0
-        width: 40px
+        font-size: 24px
+        padding: 0 15px
 
-      .title
-        font-size: 22px
+    .favorite-subject i
+      font-size: 24px
+      padding: 0 20px
 
-      .instruction
-        font-size: 13px
-        color: #999
+      &.fa-heart
+        color: $green
 
-    .controls
-      margin: 1em 0
-      text-align: center
+  &.is-tutorial-subject
 
-  .example-marking
-    display: block
-    margin: 1em auto
-    width: 150px
-
-  button
-    &[name="finish"],
-    &[name="next-subject"]
-      @extend #standard-button
-
-    &[name="restart-tutorial"]
-      color: darken($green, 15%)
-      text-decoration: underline
+    .favorite-subject
+      @extends #_DISABLED_STATE

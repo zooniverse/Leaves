@@ -5,7 +5,7 @@ module.exports =
   welcome:
     header: 'Welcome to the Leaves Project!'
     details: 'This quick tutorial will guide you through your first classification.'
-    attachment: '0.5 0.5 .marking-surface 0.5 0.5'
+    attachment: [0.5, 0.5, '.marking-surface', 0.5, 0.5]
     block: '.subject-container, button[name="next-step"]'
     next: 'whatIsThis'
 

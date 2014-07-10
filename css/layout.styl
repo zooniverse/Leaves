@@ -1,22 +1,19 @@
 $page-width = 1000px
 
-html
-  background: #333
-  font: 14px "Helvetica Neue", sans-serif
-
 body
+  background: white
+  color: #777
+  font-family: "proxima-nova",sans-serif
+  font-size: 16px
   margin: 0
-
-  > .field
-    background: $green
-    height: 50%
-    left: 0
-    position: fixed
-    top: 0
-    right: 0
+  padding: $navigation-height 0 0 0
 
 #app
-  position: relative
+
+  .stack-of-pages
+    background: white
+    margin: 0 auto
+    width: 960px
 
   > .page
     display: none
@@ -25,18 +22,27 @@ body
     &.active
       display: block
 
-button
-  background: transparent
-  border: 0
-  color: inherit
-  cursor: pointer
-  font: inherit
-  margin: 0
-  padding: 0
+  .section
+    display: none
 
-a
-  color: darken($green, 15%)
+    &.active
+      display: block
 
-.zootorial-dialog.tutorial
-  max-width: 500px
-  width: 500px
+.sub-section-menu
+  @extends #_SEMANTIC_LIST
+  clearfix()
+
+  li
+    float: left
+
+    a
+      display: block
+      padding: 10px 20px
+
+      &.active
+        background: $green
+        color: white
+
+#footer
+  background: #f2f2f2
+  padding: 50px 0

@@ -1,40 +1,86 @@
-$green = #73cb00
-$dark-green = #4a8300
+$green = #38d77b
+$dark-green = rgba(47, 135, 101, 1)
+$page-width = 960px
+$font-size = 16px
+$navigation-height = 86px
 
-@keyframes progress
-  0%
-    background-position: 0 0
-
-  100%
-    background-position: 50px 0
-
-#app
-  .loader
-    animation: 1s progress linear infinite
-    background: linear-gradient(left top, transparent 25%, $green 25%, $green 50%, transparent 50%, transparent 75%, $green 75%)
-    background-size: 25px 25px
-    bottom: 5px
-    display: none
-    left: 5px
-    opacity: 0.1
-    position: absolute
-    right: 5px
-    top: 5px
-
-  .loading .loader
-    display: block
-
-#standard-button
+// selectors only used to extend other selectors
+#_ACTIVE_STATE
   background: $green
-  border: 1px solid $dark-green
-  border-radius: 3px
-  box-shadow 0 1px 0 rgba(#fff, 0.33) inset, 0 3px 5px rgba(#000, 0.25)
-  color: #fff
-  font: inherit
-  font-weight: bold
-  padding: 3px 10px
-  text-decoration: inherit
-  text-shadow 0 1px 1px rgba(#000, 0.5)
+  color: white
 
-  &:active
-    box-shadow: 0 100px rgba(#000, 0.25) inset, 0 0 2px rgba(#000, 0.25)
+#_DISABLED_STATE
+  cursor: not-allowed !important
+  opacity: 0.45  !important
+  pointer-events: none  !important
+
+#_SEMANTIC_LIST
+  margin: 0
+  padding: 0
+  list-style: none
+
+// common useful classes
+.columns
+  clearfix()
+
+  > .column
+    box-sizing: border-box
+    float: left
+    padding: 0 1em 0 0
+    width: 50%
+
+    &.one-third
+      width: 33.3%
+
+    &:last-child
+      padding: 0
+
+  &.pushed
+
+    > .column
+      text-align: center
+
+      &:first-child
+        text-align: left
+
+      &:last-child
+        text-align: right
+
+.container
+  margin: 0 auto
+  width: $page-width
+
+.faded
+  opacity: 0.5
+
+.float-left
+  float: left
+
+.float-right
+  float: right
+
+// styling base elements
+a
+  color: $green
+  text-decoration: none
+
+button
+  background: $green
+  border: none
+  border-radius: 6px
+  color: white
+  cursor: pointer
+  font-size: $font-size
+  height: 50px
+  outline: none
+  padding: 0 45px
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    background: darken($green, 30%)
+
+img
+  max-width: 100%
+
+p
+  line-height: 1.5em

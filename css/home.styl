@@ -1,6 +1,39 @@
-#app > .main > .home.page
-  iframe
-    border: 0
+#app > .stack-of-pages > .home
+  padding-top: 100px
 
-  .start
-    @extends #standard-button
+  .home-section
+    padding: 100px 0
+
+    img
+      border-radius: 6px
+
+    &:nth-child(2n)
+      img
+        transform: rotate(-5deg)
+
+    &:nth-child(2n + 1)
+      img
+        transform: rotate(5deg)
+
+#site-banner
+  background-image: url(./images/forest-colored.jpg)
+  background-position: center
+  background-size: cover
+  box-sizing: border-box
+  color: white
+  height: 715px
+  opacity: 0
+  padding: 140px 0 0 0 
+
+  h1
+    font-size: 52px
+
+  a
+    color: white
+    font-size: 26px
+    padding: 15px
+
+
+@media screen and (min-width: 40rem)
+  #site-banner .banner-content
+    width: 60%
