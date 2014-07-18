@@ -12,7 +12,28 @@ MICONS_PER_PIXEL = (100 / 115) * NEW_SCALE
 
 RENDER_FPS = 30
 
+class AxesControls extends Tool.Controls
+  moveTo: (x, y) ->
+    [x, y] = x if x instanceof Array
+
+    if x > @tool.surface.width / 2
+      @el.addClass 'to-the-left'
+      @el.css
+        left: ''
+        position: 'absolute'
+        right: @tool.surface.width - x
+        top: y
+
+    else
+      @el.removeClass 'to-the-left'
+      @el.css
+        left: x - @el.width()
+        position: 'absolute'
+        right: ''
+        top: y
+
 class AxesTool extends Tool
+  @Controls: AxesControls
   major: null
   minor: null
   majorHalf: null

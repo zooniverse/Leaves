@@ -8,7 +8,7 @@ module.exports =
   line:
     fill: 'none'
     stroke: 'white'
-    'stroke-width': 4
+    'stroke-width': 2
     'arrow-start': 'diamond-wide-short'
     'arrow-end': 'diamond-wide-short'
 
