@@ -81,9 +81,9 @@ class Classifier extends BaseController
     @loader.fadeIn { queue: false }
 
   onSubjectSelect: (e, subject) =>
-    @el.toggleClass 'is-tutorial-subject', subject.metadata.tutorial?
+    @el.toggleClass 'is-tutorial-subject', subject.tutorial?
 
-    if subject.metadata.tutorial
+    if subject.tutorial
       @tutorial.start() unless @tutorial.started
     else
       @classification = new Classification {subject}
@@ -101,12 +101,12 @@ class Classifier extends BaseController
   onClickViewInfo: ->
     $body.animate {
       scrollTop: @informationSection.position().top - 110
-    }, 500, 'easing'
+    }, 500, 'swing'
 
   onClickViewGuide: ->
     $body.animate {
       scrollTop: @fieldGuideSection.position().top - 110
-    }, 500, 'easing'
+    }, 500, 'swing'
 
   onClickFavorite: ->
     if @classification?
