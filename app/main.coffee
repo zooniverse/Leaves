@@ -1,5 +1,3 @@
-{ Router } = require 'director'
-
 Api = require 'zooniverse/lib/api'
 api = new Api project: 'leaf'
 
@@ -9,14 +7,11 @@ StackOfPages = require 'stack-of-pages'
 stack = new StackOfPages
   '#/': require './controllers/home'
   '#/classify': require './controllers/classifier'
-  '#/about/*': require './controllers/about'
+  '#/science/*': require './controllers/science'
+  '#/education/*': require './controllers/education'
   '#/profile': require './controllers/profile'
 
 document.querySelector('#app').appendChild stack.el
-
-TopBar = require 'zooniverse/controllers/top-bar'
-topBar = new TopBar
-topBar.el.appendTo 'body'
 
 Footer = require 'zooniverse/controllers/footer'
 footer = new Footer
@@ -26,6 +21,10 @@ Navigation = require './controllers/navigation'
 navigation = new Navigation
 navigation.el.prependTo document.body
 
+TopBar = require 'zooniverse/controllers/top-bar'
+topBar = new TopBar
+topBar.el.appendTo navigation.el
+
 User = require 'zooniverse/models/user'
 User.fetch()
 
@@ -33,6 +32,6 @@ browserDialog  = require 'zooniverse/controllers/browserDialog'
 browserDialog.check()
 
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
-# TODO: new GoogleAnalytics account: '1234567890'
+# new GoogleAnalytics account: '1234567890'
 
 window.app = { stack, api, topBar }

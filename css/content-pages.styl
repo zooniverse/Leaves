@@ -1,0 +1,60 @@
+#app > .stack-of-pages > .science,
+#app > .stack-of-pages > .education,
+  .section
+    margin: 0 auto
+    max-width: 720px
+
+  .block-images
+    clearfix()
+    margin: 25px -50px
+    text-align: center
+
+    &.short
+
+      > *
+        max-height: 155px
+
+    > *
+      border: 3px solid white
+      box-sizing: border-box
+      max-height: 224px
+      width: 33%
+
+  .team
+
+    img
+      border-radius: 3px
+      float: left
+      margin: 0 2em 2em 0
+      max-width: 200px
+
+    .team-member
+      box-sizing: border-box
+      clearfix()
+      padding: 25px
+
+      &:nth-child(2n + 1)
+        background: rgba(black, 0.05)
+
+  img
+    border-radius: 2px
+
+    &.small
+      width: 250px
+
+    &.right
+      float: right
+      margin: 0 0 2em 2em
+
+    &.left
+      float: left
+      margin: 0 2em 2em 0
+
+  .box
+    box-sizing: border-box
+    clearfix()
+    margin: 0 -22px
+    padding: 22px
+
+    &.gray
+      background: #eee

@@ -1,54 +1,37 @@
-<h2>Image Classification</h2>
+<div class="section-header">Image Classification</div>
 
-<div class="subject-container">
-  <!-- marking surface goes here -->
+<div class="interface-container">
+  <div class="marking-surface-container">
+    <!-- marking surface goes here -->
+  </div>
 
-  <div class="classifier-actions">
-    <div class="columns pushed">
-      <div class="column one-third">
-        <div class="view-info"><i class="fa fa-map-marker"></i>Info</div>
-        <div class="view-guide"><i class="fa fa-book"></i>Guide</div>
-      </div>
-      <div class="column one-third">
-        <div class="prompt">Measure the lobules!</div>
-      </div>
-      <div class="column one-third">
-        <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
-        <button class="finish-subject">Finished</button>
+  <div class="actions-container">
+    <div class="classifier-actions">
+      <div class="columns pushed">
+        <div class="column one-third">
+          <div class="view-info"><i class="fa fa-map-marker"></i>Info</div>
+          <div class="view-guide"><i class="fa fa-book"></i>Guide</div>
+        </div>
+        <div class="column one-third">
+          <div class="prompt">Measure the lobules!</div>
+        </div>
+        <div class="column one-third">
+          <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
+          <button name="subject-action" class="action">Finished</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 
-<div class="location-and-information">
-  <h2>Location &amp; Information</h2>
-  <img src="http://placehold.it/960x200" />
-
-  <div class="metadata">
-    <div class="columns text-center">
-      <div class="column one-third">
-        <p class="faded">Coordinates</p>
-        <p class="focused">34N, -75E</p>
-      </div>
-      <div class="column one-third">
-        <p class="faded">Collector</p>
-        <p class="focused">John Doe</p>
-      </div>
-      <div class="column one-third">
-        <p class="faded">Date Collected</p>
-        <p class="focused">August 16, 2005</p>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="location-and-information"></div>
 
 <div class="field-guide">
   <h2>Field Guide</h2>
-  <p class="faded">Choose a category to get started!</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque, risus at adipiscing lobortis, nisl sem vulputate tellus, a ultricies ante orci id dui. Sed posuere tortor vitae rhoncus semper. Donec sed sagittis odio. Fusce nec bibendum massa. Curabitur pharetra ipsum sed neque condimentum, sit amet cursus tellus auctor. Nulla euismod elit sed massa interdum porttitor. Morbi at ullamcorper sem. Duis congue blandit feugiat. Nunc justo sapien, dictum eget pharetra sed, ultrices vel metus. Nam in facilisis enim.</p>
 
-  <p>Aliquam ut adipiscing ligula, non porttitor est. Suspendisse id fringilla lorem. Suspendisse euismod gravida pulvinar. Nullam dapibus dui turpis, a interdum libero porta quis. Vivamus ultrices auctor accumsan. Proin auctor massa vitae bibendum congue. Donec ultricies pellentesque rhoncus. Sed suscipit urna augue, vitae aliquet eros varius eu. Integer vitae metus euismod, luctus quam ac, molestie magna.</p>
+</div>
 
-  <p>Phasellus gravida, enim ac malesuada dignissim, tortor magna rhoncus nisi, eu vestibulum erat quam eget elit. Duis elit mauris, fermentum quis risus eu, porttitor fermentum nunc. Nunc a urna a quam laoreet auctor. Cras metus tortor, fringilla tincidunt sodales id, luctus vel neque. Maecenas convallis pellentesque nibh, vel mollis lectus. Nam tincidunt eleifend sem sit amet rhoncus. Proin a pretium augue. Sed lobortis quam nec tellus iaculis condimentum. Pellentesque sit amet sapien leo. Proin laoreet arcu quis tellus posuere eleifend. Curabitur in sem nec leo aliquet sodales.</p>
+<div class="loader">
+  <i class="fa fa-circle-o-notch fa-spin"></i>
 </div>

@@ -1,0 +1,36 @@
+<div class="section-header">Location &amp; Information</div>
+
+<% if @subject?.coords?: %>
+  <img src="http://placehold.it/960x200" />
+<% else: %>
+  <img src="./images/empty-map.jpg" />
+<% end %>
+
+<div class="metadata">
+  <div class="columns text-center">
+    <div class="column one-third">
+      <p class="faded">Coordinates</p>
+      <% if @subject?.coords?: %>
+        <p class="focused"><%- @subject.coords[0] %>, <%- @subject.coords[0] %></p>
+      <% else: %>
+        <p>n/a</p>
+      <% end %>
+    </div>
+    <div class="column one-third">
+      <p class="faded">Collector</p>
+      <% if @subject?.metadata.collector?: %>
+        <p class="focused">John Doe</p>
+      <% else: %>
+        <p>n/a</p>
+      <% end %>
+    </div>
+    <div class="column one-third">
+      <p class="faded">Date Collected</p>
+      <% if @subject?.metadata.date_collected?: %>
+        <p class="focused">August 16, 2005</p>
+      <% else: %>
+        <p>n/a</p>
+      <% end %>
+    </div>
+  </div>
+</div>

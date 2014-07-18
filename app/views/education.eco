@@ -1,0 +1,36 @@
+<ul class="sub-section-menu">
+  <li><a href="#/education" data-section="summary">Overview</a></li>
+  <li><a href="#/education/activities" data-section="activities">Activities</a></li>
+</ul>
+
+<div class="section" data-section="summary">
+  <p>Scientists and educators of <a href="http://www.fieldmuseum.org/">The Field Museum</a> (Chicago) are partnering with leaders in online Citizen Science, <a href="https://www.zooniverse.org/">Zooniverse</a> (a project of the <a href="http://www.adlerplanetarium.org/">Adler Planetarium</a>) and have a coordinated network including students and professionals at universities, city colleges and partnering high schools and middle schools to accelerate the pace of scientific discovery. The underlying theme is to connect biological research and collections with education and outreach. The project has the specific goal of engaging a broader audience; especially students (K-12 and university level) and citizen scientists to partner with our efforts in recording critical data sets from digitally rendered images.</p>
+
+  <p>Our education guides would be suitable for AP biology (junior and senior AKA 11th and 12th grade) in high school, entry level biology classes (100 level course at a university) or for a (200 level class in university).</p>
+
+  <h3>Can Collection Connection: MicroPlants be used in the classroom?</h3>
+  <p>Of course! MicroPlants is user friendly and can be used in the classroom as well as an at home assignment! Take part in scientific research anywhere and at anytime.</p>
+ 
+  <h3>How can these activities be implemented into my curriculum?</h3>
+  <p>K-12 programs: Educators from the Education Department at The Field Museum has developed lessons, activities, and virtual visits – establishing communication between your students and our MicroPlants Scientists. Every activity has a rubric that facilitates implementing them into your unit plan. These activities align with <a href="http://www.corestandards.org">Common Core</a> and <a href="http://www.nextgenscience.org">Next Generation Science Standards</a>.</p>
+
+  <p>Undergraduate level or equivalent: To help promote some ideas, several activities have been developed. These have been developed to applied to non biology majors as well as entry level biology. Some of the activities could also be used for advanced placement biology students in high school.</p>
+
+  <h3>Undergraduate students express their experience!</h3>
+  <p>"All together" Past Field Museum undergraduate interns, explain their experiences using MicroPlants as well as the ImageJ software used in some of our activities!</p>
+
+  <div class="center">
+    <iframe src="//player.vimeo.com/video/58426100" width="500" height="281" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="section" data-section="activities">
+  <h3><a href="./pdfs/biological-illustrations.pdf">Biological Illustrations.pdf</a></h3>
+  <p>Learn how to make scientific illustrations and record your observations, a great tool to help you to remember all the features of an observed specimen.</p>
+ 
+  <h3><a href="./pdfs/early-land-plants-tdoay.pdf">Early Land Plants Today.pdf</a></h3>
+  <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
+ 
+  <h3><a href="./pdfs/imagej-instructions.pdf">ImageJ Instructions.pdf</a></h3>
+  <p>ImageJ is a free program developed by the National Institute of Health (NIH) that has given the scientific community a way of generating data from images.</p>
+</div>

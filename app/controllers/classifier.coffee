@@ -11,6 +11,8 @@ tutorialSteps = require '../lib/tutorial-steps'
 { loadImage } = require '../lib/utils'
 
 AxesTool = require './tools/axes'
+ClassificationSummary = require './classification-summary'
+LocationInformation = require './location-information'
 
 $ = window.$
 $window = $(window)
@@ -25,18 +27,21 @@ class Classifier extends BaseController
 
   surface: null
   tutorial: null
+  step: 1
 
   elements:
-    '.subject-container': 'subjectContainer'
-    '.location-and-information': 'informationSection'
+    '.marking-surface-container': 'markingContainer'
+    '#location-and-information': 'informationSection'
     '.field-guide': 'fieldGuideSection'
     '.favorite-subject i': 'favoriteIcon'
+    '.loader': 'loader'
+    'button[name="subject-action"]': 'subjectButton'
 
   events:
     'click .view-info': 'onClickViewInfo'
     'click .view-guide': 'onClickViewGuide'
     'click .favorite-subject': 'onClickFavorite'
-    'click .finish-subject': 'onClickFinish'
+    'click button[name="subject-action"]': 'onClickSubjectAction'
 
   constructor: ->
     super
@@ -48,7 +53,8 @@ class Classifier extends BaseController
       height: IMAGE_HEIGHT
       width: IMAGE_WIDTH
 
-    @subjectContainer.prepend @surface.container
+    @markingContainer.prepend @surface.container
+    @loader.appendTo @markingContainer
 
     @surface.on 'create-mark', @onCreateMark
 
@@ -62,6 +68,9 @@ class Classifier extends BaseController
       first: 'welcome'
       parent: @el.get(0)
 
+    locationInformation = new LocationInformation
+    locationInformation.el.appendTo @informationSection
+
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
       Subject.next()
@@ -69,22 +78,25 @@ class Classifier extends BaseController
       selectTutorialSubject()
 
   onGettingNextSubject: =>
-    @el.addClass 'loading'
+    @loader.fadeIn { queue: false }
 
   onSubjectSelect: (e, subject) =>
     @el.toggleClass 'is-tutorial-subject', subject.metadata.tutorial?
 
     if subject.metadata.tutorial
-      # @tutorial.start() unless @tutorial.started
+      @tutorial.start() unless @tutorial.started
     else
       @classification = new Classification {subject}
 
     @surface.disable()
 
     loadImage subject.location.standard, (@currentSubjectImage) =>
+      @loader.fadeOut { queue: false }
       @surface.image.attr { src: @currentSubjectImage.src }
+
+      @subjectButton.removeClass 'disabled'
+
       @surface.enable()
-      @el.removeClass 'loading'
 
   onClickViewInfo: ->
     $body.animate {
@@ -103,15 +115,39 @@ class Classifier extends BaseController
       @favoriteIcon.toggleClass 'fa-heart', @classification.favorite
       @favoriteIcon.toggleClass 'fa-heart-o', !@classification.favorite
 
-  onClickFinish: ->
-    @classification.annotations.push @surface.marks...
-    @classification.send()
+  onClickSubjectAction: ({ currentTarget }) ->
+    @step = if @step is 1 then 2 else 1
+    $currentTarget = $(currentTarget)
+    
+    switch @step
+      when 1
+        $currentTarget.text 'Finished'
+        @nextSubject()
+      when 2
+        $currentTarget.text 'Next Image'
+        @finishSubject()
 
-  onClickNextSubject: ->
+  finishSubject: ->
+    @el.addClass 'showing-summary'
+
+    classificationSummary = new ClassificationSummary
+    classificationSummary.el.appendTo @markingContainer
+    classificationSummary.el.fadeIn()
+
+    Subject.on 'get-next', =>
+      @el.removeClass 'showing-summary'
+      classificationSummary.el.fadeOut 300, ->
+        classificationSummary.destroy()
+
+  nextSubject: ->
+    if @classification?
+      @classification.annotations.push @surface.marks...
+      @classification.send()
+
+    @subjectButton.addClass 'disabled'
     Subject.next()
 
-  onNoMoreSubjects: =>
-    @el.removeClass 'loading'
+  onNoMoreSubjects: ->
     alert 'All images have been classified!'
 
   activate: ->

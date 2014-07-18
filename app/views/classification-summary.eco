@@ -1,0 +1,21 @@
+<% Subject = require 'zooniverse/models/subject' %>
+
+<div class="classification-summary-content">
+  <h2>Measurements Recorded!</h2>
+  <p>If you want, you can discuss this on Talk or share it with the world!</p>
+  <div class="columns">
+    <div class="column one-third"><i class="fa fa-heart-o"></i>Favorite</div>
+    <div class="column one-third"><i class="fa fa-comments-o"></i>Discuss</div>
+    <div class="column one-third"><i class="fa fa-share-alt"></i>Share</div>
+  </div>
+  <% unless Subject.current.tutorial: %>
+    <% if @askForSurvey: %>
+      SURVERY LINK
+    <% else: %>
+      <p>We ask each person to mark 5 images. You have marked <%- @seenThisSession() %> so far!</p>
+    <% end %>
+  <% end %>
+  <div class="call-to-continue">
+    <p>Ready to Move on?</p>
+  </div>
+</div>

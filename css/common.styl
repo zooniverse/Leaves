@@ -59,25 +59,31 @@ $navigation-height = 86px
 .float-right
   float: right
 
+.center
+  margin: 0 auto
+  text-align: center
+
 // styling base elements
 a
   color: $green
   text-decoration: none
 
 button
-  background: $green
-  border: none
-  border-radius: 6px
-  color: white
-  cursor: pointer
-  font-size: $font-size
-  height: 50px
-  outline: none
-  padding: 0 45px
-  transition: all 0.2s ease-in-out
 
-  &:hover
-    background: darken($green, 30%)
+  &.action
+    background: $green
+    border: none
+    border-radius: 6px
+    color: white
+    cursor: pointer
+    font-size: $font-size
+    height: 50px
+    outline: none
+    padding: 0 45px
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      background: darken($green, 30%)
 
 img
   max-width: 100%
