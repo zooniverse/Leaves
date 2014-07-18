@@ -46,8 +46,6 @@ class Classifier extends BaseController
   constructor: ->
     super
 
-    @el.addClass 'loading'
-
     @surface ?= new MarkingSurface
       tool: AxesTool
       height: IMAGE_HEIGHT
@@ -70,6 +68,13 @@ class Classifier extends BaseController
 
     locationInformation = new LocationInformation
     locationInformation.el.appendTo @informationSection
+
+    @el.on StackOfPages::activateEvent, @activate
+
+  activate: =>
+    setTimeout =>
+      @tutorial.attach()
+    , 500
 
   onUserChange: (e, user) =>
     if user?.project.tutorial_done
@@ -152,9 +157,5 @@ class Classifier extends BaseController
 
   onNoMoreSubjects: ->
     alert 'All images have been classified!'
-
-  activate: ->
-    super
-    $(window).trigger 'resize'
 
 module.exports = Classifier
