@@ -1,0 +1,55 @@
+#_PROFILE_BUTTON
+  background: white
+  border: 0
+  border-radius: 5px
+  box-shadow: none
+  color: $green
+  cursor: pointer
+  font-weight: 400
+  outline: none
+  text-shadow: none
+
+  &:hover,
+  &.active
+    background: $green
+    color: white
+
+.zooniverse-profile
+
+  .sign-in-form
+    padding: 40px 0 0 0
+
+    input
+      border: 1px solid #aaa
+      box-shadow: none
+
+    .action button,
+    .no-account button
+      @extends #_PROFILE_BUTTON
+      @extends #_PROFILE_BUTTON.active
+
+    .no-account button
+      text-decoration: none
+
+  > nav button[name="turn-page"]
+    @extends #_PROFILE_BUTTON
+    font-size: 16px
+    padding: 8px 14px
+
+  .zooniverse-paginator
+    .controls button[name="page"]
+      @extends #_PROFILE_BUTTON
+      font-size: 14px
+      margin: 0 2px
+
+    .items .item
+
+      &:hover
+        background: $green
+
+      a
+        border-radius: 3px
+        border: 0
+
+        img
+          box-shadow: none
