@@ -8,6 +8,7 @@ stack = new StackOfPages
   '#/': require './controllers/home'
   '#/classify': require './controllers/classifier'
   '#/science/*': require './controllers/science'
+  '#/team': require './controllers/team'
   '#/education/*': require './controllers/education'
   '#/profile': require './controllers/profile'
 
