@@ -3,7 +3,7 @@
     <div class="column">
       <h2>What is this project?</h2>
       <p>Scientists from the Field Museum, Duke University and international researchers need your help.</p>
-      <p><em><span class="faded">Learn:</span> <a href="#/about">What is a citizen scientist?</a></em></p>
+      <p><em><span class="faded">Learn:</span> <a href="#/science">What is this project all about?</a></em></p>
     </div>
     <div class="column">
       <img src="./images/science/bryophytes-hornwort.jpg" />
@@ -16,7 +16,7 @@
     <div class="column">
       <h2>What are we asking for?</h2>
       <p>Measure a critical morphological feature, a modified leaf (lobule), from early land plants to help scientists document and describe new species to science.</p>
-      <p><em><span class="faded">Learn:</span> <a href="#/about">What is a lobule?</a></em></p>
+      <p><em><span class="faded">Learn:</span> <a href="#/science/about-bryophytes">What is a lobule?</a></em></p>
     </div>
     <div class="column">
       <img src="./images/science/fig-1.jpg" />
@@ -28,7 +28,7 @@
   <div class="columns">
     <div class="column">
       <h2>Ready to help?</h2>
-      <p>Step through the tutorial and let’s start!</p>
+      <p>Step through the tutorial and <a href="#/classify">let’s start!</a></p>
     </div>
     <div class="column">
       <img src="./images/science/why-study-liverworts.jpg" />
