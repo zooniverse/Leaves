@@ -14,8 +14,7 @@ AxesTool = require './tools/axes'
 ClassificationSummary = require './classification-summary'
 LocationInformation = require './location-information'
 
-$ = window.$
-$window = $(window)
+$ = window.jQuery
 $body = $('body')
 
 IMAGE_WIDTH = 720
@@ -72,12 +71,13 @@ class Classifier extends BaseController
     @el.on StackOfPages::activateEvent, @activate
 
   activate: =>
+    # have to wait until home page animation is done
     setTimeout =>
       @tutorial.attach()
     , 500
 
   onUserChange: (e, user) =>
-    if user?.project.tutorial_done
+    if user?.project?.tutorial_done
       Subject.next()
     else
       selectTutorialSubject()
@@ -95,9 +95,9 @@ class Classifier extends BaseController
 
     @surface.disable()
 
-    loadImage subject.location.standard, (@currentSubjectImage) =>
+    loadImage subject.location.standard, ({ src }) =>
       @loader.fadeOut { queue: false }
-      @surface.image.attr { src: @currentSubjectImage.src }
+      @surface.image.attr { src: src }
 
       @subjectButton.removeClass 'disabled'
 
