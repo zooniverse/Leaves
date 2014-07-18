@@ -127,6 +127,9 @@ class Classifier extends BaseController
         $currentTarget.text 'Next Image'
         @finishSubject()
 
+  onCreateMark: =>
+    @el.trigger 'create-mark'
+
   finishSubject: ->
     @el.addClass 'showing-summary'
 
