@@ -153,6 +153,7 @@ class Classifier extends BaseController
       @classification.send()
 
     @subjectButton.addClass 'disabled'
+    @surface.marks[0].destroy() until @surface.marks.length is 0
     Subject.next()
 
   onNoMoreSubjects: ->
