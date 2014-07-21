@@ -1,7 +1,7 @@
 <ul class="sub-section-menu">
   <li><a href="#/science" data-section="summary">Overview</a></li>
   <li><a href="#/science/about-bryophytes" data-section="about-bryophytes">About Bryophytes</a></li>
-  <li><a href="#/science/bryophyte-importance" data-section="bryophyte-importance">Bryophytes Importance</a></li>
+  <li><a href="#/science/bryophyte-importance" data-section="bryophyte-importance">Importance of Bryophytes</a></li>
   <li><a href="#/science/origin" data-section="origin">Images Origin</a></li>
 </ul>
 
@@ -58,9 +58,9 @@
   </div>
 
   <div class="box">
-    <img src="./images/science/bryophytes-plant-parts.jpg" class="small right" />
     <h3>What are you looking at? What is a lobule?</h3>
     <p>The images you are classifying are of single stems of a plant. Even though these plants are microscopic in size, they are very complex. A lobule is simply a special name for a modified leaf structure. The leaf in the genus Frullania is actually comprised of three parts, a main leaf that appears flat, a lobule that is often a sac-like structure, and a small structure called a stylus.</p>
+    <div class="center"><img src="./images/science/bryophytes-plant-parts.jpg" /></div>
   </div>
 </div>
 
