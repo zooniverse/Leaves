@@ -1,12 +1,12 @@
-<div id="user-stats" v-class="hidden-unless-user: !user">
+<div id="user-stats" v-if="user">
   <div class="user-name">Hello, {{ user.name }}</div>
   <div class="user-metric-block">
     <div class="user-metric-title">Images Marked</div>
-    <div class="user-metric">{{ user.classification_count }}</div>
+    <div class="user-metric">{{ user.project.classification_count || 0 }}</div>
   </div>
   <div class="user-metric-block">
     <div class="user-metric-title">Favorite Count</div>
-    <div class="user-metric">{{ user.favorite_count || 0 }}</div>
+    <div class="user-metric">{{ user.project.favorite_count || 0 }}</div>
   </div>
 </div>
 

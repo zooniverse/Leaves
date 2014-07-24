@@ -3,6 +3,8 @@ Profile = require 'zooniverse/controllers/profile'
 User = require 'zooniverse/models/user'
 Vue = require 'vue'
 
+$ = window.jQuery
+
 class ProfilePage extends BaseController
   className: 'profile page'
   template: require '../views/profile'
@@ -12,16 +14,20 @@ class ProfilePage extends BaseController
 
   constructor: ->
     super
-    
-    Vue.config({ debug: true })
+
     profileVue = new Vue
       el: @el.get(0)
-      data: user: User.current
+      data:
+        user: false
 
     @profile = new Profile
     @zooniverseProfile.append @profile.el
 
-    User.on 'change', ->
-      profileVue.$set 'user', User.current
+    User.on 'change', (e, user) ->
+      # dislike
+      if user
+        profileVue.$set 'user', $.extend {}, user
+      else
+        profileVue.$set 'user', false
 
 module.exports = ProfilePage
