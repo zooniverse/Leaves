@@ -29,9 +29,6 @@ topBar.el.appendTo navigation.el
 User = require 'zooniverse/models/user'
 User.fetch()
 
-browserDialog  = require 'zooniverse/controllers/browserDialog'
-browserDialog.check()
-
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 # new GoogleAnalytics account: '1234567890'
 

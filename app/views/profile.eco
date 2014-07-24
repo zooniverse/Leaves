@@ -1,0 +1,13 @@
+<div id="user-stats" v-class="hidden-unless-user: !user">
+  <div class="user-name">Hello, {{ user.name }}</div>
+  <div class="user-metric-block">
+    <div class="user-metric-title">Images Marked</div>
+    <div class="user-metric">{{ user.classification_count }}</div>
+  </div>
+  <div class="user-metric-block">
+    <div class="user-metric-title">Favorite Count</div>
+    <div class="user-metric">{{ user.favorite_count || 0 }}</div>
+  </div>
+</div>
+
+<div id="zooniverse-profile"></div>
