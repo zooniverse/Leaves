@@ -6,7 +6,7 @@
       <p><em><span class="faded">Learn:</span> <a href="#/science">What is this project all about?</a></em></p>
     </div>
     <div class="column">
-      <img src="./images/science/bryophytes-hornwort.jpg" />
+      <img src="./images/gifs/plant-steps.gif" />
     </div>
   </div>
 </div>
@@ -19,19 +19,13 @@
       <p><em><span class="faded">Learn:</span> <a href="#/science/about-bryophytes">What is a lobule?</a></em></p>
     </div>
     <div class="column">
-      <img src="./images/science/fig-1.jpg" />
+      <img src="./images/gifs/plant-measure.gif" />
     </div>
   </div>
 </div>
 
-<div class="home-section">
-  <div class="columns">
-    <div class="column">
-      <h2>Ready to help?</h2>
-      <p>Step through the tutorial and <a href="#/classify">let’s start!</a></p>
-    </div>
-    <div class="column">
-      <img src="./images/science/why-study-liverworts.jpg" />
-    </div>
-  </div>
+<div class="home-section center">
+  <h2>Ready to help?</h2>
+  <p>Step through the tutorial and <a href="#/classify">let’s start!</a></p>
+  <a href="#/classify"><button class="action">Get Started</button></a>
 </div>
