@@ -1,5 +1,6 @@
 MarkingSurface = require 'marking-surface'
 {Tutorial} = require 'zootorial'
+Vue = require 'vue'
 
 BaseController = require 'zooniverse/controllers/base-controller'
 User = require 'zooniverse/models/user'
@@ -12,7 +13,6 @@ tutorialSteps = require '../lib/tutorial-steps'
 
 AxesTool = require './tools/axes'
 ClassificationSummary = require './classification-summary'
-LocationInformation = require './location-information'
 
 $ = window.jQuery
 $html = $(document.querySelector('body').parentNode)
@@ -67,8 +67,24 @@ class Classifier extends BaseController
       first: 'welcome'
       parent: @el.get(0)
 
-    locationInformation = new LocationInformation
-    locationInformation.el.appendTo @informationSection
+    # meh
+    @informationVM = new Vue
+      el: @informationSection.get(0)
+      template: require('../views/location-information')()
+      data: subject: {}
+      methods:
+        formatCoords: ->
+          return unless @hasCoords
+          coords = (parseFloat(coord).toFixed(2) for coord in @subject.coords)
+          "#{ coords[0] },#{ coords[1] }"
+      computed:
+        hasCoords: ->
+          @subject.coords
+          @subject?.coords?.length is 2 and !(@subject?.coords?[0] is 0)
+        staticMapUrl: ->
+          "http://maps.googleapis.com/maps/api/staticmap?center=#{ @formatCoords() }&zoom=7&size=640x200"
+        formattedCoords: ->
+          if @hasCoords then @formatCoords() else "n/a"
 
     @el.on StackOfPages::activateEvent, @activate
 
@@ -103,6 +119,7 @@ class Classifier extends BaseController
 
       @subjectButton.removeClass 'disabled'
 
+      @informationVM.$set 'subject', subject.toJSON()
       @surface.enable()
 
   onClickViewInfo: ->

@@ -1,36 +1,24 @@
 <div class="section-header">Location &amp; Information</div>
 
-<% if @subject?.coords?: %>
-  <img src="http://placehold.it/960x200" />
-<% else: %>
-  <img src="./images/empty-map.jpg" />
-<% end %>
+<!-- got to be a better way here -->
+<div class="center">
+  <img v-if="hasCoords" v-attr="src: staticMapUrl" />
+  <img v-if="!hasCoords" v-attr="src: './images/empty-map.jpg'" />
+</div>
 
 <div class="metadata">
-  <div class="columns text-center">
+  <div class="columns center">
     <div class="column one-third">
       <p class="faded">Coordinates</p>
-      <% if @subject?.coords?: %>
-        <p class="focused"><%- @subject.coords[0] %>, <%- @subject.coords[0] %></p>
-      <% else: %>
-        <p>n/a</p>
-      <% end %>
+      <p v-class="focused: hasCoords" v-text="formattedCoords"></p>
     </div>
     <div class="column one-third">
       <p class="faded">Collector</p>
-      <% if @subject?.metadata.collector?: %>
-        <p class="focused">John Doe</p>
-      <% else: %>
-        <p>n/a</p>
-      <% end %>
+      <p v-class="focused: subject.metadata.collector">{{ subject.metadata.collector ? subject.metadata.collector : 'n/a' }}</p>
     </div>
     <div class="column one-third">
-      <p class="faded">Date Collected</p>
-      <% if @subject?.metadata.date_collected?: %>
-        <p class="focused">August 16, 2005</p>
-      <% else: %>
-        <p>n/a</p>
-      <% end %>
+      <p class="faded">Other Comments</p>
+      <p v-class="focused: subject.metadata.comments">{{ subject.metadata.comments ? subject.metadata.comments : 'n/a' }}</p>
     </div>
   </div>
 </div>
