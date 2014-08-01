@@ -8,7 +8,7 @@
     "zooniverse": "~0.7.1",
     "publisssh": "^0.2.5",
     "haw": "^0.4.9",
-    "stack-of-pages": "^0.1.5",
+    "stack-of-pages": "git://github.com/chrissnyder/stack-of-pages.git",
     "vue": "^0.10.5"
   },
   "scripts": {

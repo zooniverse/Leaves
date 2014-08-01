@@ -1,4 +1,4 @@
-<div class="home-section">
+<div class="section">
   <div class="columns">
     <div class="column">
       <h2>What is this project?</h2>
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="home-section">
+<div class="section">
   <div class="columns">
     <div class="column">
       <h2>What are we asking for?</h2>
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="home-section center">
+<div class="section center">
   <h2>Ready to help?</h2>
   <p>Step through the tutorial and <a href="#/classify">let’s start!</a></p>
   <a href="#/classify"><button class="action">Get Started</button></a>

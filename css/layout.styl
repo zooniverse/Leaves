@@ -1,7 +1,6 @@
 $page-width = 1000px
 
 body
-  background: white
   color: #777
   font-family: "proxima-nova",sans-serif
   font-size: 16px
@@ -9,29 +8,16 @@ body
   padding: $navigation-height 0 0 0
 
 #app
+  background: white
+  margin: 0 auto
+  max-width: 960px
 
-  .stack-of-pages
-    background: white
-    margin: 0 auto
-    width: 960px
-
-  > .page
-    display: none
-    position: relative
-
-    &.active
-      display: block
-
-  .section
-    display: none
-
-    &.active
-      display: block
+.stack-of-pages
+  clearfix()
 
 .sub-section-menu
   @extends #_SEMANTIC_LIST
   clearfix()
-  margin: 80px 0 0 0
 
   li
     float: left

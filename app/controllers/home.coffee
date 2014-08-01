@@ -3,7 +3,7 @@ StackOfPages = require 'stack-of-pages'
 $ = window.jQuery
 
 class Home extends BaseController
-  className: 'home page content'
+  className: 'home page'
   template: require '../views/home-page'
 
   headerSlideDelay: 150
