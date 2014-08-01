@@ -1,8 +1,6 @@
 Api = require 'zooniverse/lib/api'
 api = new Api project: 'leaf'
 
-window.app = app = {}
-
 StackOfPages = require 'stack-of-pages'
 stack = new StackOfPages
   '#/': require './controllers/home'
