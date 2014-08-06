@@ -1,5 +1,7 @@
 GhostMouse = require 'ghost-mouse'
-ghostMouse = new GhostMouse events: false
+ghostMouse = new GhostMouse
+  events: false
+  swing: 0
 
 module.exports =
   welcome:
