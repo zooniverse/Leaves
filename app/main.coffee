@@ -1,5 +1,5 @@
 Api = require 'zooniverse/lib/api'
-api = new Api project: 'leaf'
+api = new Api project: 'leaf', host: 'http://localhost:3000'
 
 StackOfPages = require 'stack-of-pages'
 stack = new StackOfPages
