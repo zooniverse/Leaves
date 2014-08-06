@@ -12,7 +12,7 @@
     "vue": "^0.10.5"
   },
   "scripts": {
-    "start": "haw serve",
+    "start": "haw serve --port 6002",
     "deploy": "haw build && publisssh ./build microplants.zooniverse.org && trash ./build",
     "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && trash ./build",
     "deploy-locale": "seed-translation --project asteroid --env production"
