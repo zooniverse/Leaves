@@ -163,6 +163,7 @@ class Classifier extends BaseController
     @el.addClass 'showing-summary'
 
     classificationSummary = new ClassificationSummary
+      classification: @classification
     classificationSummary.el.appendTo @markingContainer
     classificationSummary.el.fadeIn()
 

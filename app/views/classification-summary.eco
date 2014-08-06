@@ -4,9 +4,22 @@
   <h2>Measurements Recorded!</h2>
   <p>If you want, you can discuss this on Talk or share it with the world!</p>
   <div class="columns">
-    <div class="column one-third"><i class="fa fa-heart-o"></i>Favorite</div>
-    <div class="column one-third"><i class="fa fa-comments-o"></i>Discuss</div>
-    <div class="column one-third"><i class="fa fa-share-alt"></i>Share</div>
+    <% if @classification: %>
+      <div class="column one-third">
+        <div id="favorite" class="action">
+          <i id="favorite-icon" class="fa fa-heart-o"></i>Favorite
+        </div>
+      </div>
+    <% end %>
+    <div class="column one-third">
+      <div id="discuss" class="action">
+        <a href="<%- Subject.current.talkHref() %>"><i class="fa fa-comments-o"></i>Discuss</a>
+      </div>
+    </div>
+    <div class="column one-third">
+      <div id="share" class="action">
+        <i class="fa fa-share-alt"></i>Share</div>
+      </div>
   </div>
   <% unless Subject.current.tutorial: %>
     <% if @askForSurvey: %>
