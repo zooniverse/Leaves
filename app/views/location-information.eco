@@ -2,7 +2,9 @@
 
 <!-- got to be a better way here -->
 <div class="center">
-  <img v-if="hasCoords" v-attr="src: staticMapUrl" />
+  <div v-if="hasCoords">
+    <a v-attr="href: mapLink" target="_blank"><img v-attr="src: staticMapUrl" /></a>
+  </div>
   <img v-if="!hasCoords" v-attr="src: './images/empty-map.jpg'" />
 </div>
 
