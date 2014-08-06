@@ -14,8 +14,8 @@ module.exports =
     content: '''
       We are looking through a microscope at a section of the underside of a plant.
       The rounded bulges, representing sac-like objects growing from either side are actually tiny modified leaves!
-      Measuring the length and width of these modified leaves (lobules) can tell us what kind of plant we have.
-      Let's start by marking the length of the first modified leaf.
+      Measuring the length and width of these modified leaves (microleaves) can tell us what kind of plant we have.
+      Let's start by marking the length of the first microleaf.
     '''
     attachment: ['center', 'bottom', '.marking-surface', 'center', 'bottom']
     block: '.subject-container, button[name="next-step"]'
