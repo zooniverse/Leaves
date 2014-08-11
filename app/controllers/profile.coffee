@@ -18,13 +18,12 @@ class ProfilePage extends BaseController
     profileVue = new Vue
       el: @el.get(0)
       data:
-        user: User.current
+        user: {}
 
     @profile = new Profile
     @zooniverseProfile.append @profile.el
 
     User.on 'change', (e, user) ->
-      profileVue.$data = user: User.current
       # dislike
       if user
         profileVue.$set 'user', $.extend {}, user
