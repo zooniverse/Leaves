@@ -29,25 +29,23 @@
 
 <div class="field-guide">
   <div class="section-header">Image Classification</div>
-  <div class="section active">
-    <h3>Oops! I made a mistake. How do I undo a mistake?</h3>
-    <p>First off, don’t panic! Simply, select the “X” that appears in the grey box after each measurement to delete that set of measures. In any event, if you make a mistake, we will be able to sort that out when all the data is collected.</p>
+  <h3>Oops! I made a mistake. How do I undo a mistake?</h3>
+  <p>First off, don’t panic! Simply, select the “X” that appears in the grey box after each measurement to delete that set of measures. In any event, if you make a mistake, we will be able to sort that out when all the data is collected.</p>
 
-    <h3>How do I differentiate a microleaf from the rest of the image?</h3>
-    <p>Usually the structures in clear focus within the image will be the microleaves; it will generally be toward the center of the image. We will measure only microleaves (modified leaves) that are clearly focused and fall entirely within the image. Here are some pictures to help guide you.</p>
+  <h3>How do I differentiate a microleaf from the rest of the image?</h3>
+  <p>Usually the structures in clear focus within the image will be the microleaves; it will generally be toward the center of the image. We will measure only microleaves (modified leaves) that are clearly focused and fall entirely within the image. Here are some pictures to help guide you.</p>
 
-    <div class="block-images">
-      <img src="./images/faq/ex-3.jpg" />
-      <img src="./images/faq/ex-4.jpg" />
-      <img src="./images/faq/ex-1.jpg" />
-    </div>
-
-    <h3>How many microleaves are on each image?</h3>
-    <p>Each image will have at least one microleaf; however, some images will have several.</p>
-
-    <h3>The app is not loading, what should I do?</h3>
-    <p>The website may be affected by your connection speed. If you’re able to connect to the internet, check to see if you’re using the latest version of the recommended browser (Google Chrome of Firefox.)</p>
+  <div class="block-images">
+    <img src="./images/faq/ex-3.jpg" />
+    <img src="./images/faq/ex-4.jpg" />
+    <img src="./images/faq/ex-1.jpg" />
   </div>
+
+  <h3>How many microleaves are on each image?</h3>
+  <p>Each image will have at least one microleaf; however, some images will have several.</p>
+
+  <h3>The app is not loading, what should I do?</h3>
+  <p>The website may be affected by your connection speed. If you’re able to connect to the internet, check to see if you’re using the latest version of the recommended browser (Google Chrome of Firefox.)</p>
 </div>
 
 <div class="loader">
