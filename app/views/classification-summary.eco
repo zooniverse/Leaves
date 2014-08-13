@@ -1,25 +1,31 @@
 <% Subject = require 'zooniverse/models/subject' %>
+<% t = require 't7e' %>
 
 <div class="classification-summary-content">
-  <h2>Measurements Recorded!</h2>
-  <p>If you want, you can discuss this on Talk or share it with the world!</p>
+  <%- t 'h2', 'classifer.summary.header' %>
+  <%- t 'p', 'classifier.summary.excerpt' %>
   <div class="columns">
     <% if @classification: %>
       <div class="column one-third">
         <div id="favorite" class="action">
-          <i id="favorite-icon" class="fa fa-heart-o"></i>Favorite
+          <i id="favorite-icon" class="fa fa-heart-o"></i>
+          <%- t 'span', 'classifier.summary.favorite' %>
         </div>
       </div>
     <% end %>
     <div class="column one-third">
       <div id="discuss" class="action">
-        <a href="<%- Subject.current.talkHref() %>"><i class="fa fa-comments-o"></i>Discuss</a>
+        <a href="<%- Subject.current.talkHref() %>">
+          <i class="fa fa-comments-o"></i>
+          <%- t 'span', 'classifier.summary.discuss' %>
+        </a>
       </div>
     </div>
-    <div class="column one-third">
+    <!-- <div class="column one-third">
       <div id="share" class="action">
         <i class="fa fa-share-alt"></i>Share</div>
       </div>
+    </div> -->
   </div>
   <% unless Subject.current.tutorial: %>
     <% if @askForSurvey: %>
@@ -29,6 +35,6 @@
     <% end %>
   <% end %>
   <div class="call-to-continue">
-    <p>Ready to Move on?</p>
+    <%- t 'p', 'classifier.summary.readyToContinue' %>
   </div>
 </div>

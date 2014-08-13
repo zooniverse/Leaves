@@ -1,4 +1,6 @@
-<div class="section-header">Image Classification</div>
+<% t = require 't7e' %>
+
+<%- t 'div.section-header', 'classifier.header' %>
 
 <div class="interface-container">
   <div class="marking-surface-container">
@@ -9,15 +11,21 @@
     <div class="classifier-actions">
       <div class="columns pushed">
         <div class="column one-third">
-          <div class="view-info"><i class="fa fa-map-marker"></i>Info</div>
-          <div class="view-guide"><i class="fa fa-book"></i>Guide</div>
+          <div class="view-info">
+            <i class="fa fa-map-marker"></i>
+            <%- t 'span', 'classifier.info' %>
+          </div>
+          <div class="view-guide">
+            <i class="fa fa-book"></i>
+            <%- t 'span', 'classifier.guide' %>
+          </div>
         </div>
         <div class="column one-third">
-          <div class="prompt">Measure the Microleaves!</div>
+          <%- t 'div.prompt', 'classifier.prompt' %>
         </div>
         <div class="column one-third">
           <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
-          <button name="subject-action" class="action">Finished</button>
+          <%- t 'button.action', 'classifier.finished', name: 'subject-action' %>
         </div>
       </div>
     </div>

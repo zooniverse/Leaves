@@ -1,23 +1,8 @@
+<% t = require 't7e' %>
+
 <div class="block-images">
   <img src="./images/science/origin-1.jpg" />
   <img src="./images/science/origin-2.jpg" />
 </div>
 
-<h3>Where are these images from?</h3>
-<p>Liverworts grow all over the world, but these Frullania images have typically been collected from the southern hemisphere in areas like Fiji, New Caledonia, and Chile. Specimens were collected in the field, brought back to the museum, and painstakingly mounted onto slides. From there, they imaged with a microscope by our many interns. Images were taken by interns at the Field Museum from Northeastern Illinois University, DePaul University, Harold Washington Chicago City College, and The Ohio State University. You might be the first person ever to study and analyze a particular image!</p>
-
-<div class="block-images short">
-  <img src="./images/science/origin-3.jpg" />
-  <img src="./images/science/origin-4.jpg" />
-  <img src="./images/science/origin-5.jpg" />
-</div>
-
-<h3>Where have we collected?</h3>
-<p>The scientists involved with the MicroPlants project have collected all over the world! The pictures you measure represent countless hours of plane, car and boat rides to various collection sites to gather data.</p>
-
-<p>Explore Fiji with scientists from The Field Museum! Watch as they explain climate change as well as Fiji’s varying habitats. Discover the huge role that bryophytes plants play in the ecosystem.</p>
-
-<div class="center">
-  <iframe src="//player.vimeo.com/video/33755995" width="600" height="320" frameborder="0" allowfullscreen></iframe>
-</div>
- 
+<%- t 'div', 'science.content.origin' %>

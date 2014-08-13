@@ -1,6 +1,7 @@
-<div class="section-header">Location &amp; Information</div>
+<% t = require 't7e' %>
 
-<!-- got to be a better way here -->
+<%- t 'div.section-header', 'classifier.metadata.header' %>
+
 <div class="center">
   <div v-if="hasCoords">
     <a v-attr="href: mapLink" target="_blank"><img v-attr="src: staticMapUrl" /></a>
@@ -11,15 +12,15 @@
 <div class="metadata">
   <div class="columns center">
     <div class="column one-third">
-      <p class="faded">Coordinates</p>
+      <%- t 'p.faded', 'classifier.metadata.coordinates' %>
       <p v-class="focused: hasCoords" v-text="formattedCoords"></p>
     </div>
     <div class="column one-third">
-      <p class="faded">Collector</p>
+      <%- t 'p.faded', 'classifier.metadata.collector' %>
       <p v-class="focused: subject.metadata.collector">{{ subject.metadata.collector ? subject.metadata.collector : 'n/a' }}</p>
     </div>
     <div class="column one-third">
-      <p class="faded">Other Comments</p>
+      <%- t 'p.faded', 'classifier.metadata.comments' %>
       <p v-class="focused: subject.metadata.comments">{{ subject.metadata.comments ? subject.metadata.comments : 'n/a' }}</p>
     </div>
   </div>

@@ -1,12 +1,2 @@
-<p>Scientists and educators at <a href="http://www.fieldmuseum.org/">The Field Museum (Chicago)</a> partnered with Citizen Science and Zooniverse at the <a href="http://www.adlerplanetarium.org/">Adler Planetarium</a> have coordinated a network of students and professionals at universities, city colleges, high schools, and middle schools to accelerate the pace of scientific discovery. The underlying theme is to connect biological research and collections with education and outreach. The project has the specific goal of engaging a broader audience, especially students (K-12 and university level) and citizen scientists to partner with our efforts in recording critical data sets from digitally rendered images. Our education guides are suitable for various classes and majors. </p>
-
-<h3>Can Collection Connection: MicroPlants be used in the classroom?</h3>
-<p>Of course! MicroPlants is user friendly and can be used in the classroom as well as an at home assignment! Take part in scientific research anywhere and at anytime.</p>
-
-<h3>How can these activities be implemented into my curriculum?</h3>
-<p>K-12 programs: Educators from the Education Department at The Field Museum have developed lessons, activities, and virtual visits – establishing communication between your students and our MicroPlants Scientists. Every activity has a rubric that facilitates implementing them into your unit plan. These activities align with <a href="http://www.corestandards.org">Common Core</a> and <a href="http://www.nextgenscience.org">Next Generation Science Standards</a>.</p>
-
-<p>Undergraduate level or equivalent: To help promote ideas, several activities have been developed and applied to non biology as well as entry level biology majors. Some of the activities could also be used for advanced placement biology students in high school.</p>
-
-<h3>Undergraduate students express their experience!</h3>
-<p>"All together" Past Field Museum undergraduate interns, explain their experiences using MicroPlants as well as the ImageJ software used in some of our activities!</p>
+<% t = require 't7e' %>
+<%- t 'div', 'education.content.overview' %>

@@ -1,10 +1,12 @@
-<h1>Science</h1>
+<% t = require 't7e' %>
+
+<%- t 'h1', 'science.header' %>
 <ul class="sub-section-menu">
-  <li><a href="#/science">Overview</a></li>
-  <li><a href="#/science/about-bryophytes">About Bryophytes</a></li>
-  <li><a href="#/science/bryophyte-importance">Importance of Bryophytes</a></li>
-  <li><a href="#/science/origin">Images Origin</a></li>
-  <li><a href="#/science/how-can-i-help">How can I help?</a></li>
+  <li><%- t 'a', 'science.navigation.overview', href: '#/science' %></li>
+  <li><%- t 'a', 'science.navigation.aboutBryophytes', href: '#/science/about-bryophytes' %></li>
+  <li><%- t 'a', 'science.navigation.bryophyteImportance', href: '#/science/bryophyte-importance' %></li>
+  <li><%- t 'a', 'science.navigation.origin', href: '#/science/origin' %></li>
+  <li><%- t 'a', 'science.navigation.howCanIHelp', href: '#/science/how-can-i-help' %></li>
 </ul>
 
 <div id="science-stack"></div>

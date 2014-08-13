@@ -1,11 +1,16 @@
+<% t = require 't7e' %>
+
 <div id="user-stats" v-if="user">
-  <div class="user-name">Hello, {{ user.name }}</div>
+  <div class="user-name">
+    <%- t 'span', 'profile.hello' %>
+    {{ user.name }}
+  </div>
   <div class="user-metric-block">
-    <div class="user-metric-title">Images Marked</div>
+    <%- t 'div.user-metric-title', 'profile.imagesMarked' %>
     <div class="user-metric">{{ user.project.classification_count || 0 }}</div>
   </div>
   <div class="user-metric-block">
-    <div class="user-metric-title">Favorite Count</div>
+    <%- t 'div.user-metric-title', 'profile.favoriteCount' %>
     <div class="user-metric">{{ user.project.favorite_count || 0 }}</div>
   </div>
 </div>

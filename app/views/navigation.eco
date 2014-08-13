@@ -1,11 +1,13 @@
+<% t = require 't7e' %>
+
 <ul>
-  <li><a href="#/" class="logo">MicroPlants</a></li>
-  <li><a href="#/classify">Classify</a></li>
-  <li><a href="#/science">Science</a></li>
-  <li><a href="#/team">Team</a></li>
-  <li><a href="#/education">Education</a></li>
-  <li><a href="#/profile">Profile</a></li>
-  <li><a href="#/TODO">Discuss</a></li>
-  <li><a href="http://microplants.wordpress.com/">Blog</a></li>
+  <li><%- t 'a.logo', 'navigation.home', href: '#/' %></li>
+  <li><%- t 'a', 'navigation.classify', href: '#/classify' %></li>
+  <li><%- t 'a', 'navigation.science', href: '#/science' %></li>
+  <li><%- t 'a', 'navigation.team', href: '#/team' %></li>
+  <li><%- t 'a', 'navigation.education', href: '#/education' %></li>
+  <li><%- t 'a', 'navigation.profile', href: '#/profile' %></li>
+  <li><%- t 'a', 'navigation.discuss', href: '#/discuss' %></li>
+  <li><%- t 'a', 'navigation.blog', href: 'http://microplants.wordpress.com/' %></li>
   <li id="dark-mode-toggle"><i class="fa fa-lightbulb-o"></i></li>
 </ul>

@@ -4,4 +4,10 @@ class Team extends BaseController
   className: 'team page'
   template: require '../views/team'
 
+  snakerize: (displayName) ->
+    displayName.replace /\s/g, '-'
+
+  keyerize: (displayName) ->
+    displayName.split(' ').pop().toLowerCase()
+
 module.exports = Team

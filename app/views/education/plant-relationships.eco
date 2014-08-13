@@ -1,1 +1,2 @@
-<p>Bryophytes, specifically liverworts such as Frullania, are considered the earliest land plants. Researchers at The Field Museum are creating a working phylogeny of known species and discovering new species all over the world. Early land plants are environmental indicators. Because of their small size, liverworts respond quickly to environmental and ecological change. They are potential indicators of climate change, assist in assessing the overall “health” of forests, and detect heavy metals and pollution in the atmosphere.</p>
+<% t = require 't7e' %>
+<%- t 'div', 'education.content.plantRelationships' %>

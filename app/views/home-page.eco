@@ -1,9 +1,11 @@
+<% t = require 't7e' %>
+
 <div class="section">
   <div class="columns">
     <div class="column">
-      <h2>What is this project?</h2>
-      <p>Scientists from the Field Museum, Duke University and international researchers need your help.</p>
-      <p><em><span class="faded">Learn:</span> <a href="#/science">What is this project all about?</a></em></p>
+      <%- t 'h2', 'home.firstBlock.header' %>
+      <%- t 'p', 'home.firstBlock.excerpt' %>
+      <%- t 'p', 'home.firstBlock.link' %>
     </div>
     <div class="column">
       <div class="animations plant-steps"></div>
@@ -14,9 +16,9 @@
 <div class="section">
   <div class="columns">
     <div class="column">
-      <h2>What are we asking for?</h2>
-      <p>Measure a critical morphological feature, a modified leaf (microleaf), from early land plants to help scientists document and describe new species to science.</p>
-      <p><em><span class="faded">Learn:</span> <a href="#/science/about-bryophytes">What is a microleaf?</a></em></p>
+      <%- t 'h2', 'home.secondBlock.header' %>
+      <%- t 'p', 'home.secondBlock.excerpt' %>
+      <%- t 'p', 'home.secondBlock.link' %>
     </div>
     <div class="column">
       <div class="animations plant-measure"></div>
@@ -25,7 +27,8 @@
 </div>
 
 <div class="section center">
-  <h2>Ready to help?</h2>
-  <p>Step through the tutorial and <a href="#/classify">let’s start!</a></p>
-  <a href="#/classify"><button class="action">Get Started</button></a>
+  <%- t 'h2', 'home.thirdBlock.header' %>
+  <%- t 'p', 'home.thirdBlock.excerpt' %>
+  <%- t 'p', 'home.thirdBlock.link' %>
+  <a href="#/classify"><%- t 'button.action', 'home.thirdBlock.callToAction' %></a>
 </div>

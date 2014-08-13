@@ -2,5 +2,6 @@
 /node_modules
 /public/application.*
 /public/subjects
+/public/translations
 /test/public/specs.js
 npm-debug.log

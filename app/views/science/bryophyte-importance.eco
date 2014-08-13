@@ -1,7 +1,5 @@
-<img src="./images/science/why-study-habitat.jpg" class="small right" />
-<h2>Why Study Bryophytes</h2>
-<h3>Why are bryophytes important?</h3>
-<p>Together, bryophytes are the second largest group of land plants after flowering plants, and are pivotal in our understanding of early land plant evolution. Bryophytes are an important component of the vegetation in many regions of the world, constituting a major part of the biodiversity in moist forest, wetlands, mountain, and tundra ecosystems. Liverworts and mosses offer microhabitats that are critical to the survival of a tremendous diversity of organisms such as single-celled eukaryotes, protozoa, and numerous groups of invertebrates. Their structural contribution to levels of diversity might be as significant as that of vascular plants, albeit at a smaller scale.</p>
+<% t = require 't7e' %>
 
-<img src="./images/science/why-study-habitat-2.jpg" class="small left" />
-<p>Liverworts, in concert with mosses and hornworts, play a significant role in the global carbon budget and CO2 exchange, plant succession, net production and phytomass, nutrient cycling, and water retention. These plants also are important environmental and ecological indicators and have been used as indicators of past climate change, to validate climate models, and are potential indicators of global warming. Chemical compounds extracted from liverworts also exhibit important biological activities. For example, chemical extracts derived from Frullania species have anti-microbial, anti-fungal, cytotoxic, insect and muscle relaxing activity.</p>
+<img src="./images/science/why-study-habitat.jpg" class="small right" />
+
+<%- t 'div', 'science.content.bryophyteImportance' %>
