@@ -5,7 +5,7 @@ class Team extends BaseController
   template: require '../views/team'
 
   snakerize: (displayName) ->
-    displayName.replace /\s/g, '-'
+    displayName.replace(/\s/g, '-').toLowerCase()
 
   keyerize: (displayName) ->
     displayName.split(' ').pop().toLowerCase()
