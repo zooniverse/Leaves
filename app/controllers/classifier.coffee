@@ -15,7 +15,6 @@ AxesTool = require './tools/axes'
 ClassificationSummary = require './classification-summary'
 
 $ = window.jQuery
-$html = $(document.querySelector('body').parentNode)
 $body = $('body')
 
 IMAGE_WIDTH = 720
@@ -41,7 +40,6 @@ class Classifier extends BaseController
     'click .view-info': 'onClickViewInfo'
     'click .view-guide': 'onClickViewGuide'
     'click .favorite-subject': 'onClickFavorite'
-    'click .dark-mode-toggle': 'onClickDarkModeToggle'
     'click button[name="subject-action"]': 'onClickSubjectAction'
 
   constructor: ->
@@ -140,9 +138,6 @@ class Classifier extends BaseController
 
       @favoriteIcon.toggleClass 'fa-heart', @classification.favorite
       @favoriteIcon.toggleClass 'fa-heart-o', !@classification.favorite
-
-  onClickDarkModeToggle: ->
-    $html.toggleClass 'dark-mode'
 
   onClickSubjectAction: ({ currentTarget }) ->
     @step = if @step is 1 then 2 else 1

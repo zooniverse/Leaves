@@ -16,7 +16,6 @@
           <div class="prompt">Measure the Microleaves!</div>
         </div>
         <div class="column one-third">
-          <div class="dark-mode-toggle"><i class="fa fa-lightbulb-o"></i></div>
           <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
           <button name="subject-action" class="action">Finished</button>
         </div>

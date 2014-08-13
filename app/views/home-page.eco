@@ -6,7 +6,7 @@
       <p><em><span class="faded">Learn:</span> <a href="#/science">What is this project all about?</a></em></p>
     </div>
     <div class="column">
-      <img src="./images/gifs/plant-steps.gif" />
+      <div class="animations plant-steps"></div>
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
       <p><em><span class="faded">Learn:</span> <a href="#/science/about-bryophytes">What is a microleaf?</a></em></p>
     </div>
     <div class="column">
-      <img src="./images/gifs/plant-measure.gif" />
+      <div class="animations plant-measure"></div>
     </div>
   </div>
 </div>

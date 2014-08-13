@@ -7,4 +7,5 @@
   <li><a href="#/profile">Profile</a></li>
   <li><a href="#/TODO">Discuss</a></li>
   <li><a href="#/TODO">Blog</a></li>
+  <li id="dark-mode-toggle"><i class="fa fa-lightbulb-o"></i></li>
 </ul>
