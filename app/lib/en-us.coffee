@@ -198,7 +198,7 @@ module.exports =
         Lauren Hasan is the Project Coordinator on the MicroPlants project, having been involved with data analysis, educational brainstorming, public outreach, and organizing feedback for the development of the webtool. She has been at the Field Museum for 1 year and is working on her M.S. from Northwestern University in Health Communications. She has earned a double bachelors from the University of Illinois-Chicago in Biology and Psychology in 2013. She enjoys spending time with her family as well as running in marathons all over the country.
         """
 
-      larraín: """
+      larrain: """
         Juan Larraín is a Chilean bryologist graduated from Universidad de Concepción, Chile, specializing in southern south American bryophytes in general. He is currently working as a postdoctoral researcher at the Field Museum, studying the liverwort genus Frullania, both working to resolve the backbone phylogeny of this hyperdiverse group, and developing a monograph of one of its subgenera, Microfrullania, which is a group with approximately 20 taxa with a Southern Hemisphere distribution. His contribution to the Microplants project includes teaching interns on permanent slide preparation and imaging, as well as collect material in the field and identify the specimens.
         """
 

@@ -2,7 +2,7 @@
 
 <%- t 'h1', 'team.header' %>
 
-<% teamMembers = ['Michael Bryson', 'Laura Briscoe', 'Beth Crownover', 'Tom Campbell', 'Eve Gaus', 'Matt Greif', 'Juan Larraín', 'Matt von Konrat'] %>
+<% teamMembers = ['Michael Bryson', 'Laura Briscoe', 'Beth Crownover', 'Tom Campbell', 'Eve Gaus', 'Matt Greif', 'Juan Larrain', 'Matt von Konrat'] %>
 <% for teamMember in teamMembers: %>
   <div class="team-member">
     <h3><%- teamMember %></h3>
