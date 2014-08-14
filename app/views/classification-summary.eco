@@ -2,7 +2,7 @@
 <% t = require 't7e' %>
 
 <div class="classification-summary-content">
-  <%- t 'h2', 'classifer.summary.header' %>
+  <%- t 'h2', 'classifier.summary.header' %>
   <%- t 'p', 'classifier.summary.excerpt' %>
   <div class="columns">
     <% if @classification: %>

@@ -17,7 +17,7 @@ module.exports =
 
     firstBlock:
       header: 'What is this project?'
-      excerpt: 'Scientists from the Field Museum, Duke University and international researchers need your help.'
+      excerpt: 'From macro scale to micro scale, the importance of plants and the environment are critical to life on earth. You will be measuring microleaves, an anatomical structure smaller than a tip on a pencil. Scientists who go out to different collection locations have to keep a keen eye for these tiny plants that are only found in the most lush areas.'
       link: '<em><span class="faded">Learn:</span> <a href="#/science">What is this project all about?</a></em>'
 
     secondBlock:

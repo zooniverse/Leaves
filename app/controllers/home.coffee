@@ -4,7 +4,7 @@ $ = window.jQuery
 
 class Home extends BaseController
   className: 'home page'
-  template: require '../views/home-page'
+  template: require '../views/home'
 
   headerSlideDelay: 150
   animationDuration: 333

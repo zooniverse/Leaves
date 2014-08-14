@@ -7,7 +7,7 @@
       <%- t 'p', 'home.firstBlock.excerpt' %>
       <%- t 'p', 'home.firstBlock.link' %>
     </div>
-    <div class="column">
+    <div class="column center">
       <div class="animations plant-steps"></div>
     </div>
   </div>
@@ -20,7 +20,7 @@
       <%- t 'p', 'home.secondBlock.excerpt' %>
       <%- t 'p', 'home.secondBlock.link' %>
     </div>
-    <div class="column">
+    <div class="column center">
       <div class="animations plant-measure"></div>
     </div>
   </div>
@@ -29,6 +29,5 @@
 <div class="section center">
   <%- t 'h2', 'home.thirdBlock.header' %>
   <%- t 'p', 'home.thirdBlock.excerpt' %>
-  <%- t 'p', 'home.thirdBlock.link' %>
   <a href="#/classify"><%- t 'button.action', 'home.thirdBlock.callToAction' %></a>
 </div>
