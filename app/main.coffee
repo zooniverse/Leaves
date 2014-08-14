@@ -1,5 +1,5 @@
 Api = require 'zooniverse/lib/api'
-api = new Api project: 'leaf', host: 'http://localhost:3000'
+api = new Api project: 'leaf'
 
 enUs = require './lib/en-us'
 translate = require 't7e'
@@ -43,4 +43,4 @@ User.fetch()
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 # new GoogleAnalytics account: '1234567890'
 
-window.app = { stack, api, topBar }
+window.app = { stack, api }
