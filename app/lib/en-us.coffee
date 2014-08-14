@@ -66,6 +66,7 @@ module.exports =
         <div class="center">
           <iframe src="//player.vimeo.com/video/68192847" width="600" height="310" frameborder="0" allowfullscreen></iframe>
         </div>
+        <p>It takes a lot of work to describe new species. We need your help! Field museum bryologists, with the help of citizen scientists, are striving to collect data to uncover some of the secrets behind what makes early land plants so special.</p>
 
         <p>Taxonomy – the branch of science classifying biodiversity. Researchers at The Field Museum and partnering institutions are conducting a taxonomic treatment of a hyper-diverse group of early land plants in the liverwort genus Frullania. This includes documenting, describing and discovering new species to science. Liverworts (Marchantiophyta) are pivotal in our understanding of early land plant evolution and exist as important components of the vegetation in many regions of the world. Taxonomic conclusions will be drawn from a multi-faceted data set, including morphology, fieldwork, experimental growth studies, as well as DNA sequence data, and population studies using DNA microsatellite markers. The research is supported by the National Science Foundation (<a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1145898&HistoricalAwards=false">Award 114589</a>).</p>
 

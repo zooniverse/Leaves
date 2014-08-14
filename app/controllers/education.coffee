@@ -14,7 +14,7 @@ class Education extends BaseController
     educationStack = new StackOfPages
       '#/education': require('../views/education/overview')()
       '#/education/activities': require('../views/education/activities')()
-      '#/education/plants-101': require('../views/education/plants-101')()
+      '#/education/plants-101': require('../views/education/plants')()
       '#/education/videos': require('../views/education/videos')()
 
     @el.get(0).querySelector('#education-stack').appendChild educationStack.el
