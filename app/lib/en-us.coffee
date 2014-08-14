@@ -262,10 +262,9 @@ module.exports =
     header: 'Education'
     navigation:
       overview: 'Overview'
-      activities: 'Activities'
-      plantRelationships: 'Plant Relationships'
+      activities: 'Activities and Guides'
+      plants: 'Plants 101'
       videos: 'Videos'
-      resources: 'Resources'
 
     content:
       overview: """
@@ -283,30 +282,51 @@ module.exports =
         <p>"All together" Past Field Museum undergraduate interns, explain their experiences using MicroPlants as well as the ImageJ software used in some of our activities!</p>
       """
       activities: """
-        <h3><a href="./pdfs/biological-illustrations.pdf">Biological Illustrations.pdf</a></h3>
-        <p>Learn how to make scientific illustrations and record your observations, a great tool to help you to remember all the features of an observed specimen.</p>
+        <h2>Guides</h2>
+        <p>Lead in statement for guides</p>
 
-        <h3><a href="./pdfs/early-land-plants-tdoay.pdf">Early Land Plants Today.pdf</a></h3>
-        <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/whos-who.png">
+          <h3><a href="./pdfs/guides-bryophytes-ferns-lichens.pdf">Who is who?: Bryophytes, Ferns and Lichens</a></h3>
+        </div>
 
-        <h3><a href="./pdfs/imagej-instructions.pdf">ImageJ Instructions.pdf</a></h3>
-        <p>ImageJ is a free program developed by the National Institute of Health (NIH) that has given the scientific community a way of generating data from images.</p>
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/compare-table.png">
+          <h3><a href="./pdfs/guides-comparative-table.pdf">Comparative table: Common features distinguishing bryophytes, ferns and lichens</a></h3>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/early-land-plants.png">
+          <h3><a href="./pdfs/guides-early-land-plants.pdf">Bryophytes or Early Land Plants: Comparison between Mosses, Liverworts and Hornworts</a></h3>
+        </div>
+
+        <hr>
+
+        <h2>Activities</h2>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/sci-draw.png">
+          <h3><a href="./pdfs/biological-illustrations.pdf">Biological Illustrations.pdf</a></h3>
+          <p>Learn how to make scientific illustrations and record your observations, a great tool to help you to remember all the features of an observed specimen.</p>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/phylo-tree.png">
+          <h3><a href="./pdfs/early-land-plants-tdoay.pdf">Early Land Plants Today.pdf</a></h3>
+          <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/imagej.png">
+          <h3><a href="./pdfs/imagej-instructions.pdf">ImageJ Instructions.pdf</a></h3>
+          <p>ImageJ is a free program developed by the National Institute of Health (NIH) that has given the scientific community a way of generating data from images.</p>
+        </div>
         """
-      plantRelationships: """
+      plants: """
         <p>Bryophytes, specifically liverworts such as Frullania, are considered the earliest land plants. Researchers at The Field Museum are creating a working phylogeny of known species and discovering new species all over the world. Early land plants are environmental indicators. Because of their small size, liverworts respond quickly to environmental and ecological change. They are potential indicators of climate change, assist in assessing the overall “health” of forests, and detect heavy metals and pollution in the atmosphere.</p>
       """
       videos: """
         <p>Check out some of these videos to learn more on what the scientists at The Field Museum are doing behind the scenes.</p>
-
-        <hr>
-
-        <h3><a href="http://vimeo.com/58426100">All Together</a></h3>
-        <p>Student Intern commentary expressing their involvement with Frullania Pilot Study developed and hosted by The Field Museum in collaboration with Northeastern Illinois University and Wilbur Wright College, Chicago Illinois USA</p>
-
-        <hr>
-
-        <h3><a href="http://vimeo.com/24013867">Science at FMNH - Oil Bodies Inside Early Land Plants v1</a></h3>
-        <p>We continue our discussion with Matt Von Konrat by exploring the unique structures called oil bodies that are found inside the cells of liverworts.</p>
 
         <hr>
 
@@ -315,14 +335,18 @@ module.exports =
 
         <hr>
 
+        <h3><a href="http://vimeo.com/36771513">Science at FMNH - Environmental Significance of Early Land Plants</a></h3>
+        <p>We continue our discussion with Matt Von Konrat by exploring the biological and environmental significance of early land plants, such as mosses and liverworts.</p>
+
+        <hr>
+
         <h3><a href="http://vimeo.com/36788537">Science at FMNH - Threats for Early Land Plants</a></h3>
         <p>We continue our discussion with Matt Von Konrat by discussing the environmental impacts that threaten the existence of the descendants of early land plants.</p>
 
         <hr>
 
-        <h3><a href="http://vimeo.com/36771513">Science at FMNH - Environmental Significance of Early Land Plants</a></h3>
-        <p>We continue our discussion with Matt Von Konrat by exploring the biological and environmental significance of early land plants, such as mosses and liverworts.
-        </p>
+        <h3><a href="http://vimeo.com/24013867">Science at FMNH - Oil Bodies Inside Early Land Plants v1</a></h3>
+        <p>We continue our discussion with Matt Von Konrat by exploring the unique structures called oil bodies that are found inside the cells of liverworts.</p>
       """
 
   profile:

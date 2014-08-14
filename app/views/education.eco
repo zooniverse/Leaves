@@ -4,7 +4,7 @@
 <ul class="sub-section-menu">
   <li><%- t 'a', 'education.navigation.overview', href: '#/education' %></li>
   <li><%- t 'a', 'education.navigation.activities', href: '#/education/activities' %></li>
-  <li><%- t 'a', 'education.navigation.plantRelationships', href: '#/education/plant-relationships' %></li>
+  <li><%- t 'a', 'education.navigation.plants', href: '#/education/plants-101' %></li>
   <li><%- t 'a', 'education.navigation.videos', href: '#/education/videos' %></li>
 </ul>
 
