@@ -14,8 +14,8 @@
   },
   "scripts": {
     "start": "haw serve --port 6002",
-    "deploy": "haw build && publisssh ./build microplants.zooniverse.org && trash ./build",
-    "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && trash ./build",
+    "deploy": "npm run deploy-locale && haw build && publisssh ./build zooniverse-static/microplants.fieldmuseum.org && rm -rf ./build",
+    "deploy-to-staging": "haw build && publisssh ./build demo.zooniverse.org/leaves && rm -rf ./build",
     "deploy-locale": "seed-translation --project leaf --env production"
   }
 }
