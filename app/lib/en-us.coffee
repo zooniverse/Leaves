@@ -242,6 +242,7 @@ module.exports =
       '24': 'Ariel Wagner, Imaging and Guest Interaction, (DePaul University)'
       '25': 'Nyree Zerega, Education, (Northwestern University)'
       '26': 'Zak Zillen, Guest Interaction, (Northeastern Illinois University)'
+      '27': 'Will Flannery, Graphic Design (Field Museum)'
 
     acknowledgements:
       '01': 'Norbert Cordeiro, Roosevelt University/Field Museum--Instructor/Research Associate'
