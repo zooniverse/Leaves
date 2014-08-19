@@ -2,6 +2,9 @@
 
 <%- t 'h1', 'team.header' %>
 
+<%- t 'h2', 'team.contactsHeader' %>
+<%- t 'span', 'team.contactsExcerpt' %>
+
 <% teamMembers = ['Michael Bryson', 'Laura Briscoe', 'Beth Crownover', 'Tom Campbell', 'Eve Gaus', 'Matt Greif', 'Juan Larrain', 'Matt von Konrat'] %>
 <% for teamMember in teamMembers: %>
   <div class="team-member">
@@ -34,6 +37,7 @@
 </ul>
 
 <%- t 'h2', 'team.acknowledgementsHeader' %>
+<%- t 'span', 'team.acknowledgementsExcerpt' %>
 <ul>
   <% for i in Object.keys(t.strings.team.acknowledgements).sort(): %>
     <%- do -> t 'li', "team.acknowledgements.#{ i }" %>

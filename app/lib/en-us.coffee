@@ -158,9 +158,23 @@ module.exports =
 
   team:
     header: 'The Science, Education and Outreach Team'
+    intro: 'The Connecting Collections: MicroPlants project includes a network of students, scientists, educators, and administrators partnering with Zooniverse. Together, the team has developed a framework using digitized images captured from biological specimens to increase student participation in the scientific process and connecting museum specimens to a broader audience. The data generated can also be used in education programs.'
+    contactsHeader: 'Primary Contacts:'
+    contactsExcerpt: '''
+      <ul>
+        <li>MicroPlants Project Coordinator – Dr. Matt von Konrat, The Field Museum, mvonkonrat@fieldmuseum.org</li>
+        <li>K-12 Education Programs – Eve Gaus, The Field Museum, egaus@fieldmuseum.org</li>
+        <li>University Programs – Dr. Tom Campbell, Northeastern Illinois University, T-Campbell7@neiu.edu</li>
+      </ul>
+    '''
     internsHeader: '2014 MicroPlants Internship Team'
     contributorsHeader: 'Personnel who have contributed to MicroPlants: Past and Present'
     acknowledgementsHeader: 'Acknowledgements'
+    acknowledgementsExcerpt: '''
+      <p>The Connecting Collections:MicroPlant project has been generously supported by The Encyclopedia of Life, The Grainger Foundation, The Field Museum, Zooniverse, and the National Science Foundation (Award Number DEB-1145898).</p>
+
+      <p>The MicroPlants Team acknowledge the many people who have been involved throughout:</p>
+    '''
     concernsHeader: 'Who can I contact with any concerns?'
     concernsExcerpt: 'If you have any concerns or questions about this project, please feel free to contact <a href="mailto: mkonrat@fieldmuseum.org">Dr. Matt von Konrat</a> or <a href="mailto: T-Campbell7@neiu.edu">Dr. Tom Campbell</a>'
 
@@ -239,12 +253,14 @@ module.exports =
       '19': 'Tia Shelley (Research Assistant, Computer and Learning Scie'
       '20': 'Arfon Smith, Co-Principal Investigator (Director of Citizen Science)'
       '21': 'Steve Schultz, Imaging'
-      '22': 'Oana Vadineanu, 2012 Coordination, (Northeastern Illinois University, FM intern)'
-      '23': 'Alex Vizzone, Guest Interaction, (Northeastern Illinois University)'
-      '24': 'Ariel Wagner, Imaging and Guest Interaction, (DePaul University)'
-      '25': 'Nyree Zerega, Education, (Northwestern University)'
-      '26': 'Zak Zillen, Guest Interaction, (Northeastern Illinois University)'
-      '27': 'Will Flannery, Graphic Design (Field Museum)'
+      '22': 'Kalman Strauss, Volunteer (Field Museum)
+'
+      '23': 'Oana Vadineanu, 2012 Coordination, (Northeastern Illinois University, FM intern)'
+      '24': 'Alex Vizzone, Guest Interaction, (Northeastern Illinois University)'
+      '25': 'Ariel Wagner, Imaging and Guest Interaction, (DePaul University)'
+      '26': 'Nyree Zerega, Education, (Northwestern University)'
+      '27': 'Zak Zillen, Guest Interaction, (Northeastern Illinois University)'
+      '28': 'Will Flannery, Graphic Design (Field Museum)'
 
     acknowledgements:
       '01': 'Norbert Cordeiro, Roosevelt University/Field Museum--Instructor/Research Associate'
@@ -261,6 +277,10 @@ module.exports =
       '12': 'Tom Moher, Associate Professor Computer Science, Learning Sciences, and Education (University of Illinois, Chicago)'
       '13': 'Kara Nuss, Biology Instructor (Northeastern Illinois University, Chicago)'
       '14': 'Norm Wickett, Conservation Scientist, Genomics and Bioinformatics (Chicago Botanic Garden; Northwestern University, Chicago)'
+      '15': 'Tatyana Livshultz, Pilot Educator (Drexel University)'
+      '16': 'Mariam Nasser, Pilot Educator (Elgin Academy)'
+      '17': 'The many collaborating scientists who have kindly collected plants from around the world, especially Tamás Pócs (Fiji, Australia), John J. Engel (New Zealand, Chile), Peter de Lange (New Zealand), John Braggins (New Zealand, Fiji, Australia), Matt Renner (Australia), Bill Buck (Chile), and Laura Briscoe (Chile).'
+      '18': 'The senior scientists also thank the many herbarium curators from museums, universities and scientific institutions from around the world who have kindly loaned herbarium (dried plant specimens) to the project for study.'
 
   education:
     header: 'Education'
