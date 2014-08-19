@@ -39,6 +39,7 @@ class Classifier extends BaseController
     '.examples img': 'exampleImages'
 
   events:
+    'click .restart-tutorial': 'onClickRestartTutorial'
     'click .view-info': 'onClickViewInfo'
     'click .view-guide': 'onClickViewGuide'
     'click .favorite-subject': 'onClickFavorite'
@@ -127,14 +128,17 @@ class Classifier extends BaseController
       @informationVM.$set 'subject', subject.toJSON()
       @surface.enable()
 
-  onClickViewInfo: ->
-    $body.animate {
-      scrollTop: @informationSection.position().top - 110
-    }, 500, 'swing'
+  onClickRestartTutorial: ->
+    selectTutorialSubject()
 
   onClickViewGuide: ->
     $body.animate {
-      scrollTop: @fieldGuideSection.position().top - 110
+      scrollTop: @fieldGuideSection.position().top - 120
+    }, 500, 'swing'
+
+  onClickViewInfo: ->
+    $body.animate {
+      scrollTop: @informationSection.position().top - 120
     }, 500, 'swing'
 
   onClickFavorite: ->

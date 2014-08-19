@@ -32,8 +32,9 @@ module.exports =
 
   classifier:
     header: 'Image Classification'
-    info: 'Info'
+    restartTutorial: 'Restart Tutorial'
     guide: 'Guide'
+    info: 'info'
     prompt: 'Measure the Microleaves!'
     finished: 'Finishied'
 

@@ -11,13 +11,17 @@
     <div class="classifier-actions">
       <div class="columns pushed">
         <div class="column one-third">
-          <div class="view-info">
-            <i class="fa fa-map-marker"></i>
-            <%- t 'span', 'classifier.info' %>
+          <div class="restart-tutorial">
+            <i class="fa fa-refresh"></i><br>
+            <%- t 'span', 'classifier.restartTutorial' %>
           </div>
           <div class="view-guide">
-            <i class="fa fa-book"></i>
+            <i class="fa fa-book"></i><br>
             <%- t 'span', 'classifier.guide' %>
+          </div>
+          <div class="view-info">
+            <i class="fa fa-map-marker"></i><br>
+            <%- t 'span', 'classifier.info' %>
           </div>
         </div>
         <div class="column one-third">
@@ -48,7 +52,7 @@
     <img src="./images/faq/ex-1.jpg" />
   </div>
 
-  <h3>Example Images</h3>
+  <h3>Example Markings</h3>
   <div class="block-images examples">
     <img src="./images/guide/example-1.jpg">
     <img src="./images/guide/example-2.jpg">
