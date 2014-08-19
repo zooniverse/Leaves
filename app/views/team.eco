@@ -43,6 +43,3 @@
     <%- do -> t 'li', "team.acknowledgements.#{ i }" %>
   <% end %>
 </ul>
-
-<%- t 'h2', 'team.concernsHeader' %>
-<%- t 'p', 'team.concernsExcerpt' %>
