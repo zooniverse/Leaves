@@ -42,6 +42,7 @@ module.exports =
       coordinates: 'Coordinates'
       collector: 'Collector'
       comments: 'Other Comments'
+      dateCollected: 'Date Collected'
 
     summary:
       header: 'Measurements Recorded!'
@@ -282,6 +283,7 @@ module.exports =
 
         <h3>Undergraduate students express their experience!</h3>
         <p>"All together" Past Field Museum undergraduate interns, explain their experiences using MicroPlants as well as the ImageJ software used in some of our activities!</p>
+        <iframe src="//player.vimeo.com/video/58426100" width="600" height="320" frameborder="0" allowfullscreen></iframe>
       """
       activities: """
         <h2>Guides</h2>
@@ -355,4 +357,3 @@ module.exports =
     hello: 'Hello'
     imagesMarked: 'Images Marked'
     favoriteCount: 'Favorite Count'
-

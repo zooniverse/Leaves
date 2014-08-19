@@ -82,7 +82,7 @@ class Classifier extends BaseController
           @subject.coords
           @subject?.coords?.length is 2 and !(@subject?.coords?[0] is 0)
         staticMapUrl: ->
-          "http://maps.googleapis.com/maps/api/staticmap?center=#{ @formatCoords() }&zoom=7&size=640x200"
+          "http://maps.googleapis.com/maps/api/staticmap?center=#{ @formatCoords() }&zoom=7&size=640x200&markers=#{ @formatCoords() }"
         mapLink: ->
           "http://maps.google.com/?q=#{ @formatCoords() }"
         formattedCoords: ->

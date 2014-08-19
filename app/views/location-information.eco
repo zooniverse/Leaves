@@ -10,16 +10,24 @@
 </div>
 
 <div class="metadata">
-  <div class="columns center">
-    <div class="column one-third">
-      <%- t 'p.faded', 'classifier.metadata.coordinates' %>
-      <p v-class="focused: hasCoords" v-text="formattedCoords"></p>
+  <div class="columns">
+    <div class="column">
+      <table>
+        <tr>
+          <td><%- t 'span.faded', 'classifier.metadata.coordinates' %></td>
+          <td><span v-class="focused: hasCoords" v-text="formattedCoords"></span></td>
+        </tr>
+        <tr>
+          <td><%- t 'span.faded', 'classifier.metadata.collector' %></td>
+          <td><span v-class="focused: subject.metadata.collector">{{ subject.metadata.collector ? subject.metadata.collector : 'n/a' }}</span></td>
+        </tr>
+        <tr>
+          <td><%- t 'span.faded', 'classifier.metadata.dateCollected' %></td>
+          <td><span v-class="focused: subject.metadata.date_collected">{{ subject.metadata.date_collected ? subject.metadata.date_collected : 'n/a' }}</span></td>
+        </tr>
+      </table>
     </div>
-    <div class="column one-third">
-      <%- t 'p.faded', 'classifier.metadata.collector' %>
-      <p v-class="focused: subject.metadata.collector">{{ subject.metadata.collector ? subject.metadata.collector : 'n/a' }}</p>
-    </div>
-    <div class="column one-third">
+    <div class="column">
       <%- t 'p.faded', 'classifier.metadata.comments' %>
       <p v-class="focused: subject.metadata.comments">{{ subject.metadata.comments ? subject.metadata.comments : 'n/a' }}</p>
     </div>

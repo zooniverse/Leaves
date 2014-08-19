@@ -21,15 +21,12 @@
         </a>
       </div>
     </div>
-    <!-- <div class="column one-third">
-      <div id="share" class="action">
-        <i class="fa fa-share-alt"></i>Share</div>
-      </div>
-    </div> -->
   </div>
   <% unless Subject.current.tutorial: %>
     <% if @askForSurvey: %>
-      SURVERY LINK
+      <p>Thank you for your work! We'd love it if you took the time to complete <a href="https://www.google.com">this survey</a> about your Micrplants experience. Thank you!</p>
+    <% else if @seenThisSession() > @requestedClassifications: %>
+      <p>You have marked <%- @seenThisSession() %> so far this session!</p>
     <% else: %>
       <p>We ask each person to mark 5 images. You have marked <%- @seenThisSession() %> so far!</p>
     <% end %>
