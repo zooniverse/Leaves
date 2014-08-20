@@ -410,3 +410,4 @@ module.exports =
     hello: 'Hello'
     imagesMarked: 'Images Marked'
     favoriteCount: 'Favorite Count'
+    microleavesMarked: 'Microleaves Marked'

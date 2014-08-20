@@ -5,13 +5,19 @@
     <%- t 'span', 'profile.hello' %>
     {{ user.name }}
   </div>
-  <div class="user-metric-block">
-    <%- t 'div.user-metric-title', 'profile.imagesMarked' %>
-    <div class="user-metric">{{ user.project.classification_count || 0 }}</div>
-  </div>
-  <div class="user-metric-block">
-    <%- t 'div.user-metric-title', 'profile.favoriteCount' %>
-    <div class="user-metric">{{ user.project.favorite_count || 0 }}</div>
+  <div class="user-metrics">
+    <div class="user-metric-block">
+      <%- t 'div.user-metric-title', 'profile.imagesMarked' %>
+      <div class="user-metric">{{ user.project.classification_count || 0 }}</div>
+    </div>
+    <div class="user-metric-block">
+      <%- t 'div.user-metric-title', 'profile.favoriteCount' %>
+      <div class="user-metric">{{ user.project.favorite_count || 0 }}</div>
+    </div>
+    <div class="user-metric-block">
+      <%- t 'div.user-metric-title', 'profile.microleavesMarked' %>
+      <div class="user-metric">{{ user.project.lobules_marked || 0 }}</div>
+    </div>
   </div>
 </div>
 
