@@ -206,11 +206,9 @@ module.exports =
 
       <p>The MicroPlants Team acknowledge the many people who have been involved throughout:</p>
     '''
-<<<<<<< HEAD
+
     concernsHeader: 'Who can I contact with any concerns?'
     concernsExcerpt: 'If you have any concerns or questions about this project, please feel free to contact <a href="mailto: mkonrat@fieldmuseum.org">Dr. Matt von Konrat</a> or <a href="mailto: T-Campbell7@neiu.edu">Dr. Tom Campbell</a>'
-=======
->>>>>>> Content changes
 
     bios:
       bryson: """
