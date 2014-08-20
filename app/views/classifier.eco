@@ -39,12 +39,12 @@
 <div id="location-and-information"></div>
 
 <div class="field-guide">
-  <div class="section-header">Image Classification</div>
-  <h3>Oops! I made a mistake. How do I undo a mistake?</h3>
-  <p>First off, don’t panic! Simply, select the “X” that appears in the grey box after each measurement to delete that set of measures. In any event, if you make a mistake, we will be able to sort that out when all the data is collected.</p>
+  <%- t 'div.section-header', 'classifier.fieldGuide.header' %>
+  <%- t 'h3', 'classifier.fieldGuide.question_1' %>
+  <%- t 'p', 'classifier.fieldGuide.answer_1' %>
 
-  <h3>How do I differentiate a microleaf from the rest of the image?</h3>
-  <p>Usually the structures in clear focus within the image will be the microleaves; it will generally be toward the center of the image. We will measure only microleaves (modified leaves) that are clearly focused and fall entirely within the image. Here are some pictures to help guide you.</p>
+  <%- t 'h3', 'classifier.fieldGuide.question_2' %>
+  <%- t 'p', 'classifier.fieldGuide.answer_2' %>
 
   <div class="block-images">
     <img src="./images/faq/ex-3.jpg" />
@@ -52,7 +52,7 @@
     <img src="./images/faq/ex-1.jpg" />
   </div>
 
-  <h3>Example Markings</h3>
+  <%- t 'h3', 'classifier.fieldGuide.exampleMarkings' %>
   <div class="block-images examples">
     <img src="./images/guide/example-1.jpg">
     <img src="./images/guide/example-2.jpg">
@@ -68,11 +68,10 @@
     <img src="./images/guide/example-12.jpg">
   </div>
 
-  <h3>How many microleaves are on each image?</h3>
-  <p>Each image will have at least one microleaf; however, some images will have several.</p>
-
-  <h3>The app is not loading, what should I do?</h3>
-  <p>The website may be affected by your connection speed. If you’re able to connect to the internet, check to see if you’re using the latest version of the recommended browser (Google Chrome of Firefox.)</p>
+  <%- t 'h3', 'classifier.fieldGuide.question_3' %>
+  <%- t 'p', 'classifier.fieldGuide.answer_3' %>
+  <%- t 'h3', 'classifier.fieldGuide.question_4' %>
+  <%- t 'p', 'classifier.fieldGuide.answer_4' %>
 </div>
 
 <div class="loader">

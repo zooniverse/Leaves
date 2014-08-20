@@ -38,6 +38,22 @@ module.exports =
     prompt: 'Measure the Microleaves!'
     finished: 'Finishied'
 
+    fieldGuide:
+      header: 'Image Classification'
+      exampleMarkings: 'Example Markings'
+
+      question_1: 'Oops! I made a mistake. How do I undo a mistake?'
+      answer_1: 'First off, don’t panic! Simply, select the "X" that appears in the grey box after each measurement to delete that set of measures. In any event, if you make a mistake, we will be able to sort that out when all the data is collected.'
+
+      question_2: 'How do I differentiate a microleaf from the rest of the image?'
+      answer_2: 'Usually the structures in clear focus within the image will be the microleaves; it will generally be toward the center of the image. We will measure only microleaves (modified leaves) that are clearly focused and fall entirely within the image. Here are some pictures to help guide you.'
+
+      question_3: 'How many microleaves are on each image?'
+      answer_3: 'Each image will have at least one microleaf; however, some images will have several.'
+
+      question_4: 'The app is not loading, what should I do?'
+      answer_4: 'The website may be affected by your connection speed. If you’re able to connect to the internet, check to see if you’re using the latest version of the recommended browser (Google Chrome of Firefox.)'
+
     metadata:
       header: 'Location & Information'
       coordinates: 'Coordinates'
@@ -51,6 +67,11 @@ module.exports =
       favorite: 'Favorite'
       discuss: 'Discuss'
       readyToContinue: 'Ready to Move on?'
+      askForSurvey: """
+        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank>this survey</a> about your Micrplants experience. Thank you!
+      """
+      seenThisSession: "You have marked $seen so far this session!"
+      beforeSurvey: 'We ask each person to mark 5 images.'
 
   science:
     header: 'Science'
@@ -58,7 +79,7 @@ module.exports =
       overview: 'Overview'
       aboutBryophytes: 'About Bryophytes'
       bryophyteImportance: 'Importance of Bryophytes'
-      origin: 'Images Origin'
+      origin: 'Origin of Images'
       howCanIHelp: 'How can I help?'
 
     content:
@@ -90,6 +111,16 @@ module.exports =
         <p>Datum are automatically uploaded to our servers and stored in a database.</p>
       """
       origin: """
+        <p>The significance of biological collections of museums and academic institutions make countless contributions to science and society in general, especially in documenting, describing and discovering diversity. In this project, dried plant specimens are collected in the field from habitats ranging from tropical cloud forests to temperate tundra.</p>
+
+        <div class="block-images short">
+          <img src="./images/science/origin-6.jpg" />
+          <img src="./images/science/origin-7.jpg" />
+        </div>
+
+        <h3>Where are the specimens stored?</h3>
+        <p>The dried plant specimens are stored in a facility called a herbarium such as that at the Field Museum where some 3 million plants specimens, representing the full spectrum of green land plant diversity, are housed. Because bryophytes (mosses, liverworts and hornworts) are generally small they are typically housed in archival packets. These specimens serve as the foundation for biodiversity research and have wide ranging applications from conservation and land management to understanding species relationships and evolution.</p>
+
         <h3>Where are these images from?</h3>
         <p>Liverworts grow all over the world, but these Frullania images have typically been collected from the southern hemisphere in areas like Fiji, New Caledonia, and Chile. Specimens were collected in the field, brought back to the museum, and painstakingly mounted onto slides. From there, they imaged with a microscope by our many interns. Images were taken by interns at the Field Museum from Northeastern Illinois University, DePaul University, Harold Washington Chicago City College, and The Ohio State University. You might be the first person ever to study and analyze a particular image!</p>
 

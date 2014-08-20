@@ -6,14 +6,14 @@
   <%- t 'p', 'classifier.summary.excerpt' %>
   <div class="columns">
     <% if @classification: %>
-      <div class="column one-third">
+      <div class="column">
         <div id="favorite" class="action">
           <i id="favorite-icon" class="fa fa-heart-o"></i>
           <%- t 'span', 'classifier.summary.favorite' %>
         </div>
       </div>
     <% end %>
-    <div class="column one-third">
+    <div class="column">
       <div id="discuss" class="action">
         <a href="<%- Subject.current.talkHref() %>">
           <i class="fa fa-comments-o"></i>
@@ -22,15 +22,17 @@
       </div>
     </div>
   </div>
-  <% unless Subject.current.tutorial: %>
-    <% if @askForSurvey: %>
-      <p>Thank you for your work! We'd love it if you took the time to complete <a href="https://www.google.com">this survey</a> about your Micrplants experience. Thank you!</p>
-    <% else if @seenThisSession() > @requestedClassifications: %>
-      <p>You have marked <%- @seenThisSession() %> so far this session!</p>
-    <% else: %>
-      <p>We ask each person to mark 5 images. You have marked <%- @seenThisSession() %> so far!</p>
+  <div class="survey-space">
+    <% unless Subject.current.tutorial: %>
+      <% if @askForSurvey: %>
+        <%- t 'p', 'classifier.summary.askForSurvey' %>
+      <% else: %>
+        <%- t 'p', 'classifier.summary.beforeSurvey' %>
+      <% end %>
+
+      <%- t 'p', 'classifier.summary.seenThisSession', $seen: @seenThisSession() %>
     <% end %>
-  <% end %>
+  </div>
   <div class="call-to-continue">
     <%- t 'p', 'classifier.summary.readyToContinue' %>
   </div>

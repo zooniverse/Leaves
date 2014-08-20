@@ -5,6 +5,9 @@
 
   .block-images
     clearfix()
+    align-items: center
+    display: flex
+    justify-content: center
     margin: 25px -50px
     text-align: center
 
@@ -16,8 +19,10 @@
     > *
       border: 3px solid white
       box-sizing: border-box
-      max-height: 224px
-      width: 33%
+      cursor: pointer
+      margin: 15px
+      max-width: 300px
+      flex-grow: 1
 
   .team-member,
   .activity-or-guide

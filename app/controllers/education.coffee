@@ -1,5 +1,6 @@
 BaseController = require 'zooniverse/controllers/base-controller'
 StackOfPages = require 'stack-of-pages'
+Modal = require '../lib/modal'
 
 class Education extends BaseController
   className: 'education page'
@@ -7,6 +8,7 @@ class Education extends BaseController
 
   elements:
     '.sub-section-menu li a': 'menuLinks'
+    'img': 'images'
 
   constructor: ->
     super
@@ -17,8 +19,12 @@ class Education extends BaseController
       '#/education/plants-101': require('../views/education/plants')()
       '#/education/videos': require('../views/education/videos')()
 
-    @el.get(0).querySelector('#education-stack').appendChild educationStack.el
+    @el.find('#education-stack').append educationStack.el
     @el.on StackOfPages::activateEvent, @activate
+
+    setTimeout =>
+      @el.find('.block-images > img').on 'click', (e) ->
+        new Modal src: e.currentTarget.src
 
   activate: ({ originalEvent: { detail }}) =>
     @menuLinks.removeClass 'active'
