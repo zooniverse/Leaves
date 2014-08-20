@@ -1,9 +1,15 @@
 BaseController = require 'zooniverse/controllers/base-controller'
 Profile = require 'zooniverse/controllers/profile'
 User = require 'zooniverse/models/user'
+Subject = require 'zooniverse/models/subject'
 Vue = require 'vue'
 
 $ = window.jQuery
+
+talkHref = ->
+  "http://microplantstalk.zooniverse.org/#/subjects/#{@zooniverse_id}"
+
+Subject::talkHref = talkHref.bind Subject
 
 class ProfilePage extends BaseController
   className: 'profile page'
