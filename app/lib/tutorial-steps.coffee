@@ -3,29 +3,26 @@ ghostMouse = new GhostMouse
   events: false
   swing: 0
 
+translate = require 't7e'
+
 module.exports =
   welcome:
-    header: 'Welcome to the Leaves Project!'
-    content: 'This quick tutorial will guide you through your first classification.'
+    header: translate 'span', 'tutorial.welcome.header'
+    content: translate 'span', 'tutorial.welcome.content'
     attachment: [0.5, 0.5, '.marking-surface', 0.5, 0.5]
     block: '.subject-container, button[name="next-step"]'
     next: 'whatIsThis'
 
   whatIsThis:
-    header: 'What are we looking at?'
-    content: '''
-      We are looking through a microscope at a section of the underside of a plant.
-      The rounded bulges, representing sac-like objects growing from either side are actually tiny modified leaves!
-      Measuring the length and width of these modified leaves (microleaves) can tell us what kind of plant we have.
-      Let's start by marking the length of the first microleaf.
-    '''
+    header: translate 'span', 'tutorial.whatIsThis.header'
+    content: translate 'span', 'tutorial.whatIsThis.content'
     attachment: ['center', 'bottom', '.marking-surface', 'center', 'bottom']
     block: '.subject-container, button[name="next-step"]'
     next: 'measureFirstLobule'
 
   measureFirstLobule:
-    content: 'Let\'s start by marking the length of the first leaf.'
-    instruction: 'Drag from the top to the bottom of the modified leaf at the top-left of the image.'
+    content: translate 'span', 'tutorial.measureFirstLobule.content'
+    instruction: translate 'span', 'tutorial.measureFirstLobule.instruction'
     attachment: ['left', 'middle', '.marking-surface-container', '0.4', '0.4']
 
     demo: (callback) ->
@@ -38,12 +35,8 @@ module.exports =
       'mouseup .marking-surface': 'measureSecondAxis'
 
   measureSecondAxis:
-    content: '''
-      Now, measure the width of this modified leaf by clicking and dragging the cursor across the widest section.
-      As you drag, you'll be able to see the angle between the lines change.
-      Keep it as close to 90° as possible!
-    '''
-    instruction: 'Now drag a line out perpendicular to the previous line to complete the cross.'
+    content: translate 'span', 'tutorial.measureSecondAxis.content'
+    instruction: translate 'span', 'tutorial.measureSecondAxis.instruction'
     attachment: ['left', 'middle', '.marking-surface-container', '0.4', '0.4']
 
     demo: ->
@@ -55,8 +48,8 @@ module.exports =
       'mouseup .marking-surface': 'oneMore'
 
   oneMore:
-    content: 'Great! There\'s one more modified leaf fully visible in this image.'
-    instruction: 'Mark the axes of the other modified leaf.'
+    content: translate 'span', 'tutorial.oneMore.content'
+    instruction: translate 'span', 'tutorial.oneMore.instruction'
     attachment: ['right', 'top', '.marking-surface', 'right', 'top']
 
     onLoad: ->
@@ -79,7 +72,7 @@ module.exports =
         if @mousesUp is 2 then 'finish' else 'oneMore'
 
   finish:
-    content: 'Now that we\'ve marked all the leaves, we can move on to the next image!'
+    content: translate 'span', 'tutorial.finish.content'
     attachment: [0.5, 0.5, '.marking-surface', 0.5, 0.5]
     onLoad: ->
       delete @markCreatedOnStep

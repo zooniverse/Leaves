@@ -68,6 +68,11 @@ class Classifier extends BaseController
       steps: tutorialSteps
       first: 'welcome'
       parent: @el.get(0)
+      demoLabel: translate 'span', 'tutorial.demoLabel'
+      nextLabel: translate 'span', 'tutorial.nextLabel'
+      doneLabel: translate 'span', 'tutorial.doneLabel'
+      onLoadStep: =>
+        translate.refresh @tutorial.el.get 0
 
     # meh
     @informationVM = new Vue
@@ -155,10 +160,10 @@ class Classifier extends BaseController
     
     switch @step
       when 1
-        $currentTarget.text translate 'span', 'classifier.finished'
+        $currentTarget.html translate 'span', 'classifier.finished'
         @nextSubject()
       when 2
-        $currentTarget.text translate 'span', 'classifier.nextImage'
+        $currentTarget.html translate 'span', 'classifier.nextImage'
         @finishSubject()
 
   onCreateMark: =>

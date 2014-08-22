@@ -36,7 +36,7 @@ module.exports =
     guide: 'Guide'
     info: 'info'
     prompt: 'Measure the Microleaves!'
-    finished: 'Finishied'
+    finished: 'Finished'
     nextImage: 'Next Image'
 
     fieldGuide:
@@ -73,6 +73,38 @@ module.exports =
       """
       seenThisSession: "You have marked $seen so far this session!"
       beforeSurvey: 'We ask each person to mark 5 images.'
+
+  tutorial:
+    demoLabel: 'Show me'
+    nextLabel: 'Continue'
+    doneLabel: 'Done'
+
+    welcome:
+      header: 'Welcome to the Leaves Project!'
+      content: 'This quick tutorial will guide you through your first classification.'
+    whatIsThis:
+      header: 'What are we looking at?'
+      content: '''
+        We are looking through a microscope at a section of the underside of a plant.
+        The rounded bulges, representing sac-like objects growing from either side are actually tiny modified leaves!
+        Measuring the length and width of these modified leaves (microleaves) can tell us what kind of plant we have.
+        Let's start by marking the length of the first microleaf.
+      '''
+    measureFirstLobule:
+      content: 'Let\'s start by marking the length of the first leaf.'
+      instruction: 'Drag from the top to the bottom of the modified leaf at the top-left of the image.'
+    measureSecondAxis:
+      content: '''
+        Now, measure the width of this modified leaf by clicking and dragging the cursor across the widest section.
+        As you drag, you'll be able to see the angle between the lines change.
+        Keep it as close to 90° as possible!
+      '''
+      instruction: 'Now drag a line out perpendicular to the previous line to complete the cross.'
+    oneMore:
+      content: 'Great! There\'s one more modified leaf fully visible in this image.'
+      instruction: 'Mark the axes of the other modified leaf.'
+    finish:
+      content: 'Now that we\'ve marked all the leaves, we can move on to the next image!'
 
   science:
     header: 'Science'
@@ -286,8 +318,7 @@ module.exports =
       '19': 'Tia Shelley (Research Assistant, Computer and Learning Sciences)'
       '20': 'Arfon Smith, Co-Principal Investigator (Director of Citizen Science)'
       '21': 'Steve Schultz, Imaging'
-      '22': 'Kalman Strauss, Volunteer (Field Museum)
-'
+      '22': 'Kalman Strauss, Volunteer (Field Museum)'
       '23': 'Oana Vadineanu, 2012 Coordination, (Northeastern Illinois University, FM intern)'
       '24': 'Alex Vizzone, Guest Interaction, (Northeastern Illinois University)'
       '25': 'Ariel Wagner, Imaging and Guest Interaction, (DePaul University)'
@@ -380,7 +411,7 @@ module.exports =
         </div>
 
         <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/phylo-tree.png">
+          <img src="./pdfs/thumbs/early-land-plants.png">
           <h3><a href="./pdfs/early-land-plants-lab.pdf">Early Land Plants Today.pdf</a></h3>
           <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
         </div>
