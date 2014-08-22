@@ -72,7 +72,7 @@ class Classifier extends BaseController
       nextLabel: translate 'span', 'tutorial.nextLabel'
       doneLabel: translate 'span', 'tutorial.doneLabel'
       onLoadStep: =>
-        translate.refresh @tutorial.el.get 0
+        translate.refresh @tutorial.el
 
     # meh
     @informationVM = new Vue
