@@ -68,7 +68,7 @@ module.exports =
       discuss: 'Discuss'
       readyToContinue: 'Ready to Move on?'
       askForSurvey: """
-        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank>this survey</a> about your Microplants experience. Thank you!
+        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank">this survey</a> about your Microplants experience. Thank you!
       """
       seenThisSession: "You have marked $seen so far this session!"
       beforeSurvey: 'We ask each person to mark 5 images.'
@@ -318,58 +318,69 @@ module.exports =
     header: 'Education'
     navigation:
       overview: 'Overview'
-      activities: 'Activities and Guides'
+      activities: 'Programs, Guides, and Activities'
       plants: 'Plants 101'
       videos: 'Videos'
 
     content:
       overview: """
-        <p>Scientists and educators at <a href="http://www.fieldmuseum.org/">The Field Museum (Chicago)</a> partnered with Citizen Science and Zooniverse at the <a href="http://www.adlerplanetarium.org/">Adler Planetarium</a> have coordinated a network of students and professionals at universities, city colleges, high schools, and middle schools to accelerate the pace of scientific discovery. The underlying theme is to connect biological research and collections with education and outreach. The project has the specific goal of engaging a broader audience, especially students (K-12 and university level) and citizen scientists to partner with our efforts in recording critical data sets from digitally rendered images. Our education guides are suitable for various classes and majors. </p>
+        <p>Scientists and educators at <a href="http://www.fieldmuseum.org/">The Field Museum (Chicago)</a> partnered with Citizen Science and <a href="https://www.zooniverse.org/">Zooniverse</a> at the <a href="http://www.adlerplanetarium.org/">Adler Planetarium</a> to coordinate a network of students and professionals at universities, city colleges, high schools, and middle schools to accelerate the pace of scientific discovery. The underlying theme is to connect biological research and collections with education and outreach. The project has the specific goal of engaging a broader audience, especially students (K-12 and college) and citizen scientists to partner with our efforts in recording critical data sets from digitally rendered images. Our education guides are designed for a university level classroom and are suitable for various classes and majors. Our Virtual Visits program is designed for a middle school or high school classroom.</p>
 
         <h3>Can Collection Connection: MicroPlants be used in the classroom?</h3>
         <p>Of course! MicroPlants is user friendly and can be used in the classroom as well as an at home assignment! Take part in scientific research anywhere and at anytime.</p>
 
         <h3>How can these activities be implemented into my curriculum?</h3>
-        <p>K-12 programs: Educators from the Education Department at The Field Museum have developed lessons, activities, and virtual visits – establishing communication between your students and our MicroPlants Scientists. Every activity has a rubric that facilitates implementing them into your unit plan. These activities align with <a href="http://www.corestandards.org">Common Core</a> and <a href="http://www.nextgenscience.org">Next Generation Science Standards</a>.</p>
+        <p><b>K-12 programs:</b> Educators from the Education Department at The Field Museum developed <a href="https://www.fieldmuseum.org/educators/virtual-visits">Virtual Visits from The Field</a> – an NGSS aligned program that virtually brings our MicroPlants Scientists into the classroom. This sixty minute live broadcast is accompanied by pre and post activities that easily integrates MicroPlants into your curriculum.</p>
 
-        <p>Undergraduate level or equivalent: To help promote ideas, several activities have been developed and applied to non biology as well as entry level biology majors. Some of the activities could also be used for advanced placement biology students in high school.</p>
+        <p><b>Undergraduate level or equivalent:</b> To help promote ideas, several activities have been developed and applied to non biology as well as entry level biology majors. Some of the activities could also be used for advanced placement biology students in high school.</p>
 
         <h3>Undergraduate students express their experience!</h3>
         <p>"All together" Past Field Museum undergraduate interns, explain their experiences using MicroPlants as well as the ImageJ software used in some of our activities!</p>
-        <iframe src="//player.vimeo.com/video/58426100" width="600" height="320" frameborder="0" allowfullscreen></iframe>
+        <div class="center"><iframe src="//player.vimeo.com/video/58426100" width="600" height="320" frameborder="0" allowfullscreen></iframe></div>
       """
       activities: """
-        <h2>Guides</h2>
-        <p>Lead in statement for guides</p>
+        <p>The MicroPlants team, Citizen Science, and Zooniverse are connecting research and collections with education and outreach. Our goal is to engage a broader audience, especially students (K-12 and university level), as well as the general public to partner with our efforts in recording critical data from digital images. </p>
 
-        <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/whos-who.png">
-          <h3><a href="./pdfs/guides-bryophytes-ferns-lichens.pdf">Who is who?: Bryophytes, Ferns and Lichens</a></h3>
-        </div>
+        <div class="center"><img src="./images/logos/virtual-visits.png"></div>
+        <p><b>Virtual Visits from The Field</b> is an sixty minute live broadcast that explores taxonomy through the lens of citizen science. Students will learn about the evolution of early land plants and will engage in the process of collecting and classifying bryophytes (microplants) with the Museum’s MicroPlants team. Students will have the opportunity to become citizen scientists and contribute to the microplants project. Pre-and-post activities accompany this live broadcast, take a sneak peak at the activities!</p>
+
+        <p>NGSS DCI Alignments: LS4.A: Evidence of Common Ancestry and Diversity. For more information visit: <a href="www.fieldmuseum.org/virtualvisits">www.fieldmuseum.org/virtualvisits</a></p>
+
+        <h2>Guides</h2>
+        <p>Our guides are simple and useful for both classroom activities and while out in the field exploring. They can be laminated and combined to form a packet when going out on a field trip or on a walk through any natural area.</p>
 
         <div class="activity-or-guide">
           <img src="./pdfs/thumbs/compare-table.png">
-          <h3><a href="./pdfs/guides-comparative-table.pdf">Comparative table: Common features distinguishing bryophytes, ferns and lichens</a></h3>
+          <h3><a href="./pdfs/guides-comparative-table.pdf">Comparative table</a></h3>
+          <p>A useful beginners’ guide to distinguishing between Liverworts, Mosses, Hornworts, Ferns, and Lichen.</p>
         </div>
 
         <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/early-land-plants.png">
-          <h3><a href="./pdfs/guides-early-land-plants.pdf">Bryophytes or Early Land Plants: Comparison between Mosses, Liverworts and Hornworts</a></h3>
+          <img src="./pdfs/thumbs/whos-who.png">
+          <h3><a href="./pdfs/guides-bryophytes-ferns-lichens.pdf">Who's who?</a></h3>
+          <p>A guide to understanding the similarities and differences between nomenclature, habitats, and the distinguishing structures of bryophytes, ferns, and lichens.</p>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/bryophytes.png">
+          <h3><a href="./pdfs/guides-early-land-plants.pdf">Bryophytes or Early Land Plants</a></h3>
+          <p>This chart provides a comparison of distinguishing surface structures of Mosses, Liverworts, and Hornworts.</p>
         </div>
 
         <hr>
 
         <h2>Activities</h2>
+        <p>These activities are suitable for various undergraduate classes and majors. They can be implemented into any discussion on plants, habitats, local and global issues.</p>
 
         <div class="activity-or-guide">
           <img src="./pdfs/thumbs/sci-draw.png">
-          <h3><a href="./pdfs/biological-illustrations.pdf">Biological Illustrations.pdf</a></h3>
+          <h3><a href="./pdfs/scientific-drawings.pdf">Biological Illustrations.pdf</a></h3>
           <p>Learn how to make scientific illustrations and record your observations, a great tool to help you to remember all the features of an observed specimen.</p>
         </div>
 
         <div class="activity-or-guide">
           <img src="./pdfs/thumbs/phylo-tree.png">
-          <h3><a href="./pdfs/early-land-plants-tdoay.pdf">Early Land Plants Today.pdf</a></h3>
+          <h3><a href="./pdfs/early-land-plants-lab.pdf">Early Land Plants Today.pdf</a></h3>
           <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
         </div>
 
@@ -380,7 +391,28 @@ module.exports =
         </div>
         """
       plants: """
-        <p>Bryophytes, specifically liverworts such as Frullania, are considered the earliest land plants. Researchers at The Field Museum are creating a working phylogeny of known species and discovering new species all over the world. Early land plants are environmental indicators. Because of their small size, liverworts respond quickly to environmental and ecological change. They are potential indicators of climate change, assist in assessing the overall “health” of forests, and detect heavy metals and pollution in the atmosphere.</p>
+        <p>Bryophytes, specifically liverworts such as Frullania, are considered the earliest land plants. Researchers at The Field Museum are creating a working phylogeny of known species and discovering new species all over the world. Early land plants are environmental indicators. Because of their small size, liverworts respond quickly to environmental and ecological change. They are potential indicators of climate change, assist in assessing the overall "health" of forests, and detect heavy metals and pollution in the atmosphere.</p>
+
+        <div class="center"><img src="./images/education/plant-diversity.jpg"></div>
+        <p>From macro scale to micro scale, plants are critical to a healthy environment and life on earth. Life as we know it would cease to exist without plants. Whether directly or indirectly food, water, medicine, air, habitat and climate depends on plant life. The early land plants that we are studying are the Liverworts. You will be measuring microleaves, an anatomical structure on the liverwort, which is smaller than a tip on a pencil. Scientists who go out to different collection locations have to keep a keen eye for these tiny plants that are only found in the most lush areas. More information on plants and conservation can be found at The Botanic Gardens Conservation International: <a href="http://www.bgci.org/plantconservationday/whyplantsimportant/">http://www.bgci.org/plantconservationday/whyplantsimportant/</a></p>
+
+        <div class="center"><img src="./images/education/vegetation-zones.png"></div>
+        <div class="center"><img src="./images/education/plants-101-vegetation.png"></div>
+
+        <p>Collecting Bryophytes is no easy task, getting to these early land plants involves going to some of the most remote areas of the world. Field Museum botanists have collected from places all over Chile, Fiji, New Caledonia as well as New Zealand. This process takes time to find the perfect collection sites. Some areas that these specimen were collected from are Temperate Broadleaf Forest and Riparian, Subtropical Moist Forest, Tropical Mountain Rainforests, as well as Tropical and Subtropical Moist Forest and Rainforests. Why do you think that these areas would be the perfect growing location for early land plants?</p>
+
+        <p>For more information, check out these scholarly articles on Frullania:</p>
+        <ul>
+          <li><a href="http://scholar.google.com/scholar?oi=bibs&hl=en&cluster=12614588440966343677&btnI=Lucky">Early Land Plants Today (ELPT): How many liverwort species are there?</a> M Von Konrat, L Soderstrom, MAM Renner, A Hagborg… - Phytotaxa, 2014</li>
+          <li><a href="http://scholar.google.com/scholar?oi=bibs&hl=en&cluster=15347743729748958913&btnI=Lucky">Early Land Plants Today: Global patterns of liverwort diversity, distribution, and floristic knowledge</a> M von Konrat, A Hagborg, L Söderström, MAM Renner… - Bryology in Asia in the New Millennium. Proceedings of …, 2007</li>
+        </ul>
+
+        <div class="center"><img src="./images/education/plant-diversity-2.png"></div>
+
+        <p>Bryophytes are a diverse group of early land plants that includes liverworts (Marchantiophyta), hornworts (Anthocerotophyta), and mosses (Bryophyta). They are considered to be the living descendents of the first terrestrial plants that evolved here on Earth. Liverworts (Marchantiophyta) are pivotal in our understanding of early land plant evolution and exist as important components of the vegetation in many regions of the world. Taxonomic conclusions will be drawn from a multi-faceted data set, including morphology, fieldwork, experimental growth studies, as well as DNA sequence data, and population studies using DNA microsatellite markers.</p>
+
+        <div class="center"><img src="./images/education/herbarium-specimen.jpg"></div>
+        <p>Of the 24 million specimens and objects housed in the Field Museum (Chicago), approximately 3 million are plant specimens. The herbarium preserves and documents the biodiversity of plants. An herbarium is a repository of preserved and labeled plant specimens arranged in such a way as to allow easy access and archival storage. Each specimen is typically stored in the form of an herbarium sheet, which is a pressed and dried plant affixed to a sheet of heavy paper. Each sheet includes a label describing the plant's Latin name, the origin of the collection, the date of collection, and the name of the collector. Herbarium sheets are all of standardized size and arrangement, and are filed in protective storage cabinets. Within these cabinets the specimens are arranged according to the family, genus, and species they represent, as well as the geographic location from which they were collected.</p>
       """
       videos: """
         <p>Check out some of these videos to learn more on what the scientists at The Field Museum are doing behind the scenes.</p>
