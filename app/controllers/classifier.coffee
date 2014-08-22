@@ -1,6 +1,7 @@
 MarkingSurface = require 'marking-surface'
 {Tutorial} = require 'zootorial'
 Vue = require 'vue'
+translate = require 't7e'
 Modal = require '../lib/modal'
 
 BaseController = require 'zooniverse/controllers/base-controller'
@@ -154,10 +155,10 @@ class Classifier extends BaseController
     
     switch @step
       when 1
-        $currentTarget.text 'Finished'
+        $currentTarget.text translate 'span', 'classifier.finished'
         @nextSubject()
       when 2
-        $currentTarget.text 'Next Image'
+        $currentTarget.text translate 'span', 'classifier.nextImage'
         @finishSubject()
 
   onCreateMark: =>

@@ -37,6 +37,7 @@ module.exports =
     info: 'info'
     prompt: 'Measure the Microleaves!'
     finished: 'Finishied'
+    nextImage: 'Next Image'
 
     fieldGuide:
       header: 'Image Classification'
