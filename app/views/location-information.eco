@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <td><%- t 'span.faded', 'classifier.metadata.dateCollected' %></td>
-          <td><span v-class="focused: subject.metadata.date_collected">{{ subject.metadata.date_collected ? subject.metadata.date_collected : 'n/a' }}</span></td>
+          <td><span v-class="focused: subject.metadata.date">{{ subject.metadata.date ? subject.metadata.date : 'n/a' }}</span></td>
         </tr>
       </table>
     </div>

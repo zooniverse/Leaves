@@ -68,7 +68,7 @@ module.exports =
       discuss: 'Discuss'
       readyToContinue: 'Ready to Move on?'
       askForSurvey: """
-        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank>this survey</a> about your Micrplants experience. Thank you!
+        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank>this survey</a> about your Microplants experience. Thank you!
       """
       seenThisSession: "You have marked $seen so far this session!"
       beforeSurvey: 'We ask each person to mark 5 images.'
@@ -166,7 +166,7 @@ module.exports =
       aboutBryophytes: """
         <h2>About Bryophytes</h2>
         <h3>What is a bryophyte?</h3>
-        <p>Bryophytes are a diverse group of early land plants that includes liverworts (Marchantiophyta), hornworts (Anthocerotophyta), and mosses (Bryophyta). They are considered to be the living descendents of the first terrestrial plants that evolved here on Earth. While much remains to be discovered about their biodiversity, biology, and geographic distribution, they are widespread throughout the globe and have important evolutionary, ecological, and medicinal characteristics that make them critically important to document, identify, and study. Some bryophytes might be confused with small ferns or even lichens. See or click here: (see file ‘bryophytes who is who.pdf’) Use this guide to help distinguish a bryophyte from ferns and lichens. See or click here: <a href="http://fm1.fieldmuseum.org/keystonature/bryophytes/bryophytes1.html">http://fm1.fieldmuseum.org/keystonature/bryophytes/bryophytes1.html</a> use this identification tool to help you distinguish between a moss, a liverwort and a hornwort.</p>
+        <p>Bryophytes are a diverse group of early land plants that includes liverworts (Marchantiophyta), hornworts (Anthocerotophyta), and mosses (Bryophyta). They are considered to be the living descendents of the first terrestrial plants that evolved here on Earth. While much remains to be discovered about their biodiversity, biology, and geographic distribution, they are widespread throughout the globe and have important evolutionary, ecological, and medicinal characteristics that make them critically important to document, identify, and study. Some bryophytes might be confused with small ferns or even lichens. Use <a href="./pdfs/guides-bryophytes-ferns-lichens.pdf">this guide</a> to help distinguish a bryophyte from ferns and lichens. Use <a href="http://fm1.fieldmuseum.org/keystonature/bryophytes/bryophytes1.html">this identification tool</a> to help you distinguish between a moss, a liverwort and a hornwort.</p>
 
         <div class="box">
           <img src="./images/science/bryophytes-liverwort-2.jpg" class="small right" />
@@ -282,7 +282,7 @@ module.exports =
       '16': 'Pedro Rebollar, Guest Interaction, (DePaul University)'
       '17': 'Beth Sanzenbacher, Education '
       '18': 'Blanka Shaw (Database Manager) (Duke university)'
-      '19': 'Tia Shelley (Research Assistant, Computer and Learning Scie'
+      '19': 'Tia Shelley (Research Assistant, Computer and Learning Sciences)'
       '20': 'Arfon Smith, Co-Principal Investigator (Director of Citizen Science)'
       '21': 'Steve Schultz, Imaging'
       '22': 'Kalman Strauss, Volunteer (Field Museum)
