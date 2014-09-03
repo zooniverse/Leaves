@@ -43,6 +43,7 @@ User = require 'zooniverse/models/user'
 User.fetch()
 
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
-# new GoogleAnalytics account: '1234567890'
+new GoogleAnalytics
+  account: 'UA-53428944-2'
 
 window.app = { stack, api }
