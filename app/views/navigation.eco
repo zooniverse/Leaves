@@ -8,6 +8,6 @@
   <li><%- t 'a', 'navigation.education', href: '#/education' %></li>
   <li><%- t 'a', 'navigation.profile', href: '#/profile' %></li>
   <li><%- t 'a', 'navigation.discuss', href: 'http://microplantstalk.zooniverse.org' %></li>
-  <li><%- t 'a', 'navigation.blog', href: 'http://microplants.wordpress.com/' %></li>
+  <li><%- t 'a', 'navigation.blog', href: 'http://microplants.wordpress.com/', target: '_blank' %></li>
   <li id="dark-mode-toggle"><i class="fa fa-lightbulb-o"></i></li>
 </ul>
