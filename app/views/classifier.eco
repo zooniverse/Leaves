@@ -47,25 +47,25 @@
   <%- t 'p', 'classifier.fieldGuide.answer_2' %>
 
   <div class="block-images">
-    <img src="./images/faq/ex-3.jpg" />
-    <img src="./images/faq/ex-4.jpg" />
-    <img src="./images/faq/ex-1.jpg" />
+    <span><img src="./images/faq/ex-3.jpg"></span>
+    <span><img src="./images/faq/ex-4.jpg"></span>
+    <span><img src="./images/faq/ex-1.jpg"></span>
   </div>
 
   <%- t 'h3', 'classifier.fieldGuide.exampleMarkings' %>
   <div class="block-images examples">
-    <img src="./images/guide/example-1.jpg">
-    <img src="./images/guide/example-2.jpg">
-    <img src="./images/guide/example-3.jpg">
-    <img src="./images/guide/example-4.jpg">
-    <img src="./images/guide/example-5.jpg">
-    <img src="./images/guide/example-6.jpg">
-    <img src="./images/guide/example-7.jpg">
-    <img src="./images/guide/example-8.jpg">
-    <img src="./images/guide/example-9.jpg">
-    <img src="./images/guide/example-10.jpg">
-    <img src="./images/guide/example-11.jpg">
-    <img src="./images/guide/example-12.jpg">
+    <span><img src="./images/guide/example-1.jpg"></span>
+    <span><img src="./images/guide/example-2.jpg"></span>
+    <span><img src="./images/guide/example-3.jpg"></span>
+    <span><img src="./images/guide/example-4.jpg"></span>
+    <span><img src="./images/guide/example-5.jpg"></span>
+    <span><img src="./images/guide/example-6.jpg"></span>
+    <span><img src="./images/guide/example-7.jpg"></span>
+    <span><img src="./images/guide/example-8.jpg"></span>
+    <span><img src="./images/guide/example-9.jpg"></span>
+    <span><img src="./images/guide/example-10.jpg"></span>
+    <span><img src="./images/guide/example-11.jpg"></span>
+    <span><img src="./images/guide/example-12.jpg"></span>
   </div>
 
   <%- t 'h3', 'classifier.fieldGuide.question_3' %>

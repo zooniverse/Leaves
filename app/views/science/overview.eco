@@ -1,9 +1,9 @@
 <% t = require 't7e' %>
 
 <div class="block-images">
-  <img src="./images/science/fig-1.jpg" />
-  <img src="./images/science/fig-3.jpg" />
-  <img src="./images/science/fig-2.jpg" />
+  <span><img src="./images/science/fig-1.jpg"></span>
+  <span><img src="./images/science/fig-3.jpg"></span>
+  <span><img src="./images/science/fig-2.jpg"></span>
 </div>
 
 <%- t 'div', 'science.content.overview' %>

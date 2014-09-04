@@ -1,9 +1,9 @@
 <% t = require 't7e' %>
 
 <div class="block-images">
-  <img src="./images/science/bryophytes-moss.jpg" />
-  <img src="./images/science/bryophytes-liverwort.jpg" />
-  <img src="./images/science/bryophytes-hornwort.jpg" />
+  <span><img src="./images/science/bryophytes-moss.jpg"></span>
+  <span><img src="./images/science/bryophytes-liverwort.jpg"></span>
+  <span><img src="./images/science/bryophytes-hornwort.jpg"></span>
 </div>
 
 <%- t 'div', 'science.content.aboutBryophytes' %>

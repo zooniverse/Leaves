@@ -1,8 +1,8 @@
 <% t = require 't7e' %>
 
 <div class="block-images">
-  <img src="./images/science/origin-1.jpg" />
-  <img src="./images/science/origin-2.jpg" />
+  <span><img src="./images/science/origin-1.jpg"></span>
+  <span><img src="./images/science/origin-2.jpg"></span>
 </div>
 
 <%- t 'div', 'science.content.origin' %>

@@ -23,7 +23,7 @@ class Science extends BaseController
     @el.on StackOfPages::activateEvent, @activate
 
     setTimeout =>
-      @el.find('.block-images > img').on 'click', (e) ->
+      @el.find('.block-images img').on 'click', (e) ->
         new Modal src: e.currentTarget.src
 
   activate: ({ originalEvent: { detail }}) =>
