@@ -25,11 +25,10 @@ module.exports =
     instruction: translate 'span', 'tutorial.measureFirstLobule.instruction'
     attachment: ['left', 'middle', '.marking-surface-container', '0.4', '0.4']
 
-    demo: (callback) ->
+    demo: ->
       ghostMouse.run ->
         @move '.marking-surface', 0.159 + 0.05, 0.105 + 0.025
         @drag '.marking-surface', 0.233 + 0.025, 0.678 + 0.085
-        @do 0, -> callback()
 
     next:
       'mouseup .marking-surface': 'measureSecondAxis'
