@@ -80,7 +80,7 @@ module.exports =
     doneLabel: 'Done'
 
     welcome:
-      header: 'Welcome to the Leaves Project!'
+      header: 'Welcome to the MicroPlants Project!'
       content: 'This quick tutorial will guide you through your first classification.'
     whatIsThis:
       header: 'What are we looking at?'
@@ -112,7 +112,7 @@ module.exports =
       overview: 'Overview'
       aboutBryophytes: 'About Bryophytes'
       bryophyteImportance: 'Importance of Bryophytes'
-      origin: 'Origin of Images'
+      origin: 'From the field to The Field'
       howCanIHelp: 'How can I help?'
 
     content:
@@ -147,8 +147,8 @@ module.exports =
         <p>The significance of biological collections of museums and academic institutions make countless contributions to science and society in general, especially in documenting, describing and discovering diversity. In this project, dried plant specimens are collected in the field from habitats ranging from tropical cloud forests to temperate tundra.</p>
 
         <div class="block-images short">
-          <img src="./images/science/origin-6.jpg" />
-          <img src="./images/science/origin-7.jpg" />
+          <span><img src="./images/science/origin-6.jpg"></span>
+          <span><img src="./images/science/origin-7.jpg"></span>
         </div>
 
         <h3>Where are the specimens stored?</h3>
@@ -158,9 +158,9 @@ module.exports =
         <p>Liverworts grow all over the world, but these Frullania images have typically been collected from the southern hemisphere in areas like Fiji, New Caledonia, and Chile. Specimens were collected in the field, brought back to the museum, and painstakingly mounted onto slides. From there, they imaged with a microscope by our many interns. Images were taken by interns at the Field Museum from Northeastern Illinois University, DePaul University, Harold Washington Chicago City College, and The Ohio State University. You might be the first person ever to study and analyze a particular image!</p>
 
         <div class="block-images short">
-          <img src="./images/science/origin-3.jpg" />
-          <img src="./images/science/origin-4.jpg" />
-          <img src="./images/science/origin-5.jpg" />
+          <span><img src="./images/science/origin-3.jpg"></span>
+          <span><img src="./images/science/origin-4.jpg"></span>
+          <span><img src="./images/science/origin-5.jpg"></span>
         </div>
 
         <h3>Where have we collected?</h3>
