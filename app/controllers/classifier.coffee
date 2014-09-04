@@ -121,6 +121,7 @@ class Classifier extends BaseController
     if subject.tutorial
       @tutorial.start() unless @tutorial.started
     else
+      @tutorial.end()
       @classification = new Classification {subject}
 
     @surface.disable()
