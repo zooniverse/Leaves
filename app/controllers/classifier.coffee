@@ -17,7 +17,7 @@ AxesTool = require './tools/axes'
 ClassificationSummary = require './classification-summary'
 
 $ = window.jQuery
-$body = $('body')
+$body = $('html, body')
 
 IMAGE_WIDTH = 720
 IMAGE_HEIGHT = 536
