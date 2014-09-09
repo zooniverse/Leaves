@@ -1,6 +1,7 @@
 <% t = require 't7e' %>
 
 <%- t 'div.section-header', 'classifier.metadata.header' %>
+<%- t 'div.section-subheader', 'classifier.metadata.subheader' %>
 
 <div class="center">
   <div v-if="hasCoords">

@@ -2,6 +2,8 @@
 
 <%- t 'h1', 'team.header' %>
 
+<%- t 'p', 'team.intro' %>
+
 <%- t 'h2', 'team.contactsHeader' %>
 <%- t 'span', 'team.contactsExcerpt' %>
 

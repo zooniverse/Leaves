@@ -57,6 +57,7 @@ module.exports =
 
     metadata:
       header: 'Location & Information'
+      subheader: 'Click map to view the location in Google Maps'
       coordinates: 'Coordinates'
       collector: 'Collector'
       comments: 'Other Comments'
@@ -215,7 +216,7 @@ module.exports =
 
         <div class="box">
           <h3>What are you looking at? What is a microleaf?</h3>
-          <p>The images you are classifying are of single stems of a plant. Even though these plants are microscopic in size, they are very complex. A microleaf is simply a special name for a modified leaf structure. The leaf in the genus Frullania is actually comprised of three parts, a main leaf that appears flat, a microleaf that is often a sac-like structure, and a small structure called a stylus.</p>
+          <p>The images you are classifying are of single stems of a plant. Even though these plants are microscopic in size, they are very complex. A microleaf (lobule) is simply a special name for a modified leaf structure. The leaf in the genus Frullania is actually comprised of three parts, a main leaf that appears flat, a microleaf that is often a sac-like structure, and a small structure called a stylus.</p>
           <div class="center"><img src="./images/science/bryophytes-plant-parts.jpg" /></div>
         </div>
       """
@@ -401,7 +402,7 @@ module.exports =
 
         <hr>
 
-        <h2>Activities</h2>
+        <h2>Undergraduate Activities</h2>
         <p>These activities are suitable for various undergraduate classes and majors. They can be implemented into any discussion on plants, habitats, local and global issues.</p>
 
         <div class="activity-or-guide">
