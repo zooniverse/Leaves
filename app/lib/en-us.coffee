@@ -406,21 +406,27 @@ module.exports =
         <p>These activities are suitable for various undergraduate classes and majors. They can be implemented into any discussion on plants, habitats, local and global issues.</p>
 
         <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/sci-draw.png">
-          <h3><a href="./pdfs/scientific-drawings.pdf">Biological Illustrations.pdf</a></h3>
+          <img src="./pdfs/thumbs/PhylogenyCover.jpg">
+          <h3><a href="./pdfs/PhylogenyActivity.pdf">Phylogeny Activity</a></h3>
+          <p>Learn how to construct your very own evolutionary tree! Students can create their own tree structures and study relationships between plants, animals, fungi, and more.</p>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/MossLiverwortCover.jpg">
+          <h3><a href="./pdfs/MossLiverwortTerrarium.pdf">Moss &amp; Liverwort Terrarium</a></h3>
+          <p>Design and build unique terrariums and allow students to experiment with different plant types, water type, and sources of light.</p>
+        </div>
+
+        <div class="activity-or-guide">
+          <img src="./pdfs/thumbs/ScientificDrawingCover.jpg">
+          <h3><a href="./pdfs/ScientificDrawings.pdf">Scientific Drawings of Early Land Plants</a></h3>
           <p>Learn how to make scientific illustrations and record your observations, a great tool to help you to remember all the features of an observed specimen.</p>
         </div>
 
         <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/early-land-plants.png">
-          <h3><a href="./pdfs/early-land-plants-lab.pdf">Early Land Plants Today.pdf</a></h3>
-          <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features. Students can investigate morphological characteristics of early land plants.</p>
-        </div>
-
-        <div class="activity-or-guide">
-          <img src="./pdfs/thumbs/imagej.png">
-          <h3><a href="./pdfs/imagej-instructions.pdf">ImageJ Instructions.pdf</a></h3>
-          <p>ImageJ is a free program developed by the National Institute of Health (NIH) that has given the scientific community a way of generating data from images.</p>
+          <img src="./pdfs/thumbs/InvestigatingMicrostructuresCover.jpg">
+          <h3><a href="./pdfs/InvestigatingMicroStructures.pdf">Investigating MicroStructures with Image J</a></h3>
+          <p>This activity focuses on morphology, the study of form and structure of organisms and specific structural features using Image J, which is a free program developed by the National Institute of Health (NIH) that has given the scientific community a way of generating data from images.</p>
         </div>
         """
       plants: """
