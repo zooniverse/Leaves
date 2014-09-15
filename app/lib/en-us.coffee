@@ -374,10 +374,10 @@ module.exports =
       activities: """
         <p>The MicroPlants team, Citizen Science, and Zooniverse are connecting research and collections with education and outreach. Our goal is to engage a broader audience, especially students (K-12 and university level), as well as the general public to partner with our efforts in recording critical data from digital images. </p>
 
-        <div class="center"><img src="./images/logos/virtual-visits.png"></div>
-        <p><b>Virtual Visits from The Field</b> is an sixty minute live broadcast that explores taxonomy through the lens of citizen science. Students will learn about the evolution of early land plants and will engage in the process of collecting and classifying bryophytes (microplants) with the Museum’s MicroPlants team. Students will have the opportunity to become citizen scientists and contribute to the microplants project. Pre-and-post activities accompany this live broadcast, take a sneak peak at the activities!</p>
+        <div class="center"><a href=""><img src="./images/logos/virtual-visits.png"></a></div>
+        <p><b>Virtual Visits from The Field</b> is an sixty minute live broadcast that explores taxonomy through the lens of citizen science. Students will learn about the evolution of early land plants and will engage in the process of collecting and classifying bryophytes (microplants) with the Museum’s MicroPlants team. Students will have the opportunity to become citizen scientists and contribute to the microplants project. Pre-and-post activities accompany this live broadcast, <a href="./pdfs/PeekInsideVVMicroplants.pdf">take a sneak peak at the activities</a>!</p>
 
-        <p>NGSS DCI Alignments: LS4.A: Evidence of Common Ancestry and Diversity. For more information visit: <a href="www.fieldmuseum.org/virtualvisits">www.fieldmuseum.org/virtualvisits</a></p>
+        <p>NGSS DCI Alignments: LS4.A: Evidence of Common Ancestry and Diversity. For more information visit: <a href="http://www.fieldmuseum.org/virtualvisits">www.fieldmuseum.org/virtualvisits</a></p>
 
         <h2>Guides</h2>
         <p>Our guides are simple and useful for both classroom activities and while out in the field exploring. They can be laminated and combined to form a packet when going out on a field trip or on a walk through any natural area.</p>
