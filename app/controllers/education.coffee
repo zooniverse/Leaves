@@ -1,6 +1,5 @@
 BaseController = require 'zooniverse/controllers/base-controller'
 StackOfPages = require 'stack-of-pages'
-Modal = require '../lib/modal'
 
 class Education extends BaseController
   className: 'education page'
@@ -21,10 +20,6 @@ class Education extends BaseController
 
     @el.find('#education-stack').append educationStack.el
     @el.on StackOfPages::activateEvent, @activate
-
-    setTimeout =>
-      @el.find('.block-images img').on 'click', (e) ->
-        new Modal src: e.currentTarget.src
 
   activate: ({ originalEvent: { detail }}) =>
     @menuLinks.removeClass 'active'

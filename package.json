@@ -10,7 +10,8 @@
     "haw": "~0.5.0",
     "stack-of-pages": "git://github.com/chrissnyder/stack-of-pages.git",
     "vue": "~0.10.5",
-    "t7e": "~0.3.1"
+    "t7e": "~0.3.1",
+    "cs-utils-imagemodal": "~0.0.1"
   },
   "scripts": {
     "start": "haw serve --port 6002",

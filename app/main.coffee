@@ -47,4 +47,7 @@ GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 new GoogleAnalytics
   account: 'UA-53428944-2'
 
+ImageModal = require 'cs-utils-imagemodal'
+new ImageModal
+
 window.app = { stack, api }

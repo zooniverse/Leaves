@@ -1,8 +1,6 @@
 BaseController = require 'zooniverse/controllers/base-controller'
 Classification = require 'zooniverse/models/classification'
 
-
-
 class ClassificationSummary extends BaseController
   className: 'classification-summary'
   template: require '../views/classification-summary'

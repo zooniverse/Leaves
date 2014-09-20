@@ -2,7 +2,6 @@ MarkingSurface = require 'marking-surface'
 {Tutorial} = require 'zootorial'
 Vue = require 'vue'
 translate = require 't7e'
-Modal = require '../lib/modal'
 
 BaseController = require 'zooniverse/controllers/base-controller'
 User = require 'zooniverse/models/user'
@@ -94,9 +93,6 @@ class Classifier extends BaseController
           "http://maps.google.com/?q=#{ @formatCoords() }"
         formattedCoords: ->
           if @hasCoords then @formatCoords() else "n/a"
-
-    @exampleImages.on 'click', (e) ->
-      new Modal src: e.currentTarget.src
 
     @el.on StackOfPages::activateEvent, @activate
 
