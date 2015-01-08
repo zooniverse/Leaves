@@ -326,6 +326,7 @@ module.exports =
       '26': 'Nyree Zerega, Education, (Northwestern University)'
       '27': 'Zak Zillen, Guest Interaction, (Northeastern Illinois University)'
       '28': 'Will Flannery, Graphic Design (Field Museum)'
+      '29': 'Adriana Rosca, Romanian Translation'
 
     acknowledgements:
       '01': 'Norbert Cordeiro, Roosevelt University/Field Museum--Instructor/Research Associate'
