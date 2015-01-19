@@ -128,7 +128,14 @@ class Classifier extends BaseController
 
       @subjectButton.removeClass 'disabled'
 
-      @informationVM.$set 'subject', subject.toJSON()
+      subjectJSON = {
+        metadata: {
+          collector: subject.metadata.collector
+          date: subject.metadata.date
+          comments: subject.metadata.comments
+        }
+      }
+      @informationVM.$set 'subject', subjectJSON
       @surface.enable()
 
   onClickRestartTutorial: ->
