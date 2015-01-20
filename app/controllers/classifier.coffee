@@ -125,7 +125,6 @@ class Classifier extends BaseController
     loadImage subject.location.standard, ({ src }) =>
       @loader.fadeOut { queue: false }
       @surface.image.attr { src: src }
-
       @subjectButton.removeClass 'disabled'
 
       subjectJSON = {
@@ -182,6 +181,8 @@ class Classifier extends BaseController
     classificationSummary.el.fadeIn()
 
     Subject.on 'get-next', =>
+      @favoriteIcon.toggleClass 'fa-heart', false
+      @favoriteIcon.toggleClass 'fa-heart-o', true
       @el.removeClass 'showing-summary'
       classificationSummary.el.fadeOut 300, ->
         classificationSummary.destroy()

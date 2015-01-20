@@ -6,10 +6,8 @@ Vue = require 'vue'
 
 $ = window.jQuery
 
-talkHref = ->
+Subject::talkHref = ->
   "http://microplantstalk.zooniverse.org/#/subjects/#{@zooniverse_id}"
-
-Subject::talkHref = talkHref.bind Subject
 
 class ProfilePage extends BaseController
   className: 'profile page'
