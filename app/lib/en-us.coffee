@@ -319,7 +319,7 @@ module.exports =
       '18': 'Blanka Shaw (Database Manager) (Duke university)'
       '19': 'Tia Shelley (Research Assistant, Computer and Learning Sciences)'
       '20': 'Arfon Smith, Co-Principal Investigator (Director of Citizen Science)'
-      '21': 'Steve Schultz, Imaging'
+      '21': 'Steve Schulze, Imaging'
       '22': 'Kalman Strauss, Volunteer (Field Museum)'
       '23': 'Oana Vadineanu, 2012 Coordination, (Northeastern Illinois University, FM intern)'
       '24': 'Alex Vizzone, Guest Interaction, (Northeastern Illinois University)'
