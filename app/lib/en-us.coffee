@@ -35,6 +35,7 @@ module.exports =
     restartTutorial: 'Restart Tutorial'
     guide: 'Guide'
     info: 'info'
+    survey: 'Survey'
     prompt: 'Measure the Microleaves!'
     finished: 'Finished'
     nextImage: 'Next Image'

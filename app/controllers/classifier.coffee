@@ -42,6 +42,7 @@ class Classifier extends BaseController
     'click .restart-tutorial': 'onClickRestartTutorial'
     'click .view-info': 'onClickViewInfo'
     'click .view-guide': 'onClickViewGuide'
+    'click .survey-link': 'onClickSurveyLink'
     'click .favorite-subject': 'onClickFavorite'
     'click button[name="subject-action"]': 'onClickSubjectAction'
 
@@ -149,6 +150,9 @@ class Classifier extends BaseController
     $body.animate {
       scrollTop: @informationSection.position().top - 120
     }, 500, 'swing'
+
+  onClickSurveyLink: ->
+    window.open 'http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014'
 
   onClickFavorite: ->
     if @classification?

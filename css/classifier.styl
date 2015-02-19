@@ -105,31 +105,19 @@
           display: block
 
   .classifier-actions
+    display: flex
     height: 50px
     padding: 20px 0
 
-    // this aint great
-    .prompt
-      line-height: 25px
-
-    .prompt,
     .favorite-subject
+      align-self: center
       transition: all 0.3s ease-in-out
 
-    .view-info,
-    .view-guide,
-    .restart-tutorial
-    .favorite-subject,
-    .dark-mode-toggle
-      cursor: pointer
-      display: inline-block
-
-    .view-info,
-    .view-guide,
-    .restart-tutorial
+    > *
       box-sizing: border-box
+      cursor: pointer
+      flex-grow: 1
       text-align: center
-      width: 32%
 
       i
         color: $green
@@ -145,6 +133,7 @@
         color: $green
 
     button[name="subject-action"]
+      flex-grow: 1.5
       padding: 0
       width: 155px
 

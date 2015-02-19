@@ -9,29 +9,24 @@
 
   <div class="actions-container">
     <div class="classifier-actions">
-      <div class="columns pushed">
-        <div class="column one-third">
-          <div class="restart-tutorial">
-            <i class="fa fa-refresh"></i><br>
-            <%- t 'span', 'classifier.restartTutorial' %>
-          </div>
-          <div class="view-guide">
-            <i class="fa fa-book"></i><br>
-            <%- t 'span', 'classifier.guide' %>
-          </div>
-          <div class="view-info">
-            <i class="fa fa-map-marker"></i><br>
-            <%- t 'span', 'classifier.info' %>
-          </div>
-        </div>
-        <div class="column one-third">
-          <%- t 'div.prompt', 'classifier.prompt' %>
-        </div>
-        <div class="column one-third">
-          <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
-          <%- t 'button.action', 'classifier.finished', name: 'subject-action' %>
-        </div>
+      <div class="restart-tutorial">
+        <i class="fa fa-refresh"></i><br>
+        <%- t 'span', 'classifier.restartTutorial' %>
       </div>
+      <div class="view-guide">
+        <i class="fa fa-book"></i><br>
+        <%- t 'span', 'classifier.guide' %>
+      </div>
+      <div class="view-info">
+        <i class="fa fa-map-marker"></i><br>
+        <%- t 'span', 'classifier.info' %>
+      </div>
+      <div class="survey-link">
+        <i class="fa fa-pencil-square-o"></i><br>
+        <%- t 'span', 'classifier.survey' %>
+      </div>
+      <div class="favorite-subject"><i class="fa fa-heart-o"></i></div>
+      <%- t 'button.action', 'classifier.finished', name: 'subject-action' %>
     </div>
   </div>
 </div>

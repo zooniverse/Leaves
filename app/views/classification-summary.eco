@@ -23,16 +23,10 @@
     </div>
   </div>
   <div class="survey-space">
-    <% unless Subject.current.tutorial: %>
-      <% if @askForSurvey: %>
-        <%- t 'p', 'classifier.summary.askForSurvey' %>
-      <% else: %>
-        <%- t 'p', 'classifier.summary.beforeSurvey' %>
-      <% end %>
-
-      <%- t 'p', 'classifier.summary.seenThisSession', $seen: @seenThisSession() %>
-    <% end %>
+    <%- t 'p', 'classifier.summary.beforeSurvey' %>
+    <%- t 'p', 'classifier.summary.seenThisSession', $seen: @seenThisSession() %>
   </div>
+
   <div class="call-to-continue">
     <%- t 'p', 'classifier.summary.readyToContinue' %>
   </div>
