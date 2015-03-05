@@ -152,7 +152,7 @@ class Classifier extends BaseController
     }, 500, 'swing'
 
   onClickSurveyLink: ->
-    window.open 'http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014'
+    window.open 'http://fieldmuseum.fluidsurveys.com/surveys/fieldmuseum/microplants-survey-2015/'
 
   onClickFavorite: ->
     if @classification?

@@ -71,7 +71,7 @@ module.exports =
       discuss: 'Discuss'
       readyToContinue: 'Ready to Move on?'
       askForSurvey: """
-        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/s/MicroPlants2014/" target="_blank">this survey</a> about your Microplants experience. Thank you!
+        Thank you for your work! We'd love it if you took the time to complete <a href="http://fieldmuseum.fluidsurveys.com/surveys/fieldmuseum/microplants-survey-2015/" target="_blank">this survey</a> about your Microplants experience. Thank you!
       """
       seenThisSession: "You have marked $seen so far this session!"
       beforeSurvey: 'We ask each person to mark 5 images.'
