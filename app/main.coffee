@@ -12,6 +12,7 @@ languageManager = new LanguageManager
     es: label: 'Español'
     pt: label: 'Português'
     pl: label: 'Polski'
+    ro: label: 'Româna'
 
 languageManager.on 'change-language', (e, code, strings) ->
   t7e.load strings
