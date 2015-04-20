@@ -129,6 +129,7 @@ class Classifier extends BaseController
       @subjectButton.removeClass 'disabled'
 
       subjectJSON = {
+        coords: subject.coords
         metadata: {
           collector: subject.metadata.collector
           date: subject.metadata.date
